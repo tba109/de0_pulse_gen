@@ -1,0 +1,10 @@
+transcript on
+if {[file exists rtl_work]} {
+	vdel -lib rtl_work -all
+}
+vlib rtl_work
+vmap work rtl_work
+
+vlog -vlog01compat -work work +incdir+/home/tyler/de0_pulse_gen {/home/tyler/de0_pulse_gen/de0_pulse_gen_top.v}
+vlog -vlog01compat -work work +incdir+/home/tyler/de0_pulse_gen/hdl {/home/tyler/de0_pulse_gen/hdl/config_ind.v}
+

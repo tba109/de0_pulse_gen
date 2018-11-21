@@ -1,0 +1,17 @@
+Analysis & Synthesis Status : Successful - Wed Nov 26 15:13:06 2014
+Quartus II 64-Bit Version : 14.0.2 Build 209 09/17/2014 SJ Full Version
+Revision Name : DE0_CV_Default
+Top-level Entity Name : DE0_CV_Default
+Family : Cyclone V
+Logic utilization (in ALMs) : N/A
+Total registers : 124
+Total pins : 206
+Total virtual pins : 0
+Total block memory bits : 2,463,744
+Total DSP Blocks : 0
+Total HSSI RX PCSs : 0
+Total HSSI PMA RX Deserializers : 0
+Total HSSI TX PCSs : 0
+Total HSSI PMA TX Serializers : 0
+Total PLLs : 1
+Total DLLs : 0

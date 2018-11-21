@@ -1,0 +1,72 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/tyler/de0_pulse_gen/simulation/modelsim
+vconfig_ind
+!s110 1542140098
+!i10b 1
+!s100 Tl=NFMVzKeWoZgznj7l;o2
+IFbejML6AS0le0YOCZhb9c0
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1542140012
+8/home/tyler/de0_pulse_gen/hdl/config_ind.v
+F/home/tyler/de0_pulse_gen/hdl/config_ind.v
+L0 14
+Z2 OV;L;10.4d;61
+r1
+!s85 0
+31
+!s108 1542140098.000000
+!s107 /home/tyler/de0_pulse_gen/hdl/config_ind.v|
+!s90 -reportprogress|300|-work|work|/home/tyler/de0_pulse_gen/hdl/config_ind.v|
+!i113 1
+o-work work
+vde0_pulse_gen_top
+Z3 !s110 1542139687
+!i10b 1
+!s100 ABJcALAzI]P9mAQWWFWl:3
+IYRW4zTd]?9mN`BNX<6GFO1
+R1
+R0
+w1542129855
+8/home/tyler/de0_pulse_gen/de0_pulse_gen_top.v
+F/home/tyler/de0_pulse_gen/de0_pulse_gen_top.v
+L0 6
+R2
+r1
+!s85 0
+31
+Z4 !s108 1542139687.000000
+!s107 /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/tyler/de0_pulse_gen|/home/tyler/de0_pulse_gen/de0_pulse_gen_top.v|
+!i113 1
+Z5 o-vlog01compat -work work
+!s92 -vlog01compat -work work +incdir+/home/tyler/de0_pulse_gen
+vde0_pulse_gen_top_tb
+R3
+!i10b 1
+!s100 d7ngV>Ai?QGl[CoJUF>^h0
+I9`1`oS>Eim?LU=e`e4UUd0
+R1
+R0
+w1542139653
+8/home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v
+F/home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v
+L0 16
+R2
+r1
+!s85 0
+31
+R4
+!s107 /home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/tyler/de0_pulse_gen/sim|/home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v|
+!i113 1
+R5
+!s92 -vlog01compat -work work +incdir+/home/tyler/de0_pulse_gen/sim

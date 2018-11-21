@@ -1,0 +1,30 @@
+# do de0_pulse_gen.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 13:25:20 on Nov 13,2018
+# vlog -work work de0_pulse_gen.vo 
+# -- Compiling module de0_pulse_gen_top
+# 
+# Top level modules:
+# 	de0_pulse_gen_top
+# End time: 13:25:20 on Nov 13,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 13:25:20 on Nov 13,2018
+# vlog -work work config_ind.vwf.vt 
+# -- Compiling module de0_pulse_gen_top_vlg_vec_tst
+# 
+# Top level modules:
+# 	de0_pulse_gen_top_vlg_vec_tst
+# End time: 13:25:20 on Nov 13,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -novopt -c -t 1ps -L cyclonev_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.de0_pulse_gen_top_vlg_vec_tst -voptargs=""+acc"" 
+# Start time: 13:25:20 on Nov 13,2018
+# Loading work.de0_pulse_gen_top_vlg_vec_tst
+# Loading work.de0_pulse_gen_top
+# Loading altera_ver.dffeas
+# Loading altera_ver.PRIM_GDFF_LOW
+# ** Note: $finish    : config_ind.vwf.vt(139)
+#    Time: 100 us  Iteration: 0  Instance: /de0_pulse_gen_top_vlg_vec_tst
+# End time: 13:25:20 on Nov 13,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0

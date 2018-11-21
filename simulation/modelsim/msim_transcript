@@ -1,0 +1,115 @@
+# ERROR: No extended dataflow license exists
+# do de0_pulse_gen_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim ALTERA vmap 10.4d Lib Mapping Utility 2015.12 Dec 30 2015
+# vmap work rtl_work 
+# Copying /home/tyler/altera/16.0/modelsim_ase/linuxaloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+/home/tyler/de0_pulse_gen {/home/tyler/de0_pulse_gen/de0_pulse_gen_top.v}
+# Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 15:08:07 on Nov 13,2018
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/tyler/de0_pulse_gen" /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v 
+# -- Compiling module de0_pulse_gen_top
+# 
+# Top level modules:
+# 	de0_pulse_gen_top
+# End time: 15:08:07 on Nov 13,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+/home/tyler/de0_pulse_gen/hdl {/home/tyler/de0_pulse_gen/hdl/config_ind.v}
+# Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 15:08:07 on Nov 13,2018
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/tyler/de0_pulse_gen/hdl" /home/tyler/de0_pulse_gen/hdl/config_ind.v 
+# -- Compiling module config_ind
+# 
+# Top level modules:
+# 	config_ind
+# End time: 15:08:07 on Nov 13,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vlog -vlog01compat -work work +incdir+/home/tyler/de0_pulse_gen/sim {/home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v}
+# Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 15:08:07 on Nov 13,2018
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/tyler/de0_pulse_gen/sim" /home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v 
+# -- Compiling module de0_pulse_gen_top_tb
+# 
+# Top level modules:
+# 	de0_pulse_gen_top_tb
+# End time: 15:08:07 on Nov 13,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  tb_main
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" tb_main 
+# Start time: 15:08:07 on Nov 13,2018
+# ** Error: (vsim-3170) Could not find '/home/tyler/de0_pulse_gen/simulation/modelsim/rtl_work.tb_main'.
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO ./de0_pulse_gen_run_msim_rtl_verilog.do PAUSED at line 13
+vsim work.de0_pulse_gen_top_tb
+# vsim work.de0_pulse_gen_top_tb 
+# Start time: 15:08:07 on Nov 13,2018
+# Loading work.de0_pulse_gen_top_tb
+# Loading work.de0_pulse_gen_top
+# Loading work.config_ind
+add wave -position insertpoint sim:/de0_pulse_gen_top_tb/*
+run
+# 
+# ------------------------------------------------------
+# Test Case: CONFIG_IND
+run
+run
+run
+run
+run
+run
+run
+run
+add wave -position insertpoint  \
+sim:/de0_pulse_gen_top_tb/de0_0/CONFIG_IND_0/P_CLK_FREQ_HZ \
+sim:/de0_pulse_gen_top_tb/de0_0/CONFIG_IND_0/N_CYC_HALF_SEC \
+sim:/de0_pulse_gen_top_tb/de0_0/CONFIG_IND_0/NBITS \
+sim:/de0_pulse_gen_top_tb/de0_0/CONFIG_IND_0/clk \
+sim:/de0_pulse_gen_top_tb/de0_0/CONFIG_IND_0/rst_n \
+sim:/de0_pulse_gen_top_tb/de0_0/CONFIG_IND_0/blink_configed \
+sim:/de0_pulse_gen_top_tb/de0_0/CONFIG_IND_0/count
+restart
+run
+# 
+# ------------------------------------------------------
+# Test Case: CONFIG_IND
+run
+restart
+run -continue
+# 
+# ------------------------------------------------------
+# Test Case: CONFIG_IND
+vlog -reportprogress 300 -work work /home/tyler/de0_pulse_gen/hdl/config_ind.v
+# Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 15:14:58 on Nov 13,2018
+# vlog -reportprogress 300 -work work /home/tyler/de0_pulse_gen/hdl/config_ind.v 
+# -- Compiling module config_ind
+# 
+# Top level modules:
+# 	config_ind
+# End time: 15:14:58 on Nov 13,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+restart
+# Loading work.config_ind
+run
+run
+run
+# 
+# ------------------------------------------------------
+# Test Case: CONFIG_IND
+run
+run
+run
+run
+run
+# End time: 15:26:00 on Nov 13,2018, Elapsed time: 0:17:53
+# Errors: 1, Warnings: 0

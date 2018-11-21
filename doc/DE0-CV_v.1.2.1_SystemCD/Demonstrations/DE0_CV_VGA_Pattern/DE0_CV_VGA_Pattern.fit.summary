@@ -1,0 +1,19 @@
+Fitter Status : Successful - Wed Mar 11 17:03:14 2015
+Quartus II 64-Bit Version : 14.1.1 Build 188 01/07/2015 SJ Full Version
+Revision Name : DE0_CV_VGA_Pattern
+Top-level Entity Name : DE0_CV_VGA_Pattern
+Family : Cyclone V
+Device : 5CEBA4F23C7
+Timing Models : Final
+Logic utilization (in ALMs) : 443 / 18,480 ( 2 % )
+Total registers : 987
+Total pins : 206 / 224 ( 92 % )
+Total virtual pins : 0
+Total block memory bits : 139,264 / 3,153,920 ( 4 % )
+Total DSP Blocks : 0 / 66 ( 0 % )
+Total HSSI RX PCSs : 0
+Total HSSI PMA RX Deserializers : 0
+Total HSSI TX PCSs : 0
+Total HSSI PMA TX Serializers : 0
+Total PLLs : 1 / 4 ( 25 % )
+Total DLLs : 0 / 4 ( 0 % )

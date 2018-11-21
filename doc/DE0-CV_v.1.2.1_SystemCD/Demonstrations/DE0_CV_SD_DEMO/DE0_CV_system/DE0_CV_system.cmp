@@ -1,0 +1,13 @@
+	component DE0_CV_system is
+		port (
+			clk_clk                                : in    std_logic                    := 'X';             -- clk
+			sd_clk_export                          : out   std_logic;                                       -- export
+			sd_cmd_export                          : inout std_logic                    := 'X';             -- export
+			sd_dat_export                          : inout std_logic_vector(3 downto 0) := (others => 'X'); -- export
+			ledr_external_connection_export        : out   std_logic_vector(9 downto 0);                    -- export
+			key_external_connection_export         : in    std_logic_vector(3 downto 0) := (others => 'X'); -- export
+			cpu_reset_n_external_connection_export : in    std_logic                    := 'X';             -- export
+			reset_reset_n                          : in    std_logic                    := 'X'              -- reset_n
+		);
+	end component DE0_CV_system;
+

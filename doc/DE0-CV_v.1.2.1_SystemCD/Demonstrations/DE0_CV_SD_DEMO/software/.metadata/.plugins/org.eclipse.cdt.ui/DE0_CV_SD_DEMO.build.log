@@ -1,0 +1,10 @@
+
+**** Build of configuration Nios II for project DE0_CV_SD_DEMO ****
+
+make all 
+Info: Building ../DE0_CV_SD_DEMO_bsp/
+make --no-print-directory -C ../DE0_CV_SD_DEMO_bsp/
+[BSP build complete]
+[DE0_CV_SD_DEMO build complete]
+
+**** Build Finished ****

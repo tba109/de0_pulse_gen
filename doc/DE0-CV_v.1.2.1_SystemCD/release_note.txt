@@ -1,0 +1,12 @@
+version 1.2.1 (2015.07.03)
+---------------------------
+- Modify schematic for protection circuit
+version 1.2.0 (2015.06.03)
+---------------------------
+- Modify schematic for adding panasonic mark 
+version 1.1.2 (2015.05.08)
+---------------------------
+- Modify figure 1.1 (power adapter ) in user manual 
+
+
+

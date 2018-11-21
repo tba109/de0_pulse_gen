@@ -1,0 +1,19 @@
+Fitter Status : Successful - Mon Nov 17 10:49:06 2014
+Quartus II 64-Bit Version : 14.0.2 Build 209 09/17/2014 SJ Full Version
+Revision Name : DE0_CV_SDRAM_RTL_Test
+Top-level Entity Name : DE0_CV_SDRAM_RTL_Test
+Family : Cyclone V
+Device : 5CEBA4F23C7
+Timing Models : Final
+Logic utilization (in ALMs) : 979 / 18,480 ( 5 % )
+Total registers : 2298
+Total pins : 206 / 224 ( 92 % )
+Total virtual pins : 0
+Total block memory bits : 409,600 / 3,153,920 ( 13 % )
+Total DSP Blocks : 0 / 66 ( 0 % )
+Total HSSI RX PCSs : 0
+Total HSSI PMA RX Deserializers : 0
+Total HSSI TX PCSs : 0
+Total HSSI PMA TX Serializers : 0
+Total PLLs : 2 / 4 ( 50 % )
+Total DLLs : 0 / 4 ( 0 % )
