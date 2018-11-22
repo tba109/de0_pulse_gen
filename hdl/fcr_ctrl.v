@@ -50,9 +50,7 @@ module fcr_ctrl
      S_CMD_EXE   = 3'd2,
      S_CMD_RSP   = 3'd3;
 
-
-   assign cmd_dbb_adr = adr[11:0];
-   
+      
    reg [4:0] 	parse_state = 5'd0;
    localparam
      S_PARSE_ACT         = 5'd0,

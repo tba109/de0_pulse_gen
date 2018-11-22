@@ -18,5 +18,5 @@ Sim dir               :  simulation/modelsim
 
 Info: Starting NativeLink simulation with ModelSim-Altera software
 Sourced NativeLink script /home/tyler/altera/16.0/quartus/common/tcl/internal/nativelink/modelsim.tcl
-Warning: File de0_pulse_gen_run_msim_rtl_verilog.do already exists - backing up current file as de0_pulse_gen_run_msim_rtl_verilog.do.bak4
+Warning: File de0_pulse_gen_run_msim_rtl_verilog.do already exists - backing up current file as de0_pulse_gen_run_msim_rtl_verilog.do.bak11
 Info: Spawning ModelSim-Altera Simulation software 

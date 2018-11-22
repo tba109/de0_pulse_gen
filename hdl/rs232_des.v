@@ -15,6 +15,7 @@
 
 module rs232_des
   (
+
    input 	    clk,                  // clock frequency
    input 	    rst_n,                // active low reset
    input 	    rx,                   // serial RS-232 data

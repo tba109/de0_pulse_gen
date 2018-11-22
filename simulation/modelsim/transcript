@@ -1,0 +1,959 @@
+# reading modelsim.ini
+# Loading project test
+vsim work.de0_pulse_gen_top_tb
+# vsim work.de0_pulse_gen_top_tb 
+# Start time: 18:25:06 on Nov 21,2018
+# Loading work.de0_pulse_gen_top_tb
+# Loading work.de0_pulse_gen_top
+# ** Error: (vsim-3033) /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v(108): Instantiation of 'version_number' failed. The design unit was not found.
+#    Time: 0 ps  Iteration: 0  Instance: /de0_pulse_gen_top_tb/de0_0 File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v
+#         Searched libraries:
+#             /home/tyler/de0_pulse_gen/simulation/modelsim/work
+# Loading work.config_ind
+# Loading work.fcr_ctrl
+# Loading work.sync
+# Loading work.negedge_detector
+# Loading work.posedge_detector
+# Loading work.rs232_des
+# Loading work.rs232_ser
+# Loading work.pedge_req
+# Error loading design
+# End time: 18:25:06 on Nov 21,2018, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# Compile of de0_pulse_gen_top.v was successful.
+# Compile of config_ind.v was successful.
+# Compile of fcr_ctrl.v was successful.
+# Compile of negedge_detector.v was successful.
+# Compile of pedge_req.v was successful.
+# Compile of posedge_detector.v was successful.
+# Compile of rs232_des.v was successful.
+# Compile of rs232_ser.v was successful.
+# Compile of rst_gen.v was successful.
+# Compile of sync.v was successful.
+# Compile of de0_pulse_gen_top_tb.v was successful.
+# Compile of version_number.v was successful.
+# 12 compiles, 0 failed with no errors.
+vsim work.de0_pulse_gen_top_tb
+# vsim work.de0_pulse_gen_top_tb 
+# Start time: 18:27:16 on Nov 21,2018
+# Loading work.de0_pulse_gen_top_tb
+# Loading work.de0_pulse_gen_top
+# Loading work.version_number
+# Loading work.config_ind
+# Loading work.fcr_ctrl
+# Loading work.sync
+# Loading work.negedge_detector
+# Loading work.posedge_detector
+# Loading work.rs232_des
+# Loading work.rs232_ser
+# Loading work.pedge_req
+# ** Warning: (vsim-3017) /home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v(93): [TFMPC] - Too few port connections. Expected 45, found 39.
+#    Time: 0 ps  Iteration: 0  Instance: /de0_pulse_gen_top_tb/de0_0 File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v
+# ** Warning: (vsim-3722) /home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v(93): [TFMPC] - Missing connection for port 'nu_cmd_data'.
+# ** Warning: (vsim-3722) /home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v(93): [TFMPC] - Missing connection for port 'nu_cmd_req'.
+# ** Warning: (vsim-3722) /home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v(93): [TFMPC] - Missing connection for port 'nu_cmd_ack'.
+# ** Warning: (vsim-3722) /home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v(93): [TFMPC] - Missing connection for port 'nu_rsp_data'.
+# ** Warning: (vsim-3722) /home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v(93): [TFMPC] - Missing connection for port 'nu_rsp_req'.
+# ** Warning: (vsim-3722) /home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v(93): [TFMPC] - Missing connection for port 'nu_rsp_ack'.
+# WARNING: No extended dataflow license exists
+add wave -position insertpoint sim:/de0_pulse_gen_top_tb/de0_0/*
+quit -sim
+# End time: 18:28:07 on Nov 21,2018, Elapsed time: 0:00:51
+# Errors: 0, Warnings: 8
+vsim work.de0_pulse_gen_top_tb
+# vsim work.de0_pulse_gen_top_tb 
+# Start time: 21:45:50 on Nov 21,2018
+# Loading work.de0_pulse_gen_top_tb
+# Loading work.de0_pulse_gen_top
+# Loading work.version_number
+# Loading work.config_ind
+# Loading work.fcr_ctrl
+# Loading work.sync
+# Loading work.negedge_detector
+# Loading work.posedge_detector
+# Loading work.rs232_des
+# Loading work.rs232_ser
+# Loading work.pedge_req
+# ** Warning: (vsim-3017) /home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v(93): [TFMPC] - Too few port connections. Expected 45, found 39.
+#    Time: 0 ps  Iteration: 0  Instance: /de0_pulse_gen_top_tb/de0_0 File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v
+# ** Warning: (vsim-3722) /home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v(93): [TFMPC] - Missing connection for port 'nu_cmd_data'.
+# ** Warning: (vsim-3722) /home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v(93): [TFMPC] - Missing connection for port 'nu_cmd_req'.
+# ** Warning: (vsim-3722) /home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v(93): [TFMPC] - Missing connection for port 'nu_cmd_ack'.
+# ** Warning: (vsim-3722) /home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v(93): [TFMPC] - Missing connection for port 'nu_rsp_data'.
+# ** Warning: (vsim-3722) /home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v(93): [TFMPC] - Missing connection for port 'nu_rsp_req'.
+# ** Warning: (vsim-3722) /home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v(93): [TFMPC] - Missing connection for port 'nu_rsp_ack'.
+# WARNING: No extended dataflow license exists
+add wave -position insertpoint sim:/de0_pulse_gen_top_tb/*
+run
+# 
+# ------------------------------------------------------
+# Test Case: CONFIG_IND
+restart
+# ** Warning: (vsim-3017) /home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v(93): [TFMPC] - Too few port connections. Expected 45, found 39.
+#    Time: 0 ps  Iteration: 0  Instance: /de0_pulse_gen_top_tb/de0_0 File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v
+# ** Warning: (vsim-3722) /home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v(93): [TFMPC] - Missing connection for port 'nu_cmd_data'.
+# ** Warning: (vsim-3722) /home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v(93): [TFMPC] - Missing connection for port 'nu_cmd_req'.
+# ** Warning: (vsim-3722) /home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v(93): [TFMPC] - Missing connection for port 'nu_cmd_ack'.
+# ** Warning: (vsim-3722) /home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v(93): [TFMPC] - Missing connection for port 'nu_rsp_data'.
+# ** Warning: (vsim-3722) /home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v(93): [TFMPC] - Missing connection for port 'nu_rsp_req'.
+# ** Warning: (vsim-3722) /home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v(93): [TFMPC] - Missing connection for port 'nu_rsp_ack'.
+run
+# 
+# ------------------------------------------------------
+# Test Case: CONFIG_IND
+# Compile of de0_pulse_gen_top.v was successful.
+# Compile of config_ind.v was successful.
+# Compile of fcr_ctrl.v was successful.
+# Compile of negedge_detector.v was successful.
+# Compile of pedge_req.v was successful.
+# Compile of posedge_detector.v was successful.
+# Compile of rs232_des.v was successful.
+# Compile of rs232_ser.v was successful.
+# Compile of rst_gen.v was successful.
+# Compile of sync.v was successful.
+# Compile of de0_pulse_gen_top_tb.v failed with 2 errors.
+# Compile of version_number.v was successful.
+# 12 compiles, 1 failed with 2 errors.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Compile of de0_pulse_gen_top.v was successful.
+# Compile of config_ind.v was successful.
+# Compile of fcr_ctrl.v was successful.
+# Compile of negedge_detector.v was successful.
+# Compile of pedge_req.v was successful.
+# Compile of posedge_detector.v was successful.
+# Compile of rs232_des.v was successful.
+# Compile of rs232_ser.v was successful.
+# Compile of rst_gen.v was successful.
+# Compile of sync.v was successful.
+# Compile of de0_pulse_gen_top_tb.v failed with 2 errors.
+# Compile of version_number.v was successful.
+# 12 compiles, 1 failed with 2 errors.
+# Compile of de0_pulse_gen_top_tb.v failed with 2 errors.
+# Compile of de0_pulse_gen_top.v was successful.
+# Compile of config_ind.v was successful.
+# Compile of fcr_ctrl.v was successful.
+# Compile of negedge_detector.v was successful.
+# Compile of pedge_req.v was successful.
+# Compile of posedge_detector.v was successful.
+# Compile of rs232_des.v was successful.
+# Compile of rs232_ser.v was successful.
+# Compile of rst_gen.v was successful.
+# Compile of sync.v was successful.
+# Compile of de0_pulse_gen_top_tb.v was successful.
+# Compile of version_number.v was successful.
+# 12 compiles, 0 failed with no errors.
+restart
+# Loading work.de0_pulse_gen_top_tb
+# Loading work.de0_pulse_gen_top
+# Loading work.version_number
+# Loading work.config_ind
+# Loading work.fcr_ctrl
+# Loading work.sync
+# Loading work.negedge_detector
+# Loading work.posedge_detector
+# Loading work.rs232_des
+# Loading work.rs232_ser
+# Loading work.pedge_req
+# ** Warning: (vsim-3017) /home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v(93): [TFMPC] - Too few port connections. Expected 45, found 39.
+#    Time: 0 ps  Iteration: 0  Instance: /de0_pulse_gen_top_tb/de0_0 File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v
+# ** Warning: (vsim-3722) /home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v(93): [TFMPC] - Missing connection for port 'nu_cmd_data'.
+# ** Warning: (vsim-3722) /home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v(93): [TFMPC] - Missing connection for port 'nu_cmd_req'.
+# ** Warning: (vsim-3722) /home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v(93): [TFMPC] - Missing connection for port 'nu_cmd_ack'.
+# ** Warning: (vsim-3722) /home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v(93): [TFMPC] - Missing connection for port 'nu_rsp_data'.
+# ** Warning: (vsim-3722) /home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v(93): [TFMPC] - Missing connection for port 'nu_rsp_req'.
+# ** Warning: (vsim-3722) /home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v(93): [TFMPC] - Missing connection for port 'nu_rsp_ack'.
+run
+# 
+# -----------------------------------------------
+# Test Case: Get VNUM UART
+# gse_uart_send: 0x02
+# gse_uart_send: 0x01
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+run
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+restart
+# ** Warning: (vsim-3017) /home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v(93): [TFMPC] - Too few port connections. Expected 45, found 39.
+#    Time: 0 ps  Iteration: 0  Instance: /de0_pulse_gen_top_tb/de0_0 File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v
+# ** Warning: (vsim-3722) /home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v(93): [TFMPC] - Missing connection for port 'nu_cmd_data'.
+# ** Warning: (vsim-3722) /home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v(93): [TFMPC] - Missing connection for port 'nu_cmd_req'.
+# ** Warning: (vsim-3722) /home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v(93): [TFMPC] - Missing connection for port 'nu_cmd_ack'.
+# ** Warning: (vsim-3722) /home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v(93): [TFMPC] - Missing connection for port 'nu_rsp_data'.
+# ** Warning: (vsim-3722) /home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v(93): [TFMPC] - Missing connection for port 'nu_rsp_req'.
+# ** Warning: (vsim-3722) /home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v(93): [TFMPC] - Missing connection for port 'nu_rsp_ack'.
+run
+# 
+# -----------------------------------------------
+# Test Case: Get VNUM UART
+# gse_uart_send: 0x02
+# gse_uart_send: 0x01
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+run
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+run
+run
+# Compile of de0_pulse_gen_top.v was successful.
+# Compile of config_ind.v was successful.
+# Compile of fcr_ctrl.v was successful.
+# Compile of negedge_detector.v was successful.
+# Compile of pedge_req.v was successful.
+# Compile of posedge_detector.v was successful.
+# Compile of rs232_des.v was successful.
+# Compile of rs232_ser.v was successful.
+# Compile of rst_gen.v was successful.
+# Compile of sync.v was successful.
+# Compile of de0_pulse_gen_top_tb.v was successful.
+# Compile of version_number.v was successful.
+# 12 compiles, 0 failed with no errors.
+restart
+# Loading work.de0_pulse_gen_top_tb
+# Loading work.de0_pulse_gen_top
+# Loading work.version_number
+# Loading work.config_ind
+# Loading work.fcr_ctrl
+# Loading work.sync
+# Loading work.negedge_detector
+# Loading work.posedge_detector
+# Loading work.rs232_des
+# Loading work.rs232_ser
+# Loading work.pedge_req
+# ** Warning: (vsim-3017) /home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v(93): [TFMPC] - Too few port connections. Expected 45, found 39.
+#    Time: 0 ps  Iteration: 0  Instance: /de0_pulse_gen_top_tb/de0_0 File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v
+# ** Warning: (vsim-3722) /home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v(93): [TFMPC] - Missing connection for port 'nu_cmd_data'.
+# ** Warning: (vsim-3722) /home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v(93): [TFMPC] - Missing connection for port 'nu_cmd_req'.
+# ** Warning: (vsim-3722) /home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v(93): [TFMPC] - Missing connection for port 'nu_cmd_ack'.
+# ** Warning: (vsim-3722) /home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v(93): [TFMPC] - Missing connection for port 'nu_rsp_data'.
+# ** Warning: (vsim-3722) /home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v(93): [TFMPC] - Missing connection for port 'nu_rsp_req'.
+# ** Warning: (vsim-3722) /home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v(93): [TFMPC] - Missing connection for port 'nu_rsp_ack'.
+run
+# 
+# -----------------------------------------------
+# Test Case: Get VNUM
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+# Compile of de0_pulse_gen_top.v was successful.
+# Compile of config_ind.v was successful.
+# Compile of fcr_ctrl.v was successful.
+# Compile of negedge_detector.v was successful.
+# Compile of pedge_req.v was successful.
+# Compile of posedge_detector.v was successful.
+# Compile of rs232_des.v was successful.
+# Compile of rs232_ser.v was successful.
+# Compile of rst_gen.v was successful.
+# Compile of sync.v was successful.
+# Compile of de0_pulse_gen_top_tb.v was successful.
+# Compile of version_number.v was successful.
+# 12 compiles, 0 failed with no errors.
+restart
+# Loading work.de0_pulse_gen_top_tb
+# Loading work.de0_pulse_gen_top
+# Loading work.version_number
+# Loading work.config_ind
+# Loading work.fcr_ctrl
+# Loading work.sync
+# Loading work.negedge_detector
+# Loading work.posedge_detector
+# Loading work.rs232_des
+# Loading work.rs232_ser
+# Loading work.pedge_req
+# ** Warning: (vsim-3017) /home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v(93): [TFMPC] - Too few port connections. Expected 45, found 39.
+#    Time: 0 ps  Iteration: 0  Instance: /de0_pulse_gen_top_tb/de0_0 File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v
+# ** Warning: (vsim-3722) /home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v(93): [TFMPC] - Missing connection for port 'nu_cmd_data'.
+# ** Warning: (vsim-3722) /home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v(93): [TFMPC] - Missing connection for port 'nu_cmd_req'.
+# ** Warning: (vsim-3722) /home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v(93): [TFMPC] - Missing connection for port 'nu_cmd_ack'.
+# ** Warning: (vsim-3722) /home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v(93): [TFMPC] - Missing connection for port 'nu_rsp_data'.
+# ** Warning: (vsim-3722) /home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v(93): [TFMPC] - Missing connection for port 'nu_rsp_req'.
+# ** Warning: (vsim-3722) /home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v(93): [TFMPC] - Missing connection for port 'nu_rsp_ack'.
+run
+# 
+# -----------------------------------------------
+# Test Case: Get VNUM UART
+# gse_uart_send: 0x02
+# gse_uart_send: 0x01
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+run
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+add wave -position insertpoint sim:/de0_pulse_gen_top_tb/de0_0/*
+restart
+# ** Warning: (vsim-3017) /home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v(93): [TFMPC] - Too few port connections. Expected 45, found 39.
+#    Time: 0 ps  Iteration: 0  Instance: /de0_pulse_gen_top_tb/de0_0 File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v
+# ** Warning: (vsim-3722) /home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v(93): [TFMPC] - Missing connection for port 'nu_cmd_data'.
+# ** Warning: (vsim-3722) /home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v(93): [TFMPC] - Missing connection for port 'nu_cmd_req'.
+# ** Warning: (vsim-3722) /home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v(93): [TFMPC] - Missing connection for port 'nu_cmd_ack'.
+# ** Warning: (vsim-3722) /home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v(93): [TFMPC] - Missing connection for port 'nu_rsp_data'.
+# ** Warning: (vsim-3722) /home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v(93): [TFMPC] - Missing connection for port 'nu_rsp_req'.
+# ** Warning: (vsim-3722) /home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v(93): [TFMPC] - Missing connection for port 'nu_rsp_ack'.
+run
+# 
+# -----------------------------------------------
+# Test Case: Get VNUM UART
+# gse_uart_send: 0x02
+# gse_uart_send: 0x01
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+run
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+run
+run
+run
+run
+run
+run
+run
+run
+# Compile of de0_pulse_gen_top.v was successful.
+# Compile of config_ind.v was successful.
+# Compile of fcr_ctrl.v was successful.
+# Compile of negedge_detector.v was successful.
+# Compile of pedge_req.v was successful.
+# Compile of posedge_detector.v was successful.
+# Compile of rs232_des.v was successful.
+# Compile of rs232_ser.v was successful.
+# Compile of rst_gen.v was successful.
+# Compile of sync.v was successful.
+# Compile of de0_pulse_gen_top_tb.v was successful.
+# Compile of version_number.v was successful.
+# 12 compiles, 0 failed with no errors.
+restart
+# Loading work.de0_pulse_gen_top_tb
+# Loading work.de0_pulse_gen_top
+# Loading work.version_number
+# Loading work.config_ind
+# Loading work.fcr_ctrl
+# Loading work.sync
+# Loading work.negedge_detector
+# Loading work.posedge_detector
+# Loading work.rs232_des
+# Loading work.rs232_ser
+# Loading work.pedge_req
+# ** Warning: (vsim-3017) /home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v(93): [TFMPC] - Too few port connections. Expected 45, found 39.
+#    Time: 0 ps  Iteration: 0  Instance: /de0_pulse_gen_top_tb/de0_0 File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v
+# ** Warning: (vsim-3722) /home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v(93): [TFMPC] - Missing connection for port 'nu_cmd_data'.
+# ** Warning: (vsim-3722) /home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v(93): [TFMPC] - Missing connection for port 'nu_cmd_req'.
+# ** Warning: (vsim-3722) /home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v(93): [TFMPC] - Missing connection for port 'nu_cmd_ack'.
+# ** Warning: (vsim-3722) /home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v(93): [TFMPC] - Missing connection for port 'nu_rsp_data'.
+# ** Warning: (vsim-3722) /home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v(93): [TFMPC] - Missing connection for port 'nu_rsp_req'.
+# ** Warning: (vsim-3722) /home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v(93): [TFMPC] - Missing connection for port 'nu_rsp_ack'.
+run
+# 
+# -----------------------------------------------
+# Test Case: Get VNUM UART
+# gse_uart_send: 0x02
+# gse_uart_send: 0x01
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+run
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+add wave -position insertpoint sim:/de0_pulse_gen_top_tb/de0_0/*
+# Compile of de0_pulse_gen_top.v was successful.
+# Compile of config_ind.v was successful.
+# Compile of fcr_ctrl.v was successful.
+# Compile of negedge_detector.v was successful.
+# Compile of pedge_req.v was successful.
+# Compile of posedge_detector.v was successful.
+# Compile of rs232_des.v was successful.
+# Compile of rs232_ser.v was successful.
+# Compile of rst_gen.v was successful.
+# Compile of sync.v was successful.
+# Compile of de0_pulse_gen_top_tb.v was successful.
+# Compile of version_number.v was successful.
+# 12 compiles, 0 failed with no errors.
+restart
+# Loading work.de0_pulse_gen_top_tb
+# Loading work.de0_pulse_gen_top
+# Loading work.version_number
+# Loading work.config_ind
+# Loading work.fcr_ctrl
+# Loading work.sync
+# Loading work.negedge_detector
+# Loading work.posedge_detector
+# Loading work.rs232_des
+# Loading work.rs232_ser
+# Loading work.pedge_req
+# ** Warning: (vsim-3017) /home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v(95): [TFMPC] - Too few port connections. Expected 45, found 39.
+#    Time: 0 ps  Iteration: 0  Instance: /de0_pulse_gen_top_tb/de0_0 File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v
+# ** Warning: (vsim-3722) /home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v(95): [TFMPC] - Missing connection for port 'nu_cmd_data'.
+# ** Warning: (vsim-3722) /home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v(95): [TFMPC] - Missing connection for port 'nu_cmd_req'.
+# ** Warning: (vsim-3722) /home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v(95): [TFMPC] - Missing connection for port 'nu_cmd_ack'.
+# ** Warning: (vsim-3722) /home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v(95): [TFMPC] - Missing connection for port 'nu_rsp_data'.
+# ** Warning: (vsim-3722) /home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v(95): [TFMPC] - Missing connection for port 'nu_rsp_req'.
+# ** Warning: (vsim-3722) /home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v(95): [TFMPC] - Missing connection for port 'nu_rsp_ack'.
+run
+# 
+# -----------------------------------------------
+# Test Case: Get VNUM UART
+# gse_uart_send: 0x02
+# gse_uart_send: 0x01
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+run
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+restart
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Compile of de0_pulse_gen_top.v was successful with warnings.
+# Compile of config_ind.v was successful.
+# Compile of fcr_ctrl.v was successful.
+# Compile of negedge_detector.v was successful.
+# Compile of pedge_req.v was successful.
+# Compile of posedge_detector.v was successful.
+# Compile of rs232_des.v was successful.
+# Compile of rs232_ser.v was successful.
+# Compile of rst_gen.v was successful.
+# Compile of sync.v was successful.
+# Compile of de0_pulse_gen_top_tb.v was successful.
+# Compile of version_number.v was successful.
+# 12 compiles, 0 failed with no errors.
+restart
+# Loading work.de0_pulse_gen_top_tb
+# Loading work.de0_pulse_gen_top
+# Loading work.version_number
+# Loading work.config_ind
+# Loading work.fcr_ctrl
+# Loading work.sync
+# Loading work.negedge_detector
+# Loading work.posedge_detector
+# Loading work.rs232_des
+# Loading work.rs232_ser
+# Loading work.pedge_req
+# ** Warning: (vsim-3017) /home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v(95): [TFMPC] - Too few port connections. Expected 45, found 39.
+#    Time: 0 ps  Iteration: 0  Instance: /de0_pulse_gen_top_tb/de0_0 File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v
+# ** Warning: (vsim-3722) /home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v(95): [TFMPC] - Missing connection for port 'nu_cmd_data'.
+# ** Warning: (vsim-3722) /home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v(95): [TFMPC] - Missing connection for port 'nu_cmd_req'.
+# ** Warning: (vsim-3722) /home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v(95): [TFMPC] - Missing connection for port 'nu_cmd_ack'.
+# ** Warning: (vsim-3722) /home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v(95): [TFMPC] - Missing connection for port 'nu_rsp_data'.
+# ** Warning: (vsim-3722) /home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v(95): [TFMPC] - Missing connection for port 'nu_rsp_req'.
+# ** Warning: (vsim-3722) /home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v(95): [TFMPC] - Missing connection for port 'nu_rsp_ack'.
+run
+# 
+# -----------------------------------------------
+# Test Case: Get VNUM UART
+# gse_uart_send: 0x02
+# gse_uart_send: 0x01
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+add wave -position insertpoint sim:/de0_pulse_gen_top_tb/de0_0/FCR_0/*
+restart
+# ** Warning: (vsim-3017) /home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v(95): [TFMPC] - Too few port connections. Expected 45, found 39.
+#    Time: 0 ps  Iteration: 0  Instance: /de0_pulse_gen_top_tb/de0_0 File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v
+# ** Warning: (vsim-3722) /home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v(95): [TFMPC] - Missing connection for port 'nu_cmd_data'.
+# ** Warning: (vsim-3722) /home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v(95): [TFMPC] - Missing connection for port 'nu_cmd_req'.
+# ** Warning: (vsim-3722) /home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v(95): [TFMPC] - Missing connection for port 'nu_cmd_ack'.
+# ** Warning: (vsim-3722) /home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v(95): [TFMPC] - Missing connection for port 'nu_rsp_data'.
+# ** Warning: (vsim-3722) /home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v(95): [TFMPC] - Missing connection for port 'nu_rsp_req'.
+# ** Warning: (vsim-3722) /home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v(95): [TFMPC] - Missing connection for port 'nu_rsp_ack'.
+run
+# 
+# -----------------------------------------------
+# Test Case: Get VNUM UART
+# gse_uart_send: 0x02
+# gse_uart_send: 0x01
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# Break key hit
+# Simulation stop requested.
+# Compile of de0_pulse_gen_top.v was successful with warnings.
+# Compile of config_ind.v was successful.
+# Compile of fcr_ctrl.v was successful.
+# Compile of negedge_detector.v was successful.
+# Compile of pedge_req.v was successful.
+# Compile of posedge_detector.v was successful.
+# Compile of rs232_des.v was successful.
+# Compile of rs232_ser.v was successful.
+# Compile of rst_gen.v was successful.
+# Compile of sync.v was successful.
+# Compile of de0_pulse_gen_top_tb.v was successful.
+# Compile of version_number.v was successful.
+# 12 compiles, 0 failed with no errors.
+restart
+# Loading work.de0_pulse_gen_top_tb
+# Loading work.de0_pulse_gen_top
+# Loading work.version_number
+# Loading work.config_ind
+# Loading work.fcr_ctrl
+# Loading work.sync
+# Loading work.negedge_detector
+# Loading work.posedge_detector
+# Loading work.rs232_des
+# Loading work.rs232_ser
+# Loading work.pedge_req
+# ** Warning: (vsim-3017) /home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v(95): [TFMPC] - Too few port connections. Expected 45, found 39.
+#    Time: 0 ps  Iteration: 0  Instance: /de0_pulse_gen_top_tb/de0_0 File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v
+# ** Warning: (vsim-3722) /home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v(95): [TFMPC] - Missing connection for port 'nu_cmd_data'.
+# ** Warning: (vsim-3722) /home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v(95): [TFMPC] - Missing connection for port 'nu_cmd_req'.
+# ** Warning: (vsim-3722) /home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v(95): [TFMPC] - Missing connection for port 'nu_cmd_ack'.
+# ** Warning: (vsim-3722) /home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v(95): [TFMPC] - Missing connection for port 'nu_rsp_data'.
+# ** Warning: (vsim-3722) /home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v(95): [TFMPC] - Missing connection for port 'nu_rsp_req'.
+# ** Warning: (vsim-3722) /home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v(95): [TFMPC] - Missing connection for port 'nu_rsp_ack'.
+run
+# 
+# -----------------------------------------------
+# Test Case: Get VNUM UART
+# gse_uart_send: 0x02
+# gse_uart_send: 0x01
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+run
+run
+run
+run
+run
+run
+run
+run
+run
+# Compile of de0_pulse_gen_top.v was successful with warnings.
+# Compile of config_ind.v was successful.
+# Compile of fcr_ctrl.v was successful.
+# Compile of negedge_detector.v was successful.
+# Compile of pedge_req.v was successful.
+# Compile of posedge_detector.v was successful.
+# Compile of rs232_des.v was successful.
+# Compile of rs232_ser.v was successful.
+# Compile of rst_gen.v was successful.
+# Compile of sync.v was successful.
+# Compile of de0_pulse_gen_top_tb.v was successful.
+# Compile of version_number.v was successful.
+# 12 compiles, 0 failed with no errors.
+restart
+# Loading work.de0_pulse_gen_top_tb
+# Loading work.de0_pulse_gen_top
+# Loading work.version_number
+# Loading work.config_ind
+# Loading work.fcr_ctrl
+# Loading work.sync
+# Loading work.negedge_detector
+# Loading work.posedge_detector
+# Loading work.rs232_des
+# Loading work.rs232_ser
+# Loading work.pedge_req
+# ** Warning: (vsim-3017) /home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v(95): [TFMPC] - Too few port connections. Expected 45, found 39.
+#    Time: 0 ps  Iteration: 0  Instance: /de0_pulse_gen_top_tb/de0_0 File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v
+# ** Warning: (vsim-3722) /home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v(95): [TFMPC] - Missing connection for port 'nu_cmd_data'.
+# ** Warning: (vsim-3722) /home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v(95): [TFMPC] - Missing connection for port 'nu_cmd_req'.
+# ** Warning: (vsim-3722) /home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v(95): [TFMPC] - Missing connection for port 'nu_cmd_ack'.
+# ** Warning: (vsim-3722) /home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v(95): [TFMPC] - Missing connection for port 'nu_rsp_data'.
+# ** Warning: (vsim-3722) /home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v(95): [TFMPC] - Missing connection for port 'nu_rsp_req'.
+# ** Warning: (vsim-3722) /home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v(95): [TFMPC] - Missing connection for port 'nu_rsp_ack'.
+run
+# 
+# -----------------------------------------------
+# Test Case: Get VNUM UART
+# gse_uart_send: 0x02
+# gse_uart_send: 0x01
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_receive: 0x02
+# gse_uart_receive: 0x01
+# gse_uart_receive: 0x00
+# gse_uart_receive: 0x00
+# gse_uart_receive: 0x00
+# gse_uart_receive: 0x00
+# gse_uart_receive: 0x00
+# gse_uart_receive: 0x00
+# gse_uart_receive: 0x00
+# gse_uart_receive: 0x00
+# gse_uart_receive: 0x00
+# gse_uart_receive: 0x00
+run
+# gse_uart_receive: 0x00
+# gse_uart_receive: 0x00
+# gse_uart_receive: 0x00
+# gse_uart_receive: 0x00
+# gse_uart_receive: 0x00
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+# Compile of de0_pulse_gen_top.v was successful with warnings.
+# Compile of config_ind.v was successful.
+# Compile of fcr_ctrl.v was successful.
+# Compile of negedge_detector.v was successful.
+# Compile of pedge_req.v was successful.
+# Compile of posedge_detector.v was successful.
+# Compile of rs232_des.v was successful.
+# Compile of rs232_ser.v was successful.
+# Compile of rst_gen.v was successful.
+# Compile of sync.v was successful.
+# Compile of de0_pulse_gen_top_tb.v was successful.
+# Compile of version_number.v was successful.
+# 12 compiles, 0 failed with no errors.
+restart
+# Loading work.de0_pulse_gen_top_tb
+# Loading work.de0_pulse_gen_top
+# Loading work.version_number
+# Loading work.config_ind
+# Loading work.fcr_ctrl
+# Loading work.sync
+# Loading work.negedge_detector
+# Loading work.posedge_detector
+# Loading work.rs232_des
+# Loading work.rs232_ser
+# Loading work.pedge_req
+# ** Warning: (vsim-3017) /home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v(95): [TFMPC] - Too few port connections. Expected 45, found 39.
+#    Time: 0 ps  Iteration: 0  Instance: /de0_pulse_gen_top_tb/de0_0 File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v
+# ** Warning: (vsim-3722) /home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v(95): [TFMPC] - Missing connection for port 'nu_cmd_data'.
+# ** Warning: (vsim-3722) /home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v(95): [TFMPC] - Missing connection for port 'nu_cmd_req'.
+# ** Warning: (vsim-3722) /home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v(95): [TFMPC] - Missing connection for port 'nu_cmd_ack'.
+# ** Warning: (vsim-3722) /home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v(95): [TFMPC] - Missing connection for port 'nu_rsp_data'.
+# ** Warning: (vsim-3722) /home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v(95): [TFMPC] - Missing connection for port 'nu_rsp_req'.
+# ** Warning: (vsim-3722) /home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v(95): [TFMPC] - Missing connection for port 'nu_rsp_ack'.
+run
+# 
+# -----------------------------------------------
+# Test Case: Get VNUM UART
+# gse_uart_send: 0x02
+# gse_uart_send: 0x01
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_send: 0x00
+# gse_uart_receive: 0x02
+# gse_uart_receive: 0x01
+# gse_uart_receive: 0x00
+# gse_uart_receive: 0x00
+# gse_uart_receive: 0x00
+# gse_uart_receive: 0x00
+# gse_uart_receive: 0x00
+# gse_uart_receive: 0x00
+# gse_uart_receive: 0x00
+# gse_uart_receive: 0x00
+# gse_uart_receive: 0x00
+# gse_uart_receive: 0x00
+run
+# gse_uart_receive: 0x00
+# gse_uart_receive: 0x00
+# gse_uart_receive: 0x00
+# gse_uart_receive: 0x00
+# gse_uart_receive: 0x01
+run
+run
+run
+# End time: 23:00:57 on Nov 21,2018, Elapsed time: 1:15:07
+# Errors: 0, Warnings: 99

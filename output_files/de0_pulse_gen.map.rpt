@@ -1,5 +1,5 @@
-Analysis & Elaboration report for de0_pulse_gen
-Tue Nov 13 15:05:51 2018
+Analysis & Synthesis report for de0_pulse_gen
+Wed Nov 21 16:43:38 2018
 Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Standard Edition
 
 
@@ -7,10 +7,38 @@ Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Standard Edition
 ; Table of Contents ;
 ---------------------
   1. Legal Notice
-  2. Analysis & Elaboration Summary
-  3. Parameter Settings for User Entity Instance: config_ind:CONFIG_IND_0
-  4. Analysis & Elaboration Settings
-  5. Analysis & Elaboration Messages
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |de0_pulse_gen_top|rs232_ser:RS232_SER_0|fsm
+  9. State Machine - |de0_pulse_gen_top|rs232_des:RS232_DES_0|fsm
+ 10. State Machine - |de0_pulse_gen_top|fcr_ctrl:FCR_0|cmd_state
+ 11. State Machine - |de0_pulse_gen_top|fcr_ctrl:FCR_0|parse_state
+ 12. State Machine - |de0_pulse_gen_top|fcr_ctrl:FCR_0|exe_state
+ 13. State Machine - |de0_pulse_gen_top|fcr_ctrl:FCR_0|rsp_state
+ 14. Registers Protected by Synthesis
+ 15. Registers Removed During Synthesis
+ 16. General Register Statistics
+ 17. Inverted Register Statistics
+ 18. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 19. Source assignments for fcr_ctrl:FCR_0|sync:SYNC0
+ 20. Source assignments for fcr_ctrl:FCR_0|sync:SYNC1
+ 21. Source assignments for rs232_des:RS232_DES_0|sync:SYNC0
+ 22. Parameter Settings for User Entity Instance: config_ind:CONFIG_IND_0
+ 23. Parameter Settings for User Entity Instance: fcr_ctrl:FCR_0|sync:SYNC0
+ 24. Parameter Settings for User Entity Instance: fcr_ctrl:FCR_0|sync:SYNC1
+ 25. Parameter Settings for User Entity Instance: rs232_des:RS232_DES_0
+ 26. Parameter Settings for User Entity Instance: rs232_des:RS232_DES_0|sync:SYNC0
+ 27. Parameter Settings for User Entity Instance: rs232_ser:RS232_SER_0
+ 28. Port Connectivity Checks: "pedge_req:PEDGE_REQ_0"
+ 29. Port Connectivity Checks: "rs232_des:RS232_DES_0"
+ 30. Port Connectivity Checks: "fcr_ctrl:FCR_0"
+ 31. Post-Synthesis Netlist Statistics for Top Partition
+ 32. Elapsed Time Per Partition
+ 33. Analysis & Synthesis Messages
 
 
 
@@ -34,36 +62,31 @@ agreement for further details.
 
 
 
-+---------------------------------------------------------------------------------+
-; Analysis & Elaboration Summary                                                  ;
-+-------------------------------+-------------------------------------------------+
-; Analysis & Elaboration Status ; Successful - Tue Nov 13 15:05:50 2018           ;
-; Quartus Prime Version         ; 16.0.0 Build 211 04/27/2016 SJ Standard Edition ;
-; Revision Name                 ; de0_pulse_gen                                   ;
-; Top-level Entity Name         ; de0_pulse_gen_top                               ;
-; Family                        ; Cyclone V                                       ;
-; Logic utilization (in ALMs)   ; N/A until Partition Merge                       ;
-; Total registers               ; N/A until Partition Merge                       ;
-; Total pins                    ; N/A until Partition Merge                       ;
-; Total virtual pins            ; N/A until Partition Merge                       ;
-; Total block memory bits       ; N/A until Partition Merge                       ;
-; Total PLLs                    ; N/A until Partition Merge                       ;
-; Total DLLs                    ; N/A until Partition Merge                       ;
-+-------------------------------+-------------------------------------------------+
-
-
-+----------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: config_ind:CONFIG_IND_0 ;
-+----------------+----------+------------------------------------------+
-; Parameter Name ; Value    ; Type                                     ;
-+----------------+----------+------------------------------------------+
-; P_CLK_FREQ_HZ  ; 50000000 ; Signed Integer                           ;
-+----------------+----------+------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
++-----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                      ;
++---------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Wed Nov 21 16:43:38 2018           ;
+; Quartus Prime Version           ; 16.0.0 Build 211 04/27/2016 SJ Standard Edition ;
+; Revision Name                   ; de0_pulse_gen                                   ;
+; Top-level Entity Name           ; de0_pulse_gen_top                               ;
+; Family                          ; Cyclone V                                       ;
+; Logic utilization (in ALMs)     ; N/A                                             ;
+; Total registers                 ; 234                                             ;
+; Total pins                      ; 206                                             ;
+; Total virtual pins              ; 0                                               ;
+; Total block memory bits         ; 0                                               ;
+; Total DSP Blocks                ; 0                                               ;
+; Total HSSI RX PCSs              ; 0                                               ;
+; Total HSSI PMA RX Deserializers ; 0                                               ;
+; Total HSSI TX PCSs              ; 0                                               ;
+; Total HSSI PMA TX Serializers   ; 0                                               ;
+; Total PLLs                      ; 0                                               ;
+; Total DLLs                      ; 0                                               ;
++---------------------------------+-------------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Elaboration Settings                                                                                           ;
+; Analysis & Synthesis Settings                                                                                             ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
@@ -150,18 +173,478 @@ Note: In order to hide this table in the UI and the text report file, please set
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 
 
-+---------------------------------+
-; Analysis & Elaboration Messages ;
-+---------------------------------+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 2           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 2           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
++----------------------------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                         ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                     ; Library ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------+---------+
+; hdl/pedge_req.v                  ; yes             ; User Verilog HDL File        ; /home/tyler/de0_pulse_gen/hdl/pedge_req.v        ;         ;
+; hdl/fcr_ctrl.v                   ; yes             ; User Verilog HDL File        ; /home/tyler/de0_pulse_gen/hdl/fcr_ctrl.v         ;         ;
+; hdl/fncs.vh                      ; yes             ; User Unspecified File        ; /home/tyler/de0_pulse_gen/hdl/fncs.vh            ;         ;
+; de0_pulse_gen_top.v              ; yes             ; User Verilog HDL File        ; /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v    ;         ;
+; hdl/rs232_ser.v                  ; yes             ; User Verilog HDL File        ; /home/tyler/de0_pulse_gen/hdl/rs232_ser.v        ;         ;
+; hdl/rs232_des.v                  ; yes             ; User Verilog HDL File        ; /home/tyler/de0_pulse_gen/hdl/rs232_des.v        ;         ;
+; hdl/posedge_detector.v           ; yes             ; User Verilog HDL File        ; /home/tyler/de0_pulse_gen/hdl/posedge_detector.v ;         ;
+; hdl/negedge_detector.v           ; yes             ; User Verilog HDL File        ; /home/tyler/de0_pulse_gen/hdl/negedge_detector.v ;         ;
+; hdl/config_ind.v                 ; yes             ; User Verilog HDL File        ; /home/tyler/de0_pulse_gen/hdl/config_ind.v       ;         ;
+; hdl/sync.v                       ; yes             ; User Verilog HDL File        ; /home/tyler/de0_pulse_gen/hdl/sync.v             ;         ;
+; hdl/inc_params.v                 ; yes             ; Auto-Found Verilog HDL File  ; /home/tyler/de0_pulse_gen/hdl/inc_params.v       ;         ;
+; version_number.v                 ; yes             ; Auto-Found Verilog HDL File  ; /home/tyler/de0_pulse_gen/version_number.v       ;         ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------+---------+
+
+
++--------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                  ;
++---------------------------------------------+----------------+
+; Resource                                    ; Usage          ;
++---------------------------------------------+----------------+
+; Estimate of Logic utilization (ALMs needed) ; 138            ;
+;                                             ;                ;
+; Combinational ALUT usage for logic          ; 174            ;
+;     -- 7 input functions                    ; 0              ;
+;     -- 6 input functions                    ; 33             ;
+;     -- 5 input functions                    ; 29             ;
+;     -- 4 input functions                    ; 28             ;
+;     -- <=3 input functions                  ; 84             ;
+;                                             ;                ;
+; Dedicated logic registers                   ; 234            ;
+;                                             ;                ;
+; I/O pins                                    ; 206            ;
+;                                             ;                ;
+; Total DSP Blocks                            ; 0              ;
+;                                             ;                ;
+; Maximum fan-out node                        ; CLOCK_50~input ;
+; Maximum fan-out                             ; 234            ;
+; Total fan-out                               ; 1809           ;
+; Average fan-out                             ; 1.97           ;
++---------------------------------------------+----------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                               ;
++----------------------------------+-------------------+--------------+-------------------+------------+------+--------------+-------------------------------------------------------------------+-------------------+--------------+
+; Compilation Hierarchy Node       ; LC Combinationals ; LC Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                               ; Entity Name       ; Library Name ;
++----------------------------------+-------------------+--------------+-------------------+------------+------+--------------+-------------------------------------------------------------------+-------------------+--------------+
+; |de0_pulse_gen_top               ; 174 (0)           ; 234 (8)      ; 0                 ; 0          ; 206  ; 0            ; |de0_pulse_gen_top                                                ; de0_pulse_gen_top ; work         ;
+;    |config_ind:CONFIG_IND_0|     ; 31 (31)           ; 26 (26)      ; 0                 ; 0          ; 0    ; 0            ; |de0_pulse_gen_top|config_ind:CONFIG_IND_0                        ; config_ind        ; work         ;
+;    |fcr_ctrl:FCR_0|              ; 68 (66)           ; 134 (127)    ; 0                 ; 0          ; 0    ; 0            ; |de0_pulse_gen_top|fcr_ctrl:FCR_0                                 ; fcr_ctrl          ; work         ;
+;       |negedge_detector:NEDGE0|  ; 1 (1)             ; 1 (1)        ; 0                 ; 0          ; 0    ; 0            ; |de0_pulse_gen_top|fcr_ctrl:FCR_0|negedge_detector:NEDGE0         ; negedge_detector  ; work         ;
+;       |negedge_detector:NEDGE1|  ; 1 (1)             ; 1 (1)        ; 0                 ; 0          ; 0    ; 0            ; |de0_pulse_gen_top|fcr_ctrl:FCR_0|negedge_detector:NEDGE1         ; negedge_detector  ; work         ;
+;       |posedge_detector:PEDGE0|  ; 0 (0)             ; 1 (1)        ; 0                 ; 0          ; 0    ; 0            ; |de0_pulse_gen_top|fcr_ctrl:FCR_0|posedge_detector:PEDGE0         ; posedge_detector  ; work         ;
+;       |sync:SYNC0|               ; 0 (0)             ; 2 (2)        ; 0                 ; 0          ; 0    ; 0            ; |de0_pulse_gen_top|fcr_ctrl:FCR_0|sync:SYNC0                      ; sync              ; work         ;
+;       |sync:SYNC1|               ; 0 (0)             ; 2 (2)        ; 0                 ; 0          ; 0    ; 0            ; |de0_pulse_gen_top|fcr_ctrl:FCR_0|sync:SYNC1                      ; sync              ; work         ;
+;    |pedge_req:PEDGE_REQ_0|       ; 2 (2)             ; 4 (2)        ; 0                 ; 0          ; 0    ; 0            ; |de0_pulse_gen_top|pedge_req:PEDGE_REQ_0                          ; pedge_req         ; work         ;
+;       |negedge_detector:NEDGE_0| ; 0 (0)             ; 1 (1)        ; 0                 ; 0          ; 0    ; 0            ; |de0_pulse_gen_top|pedge_req:PEDGE_REQ_0|negedge_detector:NEDGE_0 ; negedge_detector  ; work         ;
+;       |posedge_detector:PEDGE_0| ; 0 (0)             ; 1 (1)        ; 0                 ; 0          ; 0    ; 0            ; |de0_pulse_gen_top|pedge_req:PEDGE_REQ_0|posedge_detector:PEDGE_0 ; posedge_detector  ; work         ;
+;    |rs232_des:RS232_DES_0|       ; 36 (36)           ; 32 (29)      ; 0                 ; 0          ; 0    ; 0            ; |de0_pulse_gen_top|rs232_des:RS232_DES_0                          ; rs232_des         ; work         ;
+;       |negedge_detector:NEDGE0|  ; 0 (0)             ; 1 (1)        ; 0                 ; 0          ; 0    ; 0            ; |de0_pulse_gen_top|rs232_des:RS232_DES_0|negedge_detector:NEDGE0  ; negedge_detector  ; work         ;
+;       |sync:SYNC0|               ; 0 (0)             ; 2 (2)        ; 0                 ; 0          ; 0    ; 0            ; |de0_pulse_gen_top|rs232_des:RS232_DES_0|sync:SYNC0               ; sync              ; work         ;
+;    |rs232_ser:RS232_SER_0|       ; 37 (37)           ; 30 (30)      ; 0                 ; 0          ; 0    ; 0            ; |de0_pulse_gen_top|rs232_ser:RS232_SER_0                          ; rs232_ser         ; work         ;
++----------------------------------+-------------------+--------------+-------------------+------------+------+--------------+-------------------------------------------------------------------+-------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------+
+; State Machine - |de0_pulse_gen_top|rs232_ser:RS232_SER_0|fsm  ;
++-------------+------------+-------------+-------------+--------+
+; Name        ; fsm.S_STOP ; fsm.S_SHIFT ; fsm.S_START ; fsm.00 ;
++-------------+------------+-------------+-------------+--------+
+; fsm.00      ; 0          ; 0           ; 0           ; 0      ;
+; fsm.S_START ; 0          ; 0           ; 1           ; 1      ;
+; fsm.S_SHIFT ; 0          ; 1           ; 0           ; 1      ;
+; fsm.S_STOP  ; 1          ; 0           ; 0           ; 1      ;
++-------------+------------+-------------+-------------+--------+
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------+
+; State Machine - |de0_pulse_gen_top|rs232_des:RS232_DES_0|fsm  ;
++-------------+------------+-------------+-------------+--------+
+; Name        ; fsm.S_STOP ; fsm.S_SHIFT ; fsm.S_START ; fsm.00 ;
++-------------+------------+-------------+-------------+--------+
+; fsm.00      ; 0          ; 0           ; 0           ; 0      ;
+; fsm.S_START ; 0          ; 0           ; 1           ; 1      ;
+; fsm.S_SHIFT ; 0          ; 1           ; 0           ; 1      ;
+; fsm.S_STOP  ; 1          ; 0           ; 0           ; 1      ;
++-------------+------------+-------------+-------------+--------+
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------------------------------------------+
+; State Machine - |de0_pulse_gen_top|fcr_ctrl:FCR_0|cmd_state                                               ;
++-----------------------+---------------------+---------------------+-----------------------+---------------+
+; Name                  ; cmd_state.S_CMD_RSP ; cmd_state.S_CMD_EXE ; cmd_state.S_CMD_PARSE ; cmd_state.000 ;
++-----------------------+---------------------+---------------------+-----------------------+---------------+
+; cmd_state.000         ; 0                   ; 0                   ; 0                     ; 0             ;
+; cmd_state.S_CMD_PARSE ; 0                   ; 0                   ; 1                     ; 1             ;
+; cmd_state.S_CMD_EXE   ; 0                   ; 1                   ; 0                     ; 1             ;
+; cmd_state.S_CMD_RSP   ; 1                   ; 0                   ; 0                     ; 1             ;
++-----------------------+---------------------+---------------------+-----------------------+---------------+
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |de0_pulse_gen_top|fcr_ctrl:FCR_0|parse_state                                                                                                                                                                                                                                                                                                                                                                                                                                                           ;
++----------------------------+----------------------------+----------------------------+----------------------------+----------------------------+----------------------------+----------------------------+----------------------------+----------------------------+---------------------------+---------------------------+---------------------------+---------------------------+---------------------------+---------------------------+---------------------------+-------------------+----------------------------+
+; Name                       ; parse_state.S_PARSE_DATA_1 ; parse_state.S_PARSE_DATA_2 ; parse_state.S_PARSE_DATA_3 ; parse_state.S_PARSE_DATA_4 ; parse_state.S_PARSE_DATA_5 ; parse_state.S_PARSE_DATA_6 ; parse_state.S_PARSE_DATA_7 ; parse_state.S_PARSE_DATA_8 ; parse_state.S_PARSE_ADR_0 ; parse_state.S_PARSE_ADR_1 ; parse_state.S_PARSE_ADR_2 ; parse_state.S_PARSE_ADR_3 ; parse_state.S_PARSE_ADR_4 ; parse_state.S_PARSE_ADR_5 ; parse_state.S_PARSE_PARAM ; parse_state.00000 ; parse_state.S_PARSE_DATA_0 ;
++----------------------------+----------------------------+----------------------------+----------------------------+----------------------------+----------------------------+----------------------------+----------------------------+----------------------------+---------------------------+---------------------------+---------------------------+---------------------------+---------------------------+---------------------------+---------------------------+-------------------+----------------------------+
+; parse_state.00000          ; 0                          ; 0                          ; 0                          ; 0                          ; 0                          ; 0                          ; 0                          ; 0                          ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                 ; 0                          ;
+; parse_state.S_PARSE_PARAM  ; 0                          ; 0                          ; 0                          ; 0                          ; 0                          ; 0                          ; 0                          ; 0                          ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 1                         ; 1                 ; 0                          ;
+; parse_state.S_PARSE_ADR_5  ; 0                          ; 0                          ; 0                          ; 0                          ; 0                          ; 0                          ; 0                          ; 0                          ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 1                         ; 0                         ; 1                 ; 0                          ;
+; parse_state.S_PARSE_ADR_4  ; 0                          ; 0                          ; 0                          ; 0                          ; 0                          ; 0                          ; 0                          ; 0                          ; 0                         ; 0                         ; 0                         ; 0                         ; 1                         ; 0                         ; 0                         ; 1                 ; 0                          ;
+; parse_state.S_PARSE_ADR_3  ; 0                          ; 0                          ; 0                          ; 0                          ; 0                          ; 0                          ; 0                          ; 0                          ; 0                         ; 0                         ; 0                         ; 1                         ; 0                         ; 0                         ; 0                         ; 1                 ; 0                          ;
+; parse_state.S_PARSE_ADR_2  ; 0                          ; 0                          ; 0                          ; 0                          ; 0                          ; 0                          ; 0                          ; 0                          ; 0                         ; 0                         ; 1                         ; 0                         ; 0                         ; 0                         ; 0                         ; 1                 ; 0                          ;
+; parse_state.S_PARSE_ADR_1  ; 0                          ; 0                          ; 0                          ; 0                          ; 0                          ; 0                          ; 0                          ; 0                          ; 0                         ; 1                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 1                 ; 0                          ;
+; parse_state.S_PARSE_ADR_0  ; 0                          ; 0                          ; 0                          ; 0                          ; 0                          ; 0                          ; 0                          ; 0                          ; 1                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 1                 ; 0                          ;
+; parse_state.S_PARSE_DATA_8 ; 0                          ; 0                          ; 0                          ; 0                          ; 0                          ; 0                          ; 0                          ; 1                          ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 1                 ; 0                          ;
+; parse_state.S_PARSE_DATA_7 ; 0                          ; 0                          ; 0                          ; 0                          ; 0                          ; 0                          ; 1                          ; 0                          ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 1                 ; 0                          ;
+; parse_state.S_PARSE_DATA_6 ; 0                          ; 0                          ; 0                          ; 0                          ; 0                          ; 1                          ; 0                          ; 0                          ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 1                 ; 0                          ;
+; parse_state.S_PARSE_DATA_5 ; 0                          ; 0                          ; 0                          ; 0                          ; 1                          ; 0                          ; 0                          ; 0                          ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 1                 ; 0                          ;
+; parse_state.S_PARSE_DATA_4 ; 0                          ; 0                          ; 0                          ; 1                          ; 0                          ; 0                          ; 0                          ; 0                          ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 1                 ; 0                          ;
+; parse_state.S_PARSE_DATA_3 ; 0                          ; 0                          ; 1                          ; 0                          ; 0                          ; 0                          ; 0                          ; 0                          ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 1                 ; 0                          ;
+; parse_state.S_PARSE_DATA_2 ; 0                          ; 1                          ; 0                          ; 0                          ; 0                          ; 0                          ; 0                          ; 0                          ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 1                 ; 0                          ;
+; parse_state.S_PARSE_DATA_1 ; 1                          ; 0                          ; 0                          ; 0                          ; 0                          ; 0                          ; 0                          ; 0                          ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 1                 ; 0                          ;
+; parse_state.S_PARSE_DATA_0 ; 0                          ; 0                          ; 0                          ; 0                          ; 0                          ; 0                          ; 0                          ; 0                          ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 1                 ; 1                          ;
++----------------------------+----------------------------+----------------------------+----------------------------+----------------------------+----------------------------+----------------------------+----------------------------+----------------------------+---------------------------+---------------------------+---------------------------+---------------------------+---------------------------+---------------------------+---------------------------+-------------------+----------------------------+
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------------------------------------------------------+
+; State Machine - |de0_pulse_gen_top|fcr_ctrl:FCR_0|exe_state                                                         ;
++--------------------------+--------------------------+---------------------+------------------+----------------------+
+; Name                     ; exe_state.S_EXE_GET_VNUM ; exe_state.S_EXE_NOP ; exe_state.000000 ; exe_state.S_EXE_DONE ;
++--------------------------+--------------------------+---------------------+------------------+----------------------+
+; exe_state.000000         ; 0                        ; 0                   ; 0                ; 0                    ;
+; exe_state.S_EXE_NOP      ; 0                        ; 1                   ; 1                ; 0                    ;
+; exe_state.S_EXE_GET_VNUM ; 1                        ; 0                   ; 1                ; 0                    ;
+; exe_state.S_EXE_DONE     ; 0                        ; 0                   ; 1                ; 1                    ;
++--------------------------+--------------------------+---------------------+------------------+----------------------+
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |de0_pulse_gen_top|fcr_ctrl:FCR_0|rsp_state                                                                                                                                                                                                                                                                                                                                                                                                             ;
++------------------------+------------------------+------------------------+------------------------+------------------------+------------------------+------------------------+------------------------+------------------------+------------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+---------------------+-----------------+
+; Name                   ; rsp_state.S_RSP_DATA_0 ; rsp_state.S_RSP_DATA_1 ; rsp_state.S_RSP_DATA_2 ; rsp_state.S_RSP_DATA_3 ; rsp_state.S_RSP_DATA_4 ; rsp_state.S_RSP_DATA_5 ; rsp_state.S_RSP_DATA_6 ; rsp_state.S_RSP_DATA_7 ; rsp_state.S_RSP_DATA_8 ; rsp_state.S_RSP_ADR_0 ; rsp_state.S_RSP_ADR_1 ; rsp_state.S_RSP_ADR_2 ; rsp_state.S_RSP_ADR_3 ; rsp_state.S_RSP_ADR_4 ; rsp_state.S_RSP_ADR_5 ; rsp_state.S_RSP_PARAM ; rsp_state.S_RSP_ACT ; rsp_state.00000 ;
++------------------------+------------------------+------------------------+------------------------+------------------------+------------------------+------------------------+------------------------+------------------------+------------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+---------------------+-----------------+
+; rsp_state.00000        ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                   ; 0               ;
+; rsp_state.S_RSP_ACT    ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 1                   ; 1               ;
+; rsp_state.S_RSP_PARAM  ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 1                     ; 0                   ; 1               ;
+; rsp_state.S_RSP_ADR_5  ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 1                     ; 0                     ; 0                   ; 1               ;
+; rsp_state.S_RSP_ADR_4  ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                     ; 0                     ; 0                     ; 0                     ; 1                     ; 0                     ; 0                     ; 0                   ; 1               ;
+; rsp_state.S_RSP_ADR_3  ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                     ; 0                     ; 0                     ; 1                     ; 0                     ; 0                     ; 0                     ; 0                   ; 1               ;
+; rsp_state.S_RSP_ADR_2  ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                     ; 0                     ; 1                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                   ; 1               ;
+; rsp_state.S_RSP_ADR_1  ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                     ; 1                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                   ; 1               ;
+; rsp_state.S_RSP_ADR_0  ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 1                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                   ; 1               ;
+; rsp_state.S_RSP_DATA_8 ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 1                      ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                   ; 1               ;
+; rsp_state.S_RSP_DATA_7 ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 1                      ; 0                      ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                   ; 1               ;
+; rsp_state.S_RSP_DATA_6 ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 1                      ; 0                      ; 0                      ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                   ; 1               ;
+; rsp_state.S_RSP_DATA_5 ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 1                      ; 0                      ; 0                      ; 0                      ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                   ; 1               ;
+; rsp_state.S_RSP_DATA_4 ; 0                      ; 0                      ; 0                      ; 0                      ; 1                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                   ; 1               ;
+; rsp_state.S_RSP_DATA_3 ; 0                      ; 0                      ; 0                      ; 1                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                   ; 1               ;
+; rsp_state.S_RSP_DATA_2 ; 0                      ; 0                      ; 1                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                   ; 1               ;
+; rsp_state.S_RSP_DATA_1 ; 0                      ; 1                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                   ; 1               ;
+; rsp_state.S_RSP_DATA_0 ; 1                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                   ; 1               ;
++------------------------+------------------------+------------------------+------------------------+------------------------+------------------------+------------------------+------------------------+------------------------+------------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+---------------------+-----------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Protected by Synthesis                                                                                                                       ;
++----------------------------------------+------------------------------------------------------------------+--------------------------------------------+
+; Register Name                          ; Protected by Synthesis Attribute or Preserve Register Assignment ; Not to be Touched by Netlist Optimizations ;
++----------------------------------------+------------------------------------------------------------------+--------------------------------------------+
+; fcr_ctrl:FCR_0|sync:SYNC1|ff[1]        ; yes                                                              ; yes                                        ;
+; fcr_ctrl:FCR_0|sync:SYNC1|ff[0]        ; yes                                                              ; yes                                        ;
+; fcr_ctrl:FCR_0|sync:SYNC0|ff[1]        ; yes                                                              ; yes                                        ;
+; fcr_ctrl:FCR_0|sync:SYNC0|ff[0]        ; yes                                                              ; yes                                        ;
+; rs232_des:RS232_DES_0|sync:SYNC0|ff[1] ; yes                                                              ; yes                                        ;
+; rs232_des:RS232_DES_0|sync:SYNC0|ff[0] ; yes                                                              ; yes                                        ;
++----------------------------------------+------------------------------------------------------------------+--------------------------------------------+
+
+
++---------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                              ;
++----------------------------------------+----------------------------------------+
+; Register name                          ; Reason for Removal                     ;
++----------------------------------------+----------------------------------------+
+; fcr_ctrl:FCR_0|rsp_data[0..71]         ; Stuck at GND due to stuck port data_in ;
+; fcr_ctrl:FCR_0|cmd_err                 ; Stuck at GND due to stuck port data_in ;
+; rs232_ser:RS232_SER_0|fsm~7            ; Lost fanout                            ;
+; rs232_ser:RS232_SER_0|fsm~8            ; Lost fanout                            ;
+; rs232_des:RS232_DES_0|fsm~7            ; Lost fanout                            ;
+; rs232_des:RS232_DES_0|fsm~8            ; Lost fanout                            ;
+; fcr_ctrl:FCR_0|cmd_state~4             ; Lost fanout                            ;
+; fcr_ctrl:FCR_0|cmd_state~5             ; Lost fanout                            ;
+; fcr_ctrl:FCR_0|cmd_state~6             ; Lost fanout                            ;
+; fcr_ctrl:FCR_0|parse_state~21          ; Lost fanout                            ;
+; fcr_ctrl:FCR_0|parse_state~22          ; Lost fanout                            ;
+; fcr_ctrl:FCR_0|parse_state~23          ; Lost fanout                            ;
+; fcr_ctrl:FCR_0|parse_state~24          ; Lost fanout                            ;
+; fcr_ctrl:FCR_0|exe_state~8             ; Lost fanout                            ;
+; fcr_ctrl:FCR_0|exe_state~9             ; Lost fanout                            ;
+; fcr_ctrl:FCR_0|exe_state~11            ; Lost fanout                            ;
+; fcr_ctrl:FCR_0|exe_state~12            ; Lost fanout                            ;
+; fcr_ctrl:FCR_0|exe_state~13            ; Lost fanout                            ;
+; fcr_ctrl:FCR_0|rsp_state~23            ; Lost fanout                            ;
+; fcr_ctrl:FCR_0|rsp_state~24            ; Lost fanout                            ;
+; fcr_ctrl:FCR_0|rsp_state~25            ; Lost fanout                            ;
+; fcr_ctrl:FCR_0|rsp_state~26            ; Lost fanout                            ;
+; fcr_ctrl:FCR_0|rsp_state~27            ; Lost fanout                            ;
+; Total Number of Removed Registers = 94 ;                                        ;
++----------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 234   ;
+; Number of registers using Synchronous Clear  ; 52    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 190   ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 151   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; rs232_ser:RS232_SER_0|tx               ; 2       ;
+; Total number of inverted registers = 1 ;         ;
++----------------------------------------+---------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                             ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------+
+; 5:1                ; 7 bits    ; 21 LEs        ; 7 LEs                ; 14 LEs                 ; Yes        ; |de0_pulse_gen_top|rs232_ser:RS232_SER_0|shift_reg[0]  ;
+; 4:1                ; 13 bits   ; 26 LEs        ; 0 LEs                ; 26 LEs                 ; Yes        ; |de0_pulse_gen_top|rs232_ser:RS232_SER_0|launch_cnt[4] ;
+; 6:1                ; 13 bits   ; 52 LEs        ; 0 LEs                ; 52 LEs                 ; Yes        ; |de0_pulse_gen_top|rs232_des:RS232_DES_0|latch_cnt[11] ;
+; 18:1               ; 7 bits    ; 84 LEs        ; 84 LEs               ; 0 LEs                  ; Yes        ; |de0_pulse_gen_top|fcr_ctrl:FCR_0|rsp_byte_data[6]     ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |de0_pulse_gen_top|rs232_ser:RS232_SER_0|shift_cnt     ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |de0_pulse_gen_top|rs232_des:RS232_DES_0|shift_cnt     ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |de0_pulse_gen_top|fcr_ctrl:FCR_0|Selector48           ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |de0_pulse_gen_top|fcr_ctrl:FCR_0|Selector47           ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |de0_pulse_gen_top|rs232_ser:RS232_SER_0|Selector19    ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 4 LEs                ; 6 LEs                  ; No         ; |de0_pulse_gen_top|rs232_ser:RS232_SER_0|Selector18    ;
+; 8:1                ; 4 bits    ; 20 LEs        ; 12 LEs               ; 8 LEs                  ; No         ; |de0_pulse_gen_top|rs232_des:RS232_DES_0|Selector16    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------+
+
+
++---------------------------------------------------------------------+
+; Source assignments for fcr_ctrl:FCR_0|sync:SYNC0                    ;
++-----------------------------+------------------------+------+-------+
+; Assignment                  ; Value                  ; From ; To    ;
++-----------------------------+------------------------+------+-------+
+; SYNCHRONIZER_IDENTIFICATION ; FORCED_IF_ASYNCHRONOUS ; -    ; ff[0] ;
+; DONT_MERGE_REGISTER         ; ON                     ; -    ; ff[0] ;
+; PRESERVE_REGISTER           ; ON                     ; -    ; ff[0] ;
+; SYNCHRONIZER_IDENTIFICATION ; FORCED_IF_ASYNCHRONOUS ; -    ; ff[1] ;
+; DONT_MERGE_REGISTER         ; ON                     ; -    ; ff[1] ;
+; PRESERVE_REGISTER           ; ON                     ; -    ; ff[1] ;
++-----------------------------+------------------------+------+-------+
+
+
++---------------------------------------------------------------------+
+; Source assignments for fcr_ctrl:FCR_0|sync:SYNC1                    ;
++-----------------------------+------------------------+------+-------+
+; Assignment                  ; Value                  ; From ; To    ;
++-----------------------------+------------------------+------+-------+
+; SYNCHRONIZER_IDENTIFICATION ; FORCED_IF_ASYNCHRONOUS ; -    ; ff[0] ;
+; DONT_MERGE_REGISTER         ; ON                     ; -    ; ff[0] ;
+; PRESERVE_REGISTER           ; ON                     ; -    ; ff[0] ;
+; SYNCHRONIZER_IDENTIFICATION ; FORCED_IF_ASYNCHRONOUS ; -    ; ff[1] ;
+; DONT_MERGE_REGISTER         ; ON                     ; -    ; ff[1] ;
+; PRESERVE_REGISTER           ; ON                     ; -    ; ff[1] ;
++-----------------------------+------------------------+------+-------+
+
+
++---------------------------------------------------------------------+
+; Source assignments for rs232_des:RS232_DES_0|sync:SYNC0             ;
++-----------------------------+------------------------+------+-------+
+; Assignment                  ; Value                  ; From ; To    ;
++-----------------------------+------------------------+------+-------+
+; SYNCHRONIZER_IDENTIFICATION ; FORCED_IF_ASYNCHRONOUS ; -    ; ff[0] ;
+; DONT_MERGE_REGISTER         ; ON                     ; -    ; ff[0] ;
+; PRESERVE_REGISTER           ; ON                     ; -    ; ff[0] ;
+; SYNCHRONIZER_IDENTIFICATION ; FORCED_IF_ASYNCHRONOUS ; -    ; ff[1] ;
+; DONT_MERGE_REGISTER         ; ON                     ; -    ; ff[1] ;
+; PRESERVE_REGISTER           ; ON                     ; -    ; ff[1] ;
++-----------------------------+------------------------+------+-------+
+
+
++----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: config_ind:CONFIG_IND_0 ;
++----------------+----------+------------------------------------------+
+; Parameter Name ; Value    ; Type                                     ;
++----------------+----------+------------------------------------------+
+; P_CLK_FREQ_HZ  ; 50000000 ; Signed Integer                           ;
++----------------+----------+------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: fcr_ctrl:FCR_0|sync:SYNC0 ;
++----------------+-------+-----------------------------------------------+
+; Parameter Name ; Value ; Type                                          ;
++----------------+-------+-----------------------------------------------+
+; P_DEFVAL       ; 0     ; Unsigned Binary                               ;
+; P_NFF          ; 2     ; Signed Integer                                ;
++----------------+-------+-----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: fcr_ctrl:FCR_0|sync:SYNC1 ;
++----------------+-------+-----------------------------------------------+
+; Parameter Name ; Value ; Type                                          ;
++----------------+-------+-----------------------------------------------+
+; P_DEFVAL       ; 0     ; Unsigned Binary                               ;
+; P_NFF          ; 2     ; Signed Integer                                ;
++----------------+-------+-----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: rs232_des:RS232_DES_0 ;
++----------------+----------+----------------------------------------+
+; Parameter Name ; Value    ; Type                                   ;
++----------------+----------+----------------------------------------+
+; P_CLK_FREQ_HZ  ; 50000000 ; Signed Integer                         ;
+; P_BAUD_RATE    ; 9600     ; Signed Integer                         ;
++----------------+----------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: rs232_des:RS232_DES_0|sync:SYNC0 ;
++----------------+-------+------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                 ;
++----------------+-------+------------------------------------------------------+
+; P_DEFVAL       ; 0     ; Unsigned Binary                                      ;
+; P_NFF          ; 2     ; Signed Integer                                       ;
++----------------+-------+------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: rs232_ser:RS232_SER_0 ;
++----------------+----------+----------------------------------------+
+; Parameter Name ; Value    ; Type                                   ;
++----------------+----------+----------------------------------------+
+; P_CLK_FREQ_HZ  ; 50000000 ; Signed Integer                         ;
+; P_BAUD_RATE    ; 9600     ; Signed Integer                         ;
++----------------+----------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------+
+; Port Connectivity Checks: "pedge_req:PEDGE_REQ_0" ;
++-------+-------+----------+------------------------+
+; Port  ; Type  ; Severity ; Details                ;
++-------+-------+----------+------------------------+
+; rst_n ; Input ; Info     ; Stuck at VCC           ;
++-------+-------+----------+------------------------+
+
+
++---------------------------------------------------+
+; Port Connectivity Checks: "rs232_des:RS232_DES_0" ;
++--------------+-------+----------+-----------------+
+; Port         ; Type  ; Severity ; Details         ;
++--------------+-------+----------+-----------------+
+; rx_fifo_full ; Input ; Info     ; Stuck at GND    ;
++--------------+-------+----------+-----------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "fcr_ctrl:FCR_0"                                                                         ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; cmd_busy ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 234                         ;
+;     CLR               ; 39                          ;
+;     CLR SCLR          ; 39                          ;
+;     ENA               ; 26                          ;
+;     ENA CLR           ; 112                         ;
+;     ENA SCLR          ; 13                          ;
+;     plain             ; 5                           ;
+; arriav_io_obuf        ; 98                          ;
+; arriav_lcell_comb     ; 175                         ;
+;     arith             ; 51                          ;
+;         1 data inputs ; 51                          ;
+;     normal            ; 124                         ;
+;         0 data inputs ; 1                           ;
+;         2 data inputs ; 11                          ;
+;         3 data inputs ; 22                          ;
+;         4 data inputs ; 28                          ;
+;         5 data inputs ; 29                          ;
+;         6 data inputs ; 33                          ;
+; boundary_port         ; 206                         ;
+;                       ;                             ;
+; Max LUT depth         ; 3.40                        ;
+; Average LUT depth     ; 1.58                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
 Info: *******************************************************************
-Info: Running Quartus Prime Analysis & Elaboration
+Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 16.0.0 Build 211 04/27/2016 SJ Standard Edition
-    Info: Processing started: Tue Nov 13 15:04:54 2018
-Info: Command: quartus_map --read_settings_files=on --write_settings_files=off de0_pulse_gen -c de0_pulse_gen --analysis_and_elaboration
+    Info: Processing started: Wed Nov 21 16:43:22 2018
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off de0_pulse_gen -c de0_pulse_gen
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20029): Only one processor detected - disabling parallel compilation
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file hdl/pedge_req.v
+    Info (12023): Found entity 1: pedge_req File: /home/tyler/de0_pulse_gen/hdl/pedge_req.v Line: 9
+Info (12021): Found 1 design units, including 1 entities, in source file hdl/fcr_ctrl.v
+    Info (12023): Found entity 1: fcr_ctrl File: /home/tyler/de0_pulse_gen/hdl/fcr_ctrl.v Line: 15
 Info (12021): Found 1 design units, including 1 entities, in source file sim/de0_pulse_gen_top_tb.v
-    Info (12023): Found entity 1: de0_pulse_gen_top_tb File: /home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v Line: 16
+    Info (12023): Found entity 1: de0_pulse_gen_top_tb File: /home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v Line: 18
 Info (12021): Found 1 design units, including 1 entities, in source file de0_pulse_gen_top.v
     Info (12023): Found entity 1: de0_pulse_gen_top File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 6
 Info (12021): Found 1 design units, including 1 entities, in source file hdl/rst_gen.v
@@ -178,31 +661,241 @@ Info (12021): Found 1 design units, including 1 entities, in source file hdl/con
     Info (12023): Found entity 1: config_ind File: /home/tyler/de0_pulse_gen/hdl/config_ind.v Line: 14
 Info (12021): Found 1 design units, including 1 entities, in source file hdl/sync.v
     Info (12023): Found entity 1: sync File: /home/tyler/de0_pulse_gen/hdl/sync.v Line: 5
+Warning (10037): Verilog HDL or VHDL warning at fcr_ctrl.v(185): conditional expression evaluates to a constant File: /home/tyler/de0_pulse_gen/hdl/fcr_ctrl.v Line: 185
+Warning (10037): Verilog HDL or VHDL warning at de0_pulse_gen_top_tb.v(291): conditional expression evaluates to a constant File: /home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v Line: 291
+Warning (10037): Verilog HDL or VHDL warning at de0_pulse_gen_top_tb.v(329): conditional expression evaluates to a constant File: /home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v Line: 329
 Info (12127): Elaborating entity "de0_pulse_gen_top" for the top level hierarchy
-Warning (10034): Output port "DRAM_ADDR" at de0_pulse_gen_top.v(22) has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 22
-Warning (10034): Output port "DRAM_BA" at de0_pulse_gen_top.v(23) has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 23
-Warning (10034): Output port "HEX0" at de0_pulse_gen_top.v(39) has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 39
-Warning (10034): Output port "HEX1" at de0_pulse_gen_top.v(42) has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 42
-Warning (10034): Output port "HEX2" at de0_pulse_gen_top.v(45) has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
-Warning (10034): Output port "HEX3" at de0_pulse_gen_top.v(48) has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 48
-Warning (10034): Output port "HEX4" at de0_pulse_gen_top.v(51) has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 51
-Warning (10034): Output port "HEX5" at de0_pulse_gen_top.v(54) has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 54
-Warning (10034): Output port "LEDR[9..1]" at de0_pulse_gen_top.v(60) has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 60
-Warning (10034): Output port "VGA_B" at de0_pulse_gen_top.v(80) has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 80
-Warning (10034): Output port "VGA_G" at de0_pulse_gen_top.v(81) has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 81
-Warning (10034): Output port "VGA_R" at de0_pulse_gen_top.v(83) has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 83
-Warning (10034): Output port "DRAM_CAS_N" at de0_pulse_gen_top.v(24) has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 24
-Warning (10034): Output port "DRAM_CKE" at de0_pulse_gen_top.v(25) has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 25
-Warning (10034): Output port "DRAM_CLK" at de0_pulse_gen_top.v(26) has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 26
-Warning (10034): Output port "DRAM_CS_N" at de0_pulse_gen_top.v(27) has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 27
-Warning (10034): Output port "DRAM_LDQM" at de0_pulse_gen_top.v(29) has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 29
-Warning (10034): Output port "DRAM_RAS_N" at de0_pulse_gen_top.v(30) has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 30
-Warning (10034): Output port "DRAM_UDQM" at de0_pulse_gen_top.v(31) has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 31
-Warning (10034): Output port "DRAM_WE_N" at de0_pulse_gen_top.v(32) has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 32
-Warning (10034): Output port "SD_CLK" at de0_pulse_gen_top.v(72) has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 72
-Warning (10034): Output port "VGA_HS" at de0_pulse_gen_top.v(82) has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 82
-Warning (10034): Output port "VGA_VS" at de0_pulse_gen_top.v(85) has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 85
-Info (12128): Elaborating entity "config_ind" for hierarchy "config_ind:CONFIG_IND_0" File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 100
+Warning (10034): Output port "DRAM_ADDR" at de0_pulse_gen_top.v(31) has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 31
+Warning (10034): Output port "DRAM_BA" at de0_pulse_gen_top.v(32) has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 32
+Warning (10034): Output port "HEX0" at de0_pulse_gen_top.v(48) has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 48
+Warning (10034): Output port "HEX1" at de0_pulse_gen_top.v(51) has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 51
+Warning (10034): Output port "HEX2" at de0_pulse_gen_top.v(54) has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 54
+Warning (10034): Output port "HEX3" at de0_pulse_gen_top.v(57) has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 57
+Warning (10034): Output port "HEX4" at de0_pulse_gen_top.v(60) has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 60
+Warning (10034): Output port "HEX5" at de0_pulse_gen_top.v(63) has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 63
+Warning (10034): Output port "LEDR[9..1]" at de0_pulse_gen_top.v(69) has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 69
+Warning (10034): Output port "VGA_B" at de0_pulse_gen_top.v(89) has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 89
+Warning (10034): Output port "VGA_G" at de0_pulse_gen_top.v(90) has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 90
+Warning (10034): Output port "VGA_R" at de0_pulse_gen_top.v(92) has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 92
+Warning (10034): Output port "DRAM_CAS_N" at de0_pulse_gen_top.v(33) has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 33
+Warning (10034): Output port "DRAM_CKE" at de0_pulse_gen_top.v(34) has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 34
+Warning (10034): Output port "DRAM_CLK" at de0_pulse_gen_top.v(35) has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 35
+Warning (10034): Output port "DRAM_CS_N" at de0_pulse_gen_top.v(36) has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 36
+Warning (10034): Output port "DRAM_LDQM" at de0_pulse_gen_top.v(38) has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 38
+Warning (10034): Output port "DRAM_RAS_N" at de0_pulse_gen_top.v(39) has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 39
+Warning (10034): Output port "DRAM_UDQM" at de0_pulse_gen_top.v(40) has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 40
+Warning (10034): Output port "DRAM_WE_N" at de0_pulse_gen_top.v(41) has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 41
+Warning (10034): Output port "SD_CLK" at de0_pulse_gen_top.v(81) has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 81
+Warning (10034): Output port "VGA_HS" at de0_pulse_gen_top.v(91) has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 91
+Warning (10034): Output port "VGA_VS" at de0_pulse_gen_top.v(94) has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 94
+Warning (12125): Using design file version_number.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: version_number File: /home/tyler/de0_pulse_gen/version_number.v Line: 1
+Info (12128): Elaborating entity "version_number" for hierarchy "version_number:VNUM_0" File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 108
+Info (12128): Elaborating entity "config_ind" for hierarchy "config_ind:CONFIG_IND_0" File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 117
+Info (12128): Elaborating entity "fcr_ctrl" for hierarchy "fcr_ctrl:FCR_0" File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 150
+Warning (10036): Verilog HDL or VHDL warning at fcr_ctrl.v(41): object "data" assigned a value but never read File: /home/tyler/de0_pulse_gen/hdl/fcr_ctrl.v Line: 41
+Warning (10036): Verilog HDL or VHDL warning at fcr_ctrl.v(46): object "erm_clear_cnt" assigned a value but never read File: /home/tyler/de0_pulse_gen/hdl/fcr_ctrl.v Line: 46
+Info (10264): Verilog HDL Case Statement information at fcr_ctrl.v(170): all case item expressions in this case statement are onehot File: /home/tyler/de0_pulse_gen/hdl/fcr_ctrl.v Line: 170
+Info (12128): Elaborating entity "sync" for hierarchy "fcr_ctrl:FCR_0|sync:SYNC0" File: /home/tyler/de0_pulse_gen/hdl/fcr_ctrl.v Line: 108
+Info (12128): Elaborating entity "negedge_detector" for hierarchy "fcr_ctrl:FCR_0|negedge_detector:NEDGE1" File: /home/tyler/de0_pulse_gen/hdl/fcr_ctrl.v Line: 112
+Info (12128): Elaborating entity "posedge_detector" for hierarchy "fcr_ctrl:FCR_0|posedge_detector:PEDGE0" File: /home/tyler/de0_pulse_gen/hdl/fcr_ctrl.v Line: 297
+Info (12128): Elaborating entity "rs232_des" for hierarchy "rs232_des:RS232_DES_0" File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 164
+Info (12128): Elaborating entity "rs232_ser" for hierarchy "rs232_ser:RS232_SER_0" File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 180
+Info (12128): Elaborating entity "pedge_req" for hierarchy "pedge_req:PEDGE_REQ_0" File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 184
+Warning (13034): The following nodes have both tri-state and non-tri-state drivers
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_1[29]" and its non-tri-state driver. File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
+Warning (13039): The following bidirectional pins have no drivers
+    Warning (13040): bidirectional pin "GPIO_1[28]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
+    Warning (13040): bidirectional pin "CLOCK4_50" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 25
+    Warning (13040): bidirectional pin "DRAM_DQ[0]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 37
+    Warning (13040): bidirectional pin "DRAM_DQ[1]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 37
+    Warning (13040): bidirectional pin "DRAM_DQ[2]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 37
+    Warning (13040): bidirectional pin "DRAM_DQ[3]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 37
+    Warning (13040): bidirectional pin "DRAM_DQ[4]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 37
+    Warning (13040): bidirectional pin "DRAM_DQ[5]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 37
+    Warning (13040): bidirectional pin "DRAM_DQ[6]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 37
+    Warning (13040): bidirectional pin "DRAM_DQ[7]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 37
+    Warning (13040): bidirectional pin "DRAM_DQ[8]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 37
+    Warning (13040): bidirectional pin "DRAM_DQ[9]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 37
+    Warning (13040): bidirectional pin "DRAM_DQ[10]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 37
+    Warning (13040): bidirectional pin "DRAM_DQ[11]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 37
+    Warning (13040): bidirectional pin "DRAM_DQ[12]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 37
+    Warning (13040): bidirectional pin "DRAM_DQ[13]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 37
+    Warning (13040): bidirectional pin "DRAM_DQ[14]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 37
+    Warning (13040): bidirectional pin "DRAM_DQ[15]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 37
+    Warning (13040): bidirectional pin "GPIO_0[0]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 44
+    Warning (13040): bidirectional pin "GPIO_0[1]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 44
+    Warning (13040): bidirectional pin "GPIO_0[2]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 44
+    Warning (13040): bidirectional pin "GPIO_0[3]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 44
+    Warning (13040): bidirectional pin "GPIO_0[4]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 44
+    Warning (13040): bidirectional pin "GPIO_0[5]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 44
+    Warning (13040): bidirectional pin "GPIO_0[6]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 44
+    Warning (13040): bidirectional pin "GPIO_0[7]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 44
+    Warning (13040): bidirectional pin "GPIO_0[8]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 44
+    Warning (13040): bidirectional pin "GPIO_0[9]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 44
+    Warning (13040): bidirectional pin "GPIO_0[10]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 44
+    Warning (13040): bidirectional pin "GPIO_0[11]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 44
+    Warning (13040): bidirectional pin "GPIO_0[12]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 44
+    Warning (13040): bidirectional pin "GPIO_0[13]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 44
+    Warning (13040): bidirectional pin "GPIO_0[14]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 44
+    Warning (13040): bidirectional pin "GPIO_0[15]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 44
+    Warning (13040): bidirectional pin "GPIO_0[16]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 44
+    Warning (13040): bidirectional pin "GPIO_0[17]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 44
+    Warning (13040): bidirectional pin "GPIO_0[18]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 44
+    Warning (13040): bidirectional pin "GPIO_0[19]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 44
+    Warning (13040): bidirectional pin "GPIO_0[20]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 44
+    Warning (13040): bidirectional pin "GPIO_0[21]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 44
+    Warning (13040): bidirectional pin "GPIO_0[22]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 44
+    Warning (13040): bidirectional pin "GPIO_0[23]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 44
+    Warning (13040): bidirectional pin "GPIO_0[24]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 44
+    Warning (13040): bidirectional pin "GPIO_0[25]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 44
+    Warning (13040): bidirectional pin "GPIO_0[26]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 44
+    Warning (13040): bidirectional pin "GPIO_0[27]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 44
+    Warning (13040): bidirectional pin "GPIO_0[28]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 44
+    Warning (13040): bidirectional pin "GPIO_0[29]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 44
+    Warning (13040): bidirectional pin "GPIO_0[30]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 44
+    Warning (13040): bidirectional pin "GPIO_0[31]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 44
+    Warning (13040): bidirectional pin "GPIO_0[32]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 44
+    Warning (13040): bidirectional pin "GPIO_0[33]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 44
+    Warning (13040): bidirectional pin "GPIO_0[34]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 44
+    Warning (13040): bidirectional pin "GPIO_0[35]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 44
+    Warning (13040): bidirectional pin "GPIO_1[0]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
+    Warning (13040): bidirectional pin "GPIO_1[1]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
+    Warning (13040): bidirectional pin "GPIO_1[2]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
+    Warning (13040): bidirectional pin "GPIO_1[3]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
+    Warning (13040): bidirectional pin "GPIO_1[4]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
+    Warning (13040): bidirectional pin "GPIO_1[5]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
+    Warning (13040): bidirectional pin "GPIO_1[6]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
+    Warning (13040): bidirectional pin "GPIO_1[7]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
+    Warning (13040): bidirectional pin "GPIO_1[8]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
+    Warning (13040): bidirectional pin "GPIO_1[9]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
+    Warning (13040): bidirectional pin "GPIO_1[10]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
+    Warning (13040): bidirectional pin "GPIO_1[11]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
+    Warning (13040): bidirectional pin "GPIO_1[12]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
+    Warning (13040): bidirectional pin "GPIO_1[13]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
+    Warning (13040): bidirectional pin "GPIO_1[14]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
+    Warning (13040): bidirectional pin "GPIO_1[15]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
+    Warning (13040): bidirectional pin "GPIO_1[16]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
+    Warning (13040): bidirectional pin "GPIO_1[17]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
+    Warning (13040): bidirectional pin "GPIO_1[18]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
+    Warning (13040): bidirectional pin "GPIO_1[19]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
+    Warning (13040): bidirectional pin "GPIO_1[20]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
+    Warning (13040): bidirectional pin "GPIO_1[21]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
+    Warning (13040): bidirectional pin "GPIO_1[22]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
+    Warning (13040): bidirectional pin "GPIO_1[23]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
+    Warning (13040): bidirectional pin "GPIO_1[24]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
+    Warning (13040): bidirectional pin "GPIO_1[25]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
+    Warning (13040): bidirectional pin "GPIO_1[26]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
+    Warning (13040): bidirectional pin "GPIO_1[27]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
+    Warning (13040): bidirectional pin "GPIO_1[30]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
+    Warning (13040): bidirectional pin "GPIO_1[31]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
+    Warning (13040): bidirectional pin "GPIO_1[32]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
+    Warning (13040): bidirectional pin "GPIO_1[33]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
+    Warning (13040): bidirectional pin "GPIO_1[34]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
+    Warning (13040): bidirectional pin "GPIO_1[35]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
+    Warning (13040): bidirectional pin "PS2_CLK" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 72
+    Warning (13040): bidirectional pin "PS2_CLK2" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 73
+    Warning (13040): bidirectional pin "PS2_DAT" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 74
+    Warning (13040): bidirectional pin "PS2_DAT2" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 75
+    Warning (13040): bidirectional pin "SD_CMD" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 82
+    Warning (13040): bidirectional pin "SD_DATA[0]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 83
+    Warning (13040): bidirectional pin "SD_DATA[1]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 83
+    Warning (13040): bidirectional pin "SD_DATA[2]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 83
+    Warning (13040): bidirectional pin "SD_DATA[3]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 83
+Warning (13009): TRI or OPNDRN buffers permanently enabled
+    Warning (13010): Node "GPIO_1[29]~synth" File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "DRAM_ADDR[0]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 31
+    Warning (13410): Pin "DRAM_ADDR[1]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 31
+    Warning (13410): Pin "DRAM_ADDR[2]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 31
+    Warning (13410): Pin "DRAM_ADDR[3]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 31
+    Warning (13410): Pin "DRAM_ADDR[4]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 31
+    Warning (13410): Pin "DRAM_ADDR[5]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 31
+    Warning (13410): Pin "DRAM_ADDR[6]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 31
+    Warning (13410): Pin "DRAM_ADDR[7]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 31
+    Warning (13410): Pin "DRAM_ADDR[8]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 31
+    Warning (13410): Pin "DRAM_ADDR[9]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 31
+    Warning (13410): Pin "DRAM_ADDR[10]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 31
+    Warning (13410): Pin "DRAM_ADDR[11]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 31
+    Warning (13410): Pin "DRAM_ADDR[12]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 31
+    Warning (13410): Pin "DRAM_BA[0]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 32
+    Warning (13410): Pin "DRAM_BA[1]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 32
+    Warning (13410): Pin "DRAM_CAS_N" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 33
+    Warning (13410): Pin "DRAM_CKE" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 34
+    Warning (13410): Pin "DRAM_CLK" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 35
+    Warning (13410): Pin "DRAM_CS_N" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 36
+    Warning (13410): Pin "DRAM_LDQM" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 38
+    Warning (13410): Pin "DRAM_RAS_N" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 39
+    Warning (13410): Pin "DRAM_UDQM" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 40
+    Warning (13410): Pin "DRAM_WE_N" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 41
+    Warning (13410): Pin "HEX0[0]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 48
+    Warning (13410): Pin "HEX0[1]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 48
+    Warning (13410): Pin "HEX0[2]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 48
+    Warning (13410): Pin "HEX0[3]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 48
+    Warning (13410): Pin "HEX0[4]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 48
+    Warning (13410): Pin "HEX0[5]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 48
+    Warning (13410): Pin "HEX0[6]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 48
+    Warning (13410): Pin "HEX1[0]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 51
+    Warning (13410): Pin "HEX1[1]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 51
+    Warning (13410): Pin "HEX1[2]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 51
+    Warning (13410): Pin "HEX1[3]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 51
+    Warning (13410): Pin "HEX1[4]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 51
+    Warning (13410): Pin "HEX1[5]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 51
+    Warning (13410): Pin "HEX1[6]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 51
+    Warning (13410): Pin "HEX2[0]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 54
+    Warning (13410): Pin "HEX2[1]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 54
+    Warning (13410): Pin "HEX2[2]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 54
+    Warning (13410): Pin "HEX2[3]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 54
+    Warning (13410): Pin "HEX2[4]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 54
+    Warning (13410): Pin "HEX2[5]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 54
+    Warning (13410): Pin "HEX2[6]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 54
+    Warning (13410): Pin "HEX3[0]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 57
+    Warning (13410): Pin "HEX3[1]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 57
+    Warning (13410): Pin "HEX3[2]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 57
+    Warning (13410): Pin "HEX3[3]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 57
+    Warning (13410): Pin "HEX3[4]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 57
+    Warning (13410): Pin "HEX3[5]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 57
+    Warning (13410): Pin "HEX3[6]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 57
+    Warning (13410): Pin "HEX4[0]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 60
+    Warning (13410): Pin "HEX4[1]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 60
+    Warning (13410): Pin "HEX4[2]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 60
+    Warning (13410): Pin "HEX4[3]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 60
+    Warning (13410): Pin "HEX4[4]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 60
+    Warning (13410): Pin "HEX4[5]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 60
+    Warning (13410): Pin "HEX4[6]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 60
+    Warning (13410): Pin "HEX5[0]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 63
+    Warning (13410): Pin "HEX5[1]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 63
+    Warning (13410): Pin "HEX5[2]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 63
+    Warning (13410): Pin "HEX5[3]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 63
+    Warning (13410): Pin "HEX5[4]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 63
+    Warning (13410): Pin "HEX5[5]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 63
+    Warning (13410): Pin "HEX5[6]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 63
+    Warning (13410): Pin "LEDR[1]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 69
+    Warning (13410): Pin "LEDR[2]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 69
+    Warning (13410): Pin "LEDR[3]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 69
+    Warning (13410): Pin "LEDR[4]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 69
+    Warning (13410): Pin "LEDR[5]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 69
+    Warning (13410): Pin "LEDR[6]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 69
+    Warning (13410): Pin "LEDR[7]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 69
+    Warning (13410): Pin "LEDR[8]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 69
+    Warning (13410): Pin "LEDR[9]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 69
+    Warning (13410): Pin "SD_CLK" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 81
+    Warning (13410): Pin "VGA_B[0]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 89
+    Warning (13410): Pin "VGA_B[1]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 89
+    Warning (13410): Pin "VGA_B[2]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 89
+    Warning (13410): Pin "VGA_B[3]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 89
+    Warning (13410): Pin "VGA_G[0]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 90
+    Warning (13410): Pin "VGA_G[1]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 90
+    Warning (13410): Pin "VGA_G[2]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 90
+    Warning (13410): Pin "VGA_G[3]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 90
+    Warning (13410): Pin "VGA_HS" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 91
+    Warning (13410): Pin "VGA_R[0]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 92
+    Warning (13410): Pin "VGA_R[1]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 92
+    Warning (13410): Pin "VGA_R[2]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 92
+    Warning (13410): Pin "VGA_R[3]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 92
+    Warning (13410): Pin "VGA_VS" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 94
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 21 registers lost all their fanouts during netlist optimizations.
 Warning (20013): Ignored 230 assignments for entity "DE0_CV_Default" -- entity does not exist in design
     Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to CLOCK2_50 -entity DE0_CV_Default was ignored
     Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to CLOCK3_50 -entity DE0_CV_Default was ignored
@@ -434,10 +1127,34 @@ Warning (20013): Ignored 230 assignments for entity "DE0_CV_Default" -- entity d
     Warning (20014): Assignment for entity set_global_assignment -name ABSORB_PATHS_FROM_OUTPUTS_TO_INPUTS ON -entity DE0_CV_Default -section_id Top was ignored
     Warning (20014): Assignment for entity set_global_assignment -name PARTITION_EXTRACT_HARD_BLOCK_NODES ON -entity DE0_CV_Default -section_id Top was ignored
     Warning (20014): Assignment for entity set_global_assignment -name PARTITION_ENABLE_STRICT_PRESERVATION OFF -entity DE0_CV_Default -section_id Top was ignored
-Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 255 warnings
-    Info: Peak virtual memory: 1596 megabytes
-    Info: Processing ended: Tue Nov 13 15:05:51 2018
-    Info: Elapsed time: 00:00:57
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 16 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "CLOCK2_50" File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 19
+    Warning (15610): No output dependent on input pin "CLOCK3_50" File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 22
+    Warning (15610): No output dependent on input pin "KEY[1]" File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 66
+    Warning (15610): No output dependent on input pin "KEY[2]" File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 66
+    Warning (15610): No output dependent on input pin "KEY[3]" File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 66
+    Warning (15610): No output dependent on input pin "RESET_N" File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 78
+    Warning (15610): No output dependent on input pin "SW[0]" File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 86
+    Warning (15610): No output dependent on input pin "SW[1]" File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 86
+    Warning (15610): No output dependent on input pin "SW[2]" File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 86
+    Warning (15610): No output dependent on input pin "SW[3]" File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 86
+    Warning (15610): No output dependent on input pin "SW[4]" File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 86
+    Warning (15610): No output dependent on input pin "SW[5]" File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 86
+    Warning (15610): No output dependent on input pin "SW[6]" File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 86
+    Warning (15610): No output dependent on input pin "SW[7]" File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 86
+    Warning (15610): No output dependent on input pin "SW[8]" File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 86
+    Warning (15610): No output dependent on input pin "SW[9]" File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 86
+Info (21057): Implemented 514 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 18 input pins
+    Info (21059): Implemented 90 output pins
+    Info (21060): Implemented 98 bidirectional pins
+    Info (21061): Implemented 308 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 470 warnings
+    Info: Peak virtual memory: 1349 megabytes
+    Info: Processing ended: Wed Nov 21 16:43:38 2018
+    Info: Elapsed time: 00:00:16
     Info: Total CPU time (on all processors): 00:00:23
 
 

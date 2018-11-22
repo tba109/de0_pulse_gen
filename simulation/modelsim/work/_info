@@ -1,0 +1,255 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/tyler/de0_pulse_gen/simulation/modelsim
+vconfig_ind
+Z1 !s110 1542859236
+!i10b 1
+!s100 Tl=NFMVzKeWoZgznj7l;o2
+IFbejML6AS0le0YOCZhb9c0
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1542140012
+8/home/tyler/de0_pulse_gen/hdl/config_ind.v
+F/home/tyler/de0_pulse_gen/hdl/config_ind.v
+L0 14
+Z3 OV;L;10.4d;61
+r1
+!s85 0
+31
+Z4 !s108 1542859236.000000
+!s107 /home/tyler/de0_pulse_gen/hdl/config_ind.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/home/tyler/de0_pulse_gen/hdl/config_ind.v|
+!i113 1
+Z5 o-work work
+vde0_pulse_gen_top
+R1
+!i10b 1
+!s100 aNR@]_BBK_iIYkM8>R1Cd3
+I5I4[ZRMXfmQ:@cAeBXNia2
+R2
+R0
+w1542858983
+8/home/tyler/de0_pulse_gen/de0_pulse_gen_top.v
+F/home/tyler/de0_pulse_gen/de0_pulse_gen_top.v
+L0 6
+R3
+r1
+!s85 0
+31
+R4
+!s107 /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/home/tyler/de0_pulse_gen/de0_pulse_gen_top.v|
+!i113 1
+R5
+vde0_pulse_gen_top_tb
+R1
+!i10b 1
+!s100 1=T4<1V4]AVC@Q_:z^0`z2
+I]_T_?N@bRPVWlakV30c^>2
+R2
+R0
+w1542859113
+8/home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v
+F/home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v
+Z6 F/home/tyler/de0_pulse_gen/hdl/inc_params.v
+Z7 L0 16
+R3
+r1
+!s85 0
+31
+R4
+!s107 /home/tyler/de0_pulse_gen/hdl/inc_params.v|/home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v|
+!s90 -reportprogress|300|-work|work|+incdir+/home/tyler/de0_pulse_gen/hdl|-stats=none|/home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v|
+!i113 1
+R5
+!s92 -work work +incdir+/home/tyler/de0_pulse_gen/hdl
+vfcr_ctrl
+R1
+!i10b 1
+!s100 8Eb14L2D8Eb<QG28Nz[QZ2
+I@?X9`Fec]4C87:89=Dim`0
+R2
+R0
+w1542834745
+8/home/tyler/de0_pulse_gen/hdl/fcr_ctrl.v
+F/home/tyler/de0_pulse_gen/hdl/fcr_ctrl.v
+R6
+L0 15
+R3
+r1
+!s85 0
+31
+R4
+!s107 /home/tyler/de0_pulse_gen/hdl/inc_params.v|/home/tyler/de0_pulse_gen/hdl/fcr_ctrl.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/home/tyler/de0_pulse_gen/hdl/fcr_ctrl.v|
+!i113 1
+R5
+vnegedge_detector
+R1
+!i10b 1
+!s100 TI9=1cSZf^z3AI6k<@AnF3
+I>k]zIW@5=aLi<I3X0NLe<3
+R2
+R0
+Z8 w1542125335
+8/home/tyler/de0_pulse_gen/hdl/negedge_detector.v
+F/home/tyler/de0_pulse_gen/hdl/negedge_detector.v
+L0 5
+R3
+r1
+!s85 0
+31
+R4
+!s107 /home/tyler/de0_pulse_gen/hdl/negedge_detector.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/home/tyler/de0_pulse_gen/hdl/negedge_detector.v|
+!i113 1
+R5
+vpedge_req
+R1
+!i10b 1
+!s100 QCZf6XKQF>f]2VL21?Dg?3
+I7flbzEK3:NhTBDnjiVhZ21
+R2
+R0
+w1542829130
+8/home/tyler/de0_pulse_gen/hdl/pedge_req.v
+F/home/tyler/de0_pulse_gen/hdl/pedge_req.v
+L0 9
+R3
+r1
+!s85 0
+31
+R4
+!s107 /home/tyler/de0_pulse_gen/hdl/pedge_req.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/home/tyler/de0_pulse_gen/hdl/pedge_req.v|
+!i113 1
+R5
+vposedge_detector
+R1
+!i10b 1
+!s100 @mEzd0YG3^ZcRUVSbWJTL1
+Im9Oag4><X831U`G8^azSV3
+R2
+R0
+R8
+8/home/tyler/de0_pulse_gen/hdl/posedge_detector.v
+F/home/tyler/de0_pulse_gen/hdl/posedge_detector.v
+L0 5
+R3
+r1
+!s85 0
+31
+R4
+!s107 /home/tyler/de0_pulse_gen/hdl/posedge_detector.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/home/tyler/de0_pulse_gen/hdl/posedge_detector.v|
+!i113 1
+R5
+vrs232_des
+R1
+!i10b 1
+!s100 zf>=WOEfMWKjHkFd5g4YU3
+IW7Jekm^8W;2V@bJl>j^LH0
+R2
+R0
+w1542824324
+8/home/tyler/de0_pulse_gen/hdl/rs232_des.v
+F/home/tyler/de0_pulse_gen/hdl/rs232_des.v
+Z9 F/home/tyler/de0_pulse_gen/hdl/fncs.vh
+R7
+R3
+r1
+!s85 0
+31
+R4
+!s107 /home/tyler/de0_pulse_gen/hdl/fncs.vh|/home/tyler/de0_pulse_gen/hdl/rs232_des.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/home/tyler/de0_pulse_gen/hdl/rs232_des.v|
+!i113 1
+R5
+vrs232_ser
+R1
+!i10b 1
+!s100 0SDjY9BFoNOm]YW5gGNVL0
+IWYP>`e5;FeT^Zm2nnaTTK2
+R2
+R0
+w1542133248
+8/home/tyler/de0_pulse_gen/hdl/rs232_ser.v
+F/home/tyler/de0_pulse_gen/hdl/rs232_ser.v
+R9
+L0 17
+R3
+r1
+!s85 0
+31
+R4
+!s107 /home/tyler/de0_pulse_gen/hdl/fncs.vh|/home/tyler/de0_pulse_gen/hdl/rs232_ser.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/home/tyler/de0_pulse_gen/hdl/rs232_ser.v|
+!i113 1
+R5
+vrst_gen
+R1
+!i10b 1
+!s100 2Vb^=f8z14Z0`OWTT3[g[0
+IIc6`W[Z]A;ZE=oi;AoGWN3
+R2
+R0
+R8
+8/home/tyler/de0_pulse_gen/hdl/rst_gen.v
+F/home/tyler/de0_pulse_gen/hdl/rst_gen.v
+L0 9
+R3
+r1
+!s85 0
+31
+R4
+!s107 /home/tyler/de0_pulse_gen/hdl/rst_gen.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/home/tyler/de0_pulse_gen/hdl/rst_gen.v|
+!i113 1
+R5
+vsync
+R1
+!i10b 1
+!s100 8>ODV5YBDo`kGRGGK>0_Y3
+IHQmJdHd@Hamb7;Hf_QCJU1
+R2
+R0
+R8
+8/home/tyler/de0_pulse_gen/hdl/sync.v
+F/home/tyler/de0_pulse_gen/hdl/sync.v
+L0 5
+R3
+r1
+!s85 0
+31
+R4
+!s107 /home/tyler/de0_pulse_gen/hdl/sync.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/home/tyler/de0_pulse_gen/hdl/sync.v|
+!i113 1
+R5
+vversion_number
+R1
+!i10b 1
+!s100 O=G4R_YGW9H0eTT;QzcFM0
+IV]UPZ?zEoN_GfOMe6iBm62
+R2
+R0
+w1542859232
+8/home/tyler/de0_pulse_gen/hdl/version_number.v
+F/home/tyler/de0_pulse_gen/hdl/version_number.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 /home/tyler/de0_pulse_gen/hdl/version_number.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/home/tyler/de0_pulse_gen/hdl/version_number.v|
+!i113 1
+R5

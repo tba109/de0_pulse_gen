@@ -2,9 +2,18 @@
 // Tyler Anderson Tue Nov 13 11:10:07 EST 2018
 // de0_pulse_gen_top.v
 //
-
+//////////////////////////////////////////////////////////////////////////////////////
 module de0_pulse_gen_top
   (
+   
+`ifdef MODEL_TECH
+      input [7:0]   nu_cmd_data,
+      input         nu_cmd_req,
+      output        nu_cmd_ack,
+      output [7:0]  nu_rsp_data,
+      output        nu_rsp_req,
+      input         nu_rsp_ack,
+`endif
    
    ///////// CLOCK2 /////////
    input 	 CLOCK2_50,
@@ -83,13 +92,21 @@ module de0_pulse_gen_top
    output [3:0]  VGA_R,
    output 	 VGA_VS
    );
-
    
    ///////////////////////////////////////////////////////////////////////////////////////////
    // Clocks, etc
    wire 	 clk = CLOCK_50; 
    wire 	 rst_n = KEY[0]; 	 
+   wire 	 rx; 
+   wire 	 tx; 
+   assign GPIO_1[29] = 1'b1 ? tx : 1'bz; 
+   assign rx         = GPIO_1[28];
    
+   ///////////////////////////////////////////////////////////////////////////////////////////
+   // Version Number
+   wire [15:0] 	 vnum; 
+   version_number VNUM_0(.vnum(vnum[15:0])); 
+
    ///////////////////////////////////////////////////////////////////////////////////////////
    // Configuration indicator
    config_ind #(.P_CLK_FREQ_HZ(50_000_000)) CONFIG_IND_0
@@ -100,37 +117,72 @@ module de0_pulse_gen_top
       ); 
 
    ///////////////////////////////////////////////////////////////////////////////////////////
-   // RS232 deserializer
+   // FPGA Command and Respon   
    wire [7:0] 	 rx_fifo_data;		
    wire 	 rx_fifo_wr_en;		
-   reg 		 rx;			
-   reg 		 rx_fifo_full;
+   wire 	 cmd_busy;
+   wire 	 cmd_byte_req;
+   wire 	 cmd_byte_ack;
+   wire 	 rsp_byte_req;
+   wire 	 rsp_byte_ack;
+   wire [7:0] 	 rsp_byte_data; 
+   fcr_ctrl FCR_0
+     (
+      .clk(clk),
+      .rst_n(rst_n),
+`ifdef 0//MODEL_TECH
+      .cmd_byte_req(nu_cmd_req),
+      .cmd_byte_data(nu_cmd_data),
+      .cmd_byte_ack(nu_cmd_ack),
+      .rsp_byte_req(nu_rsp_req),
+      .rsp_byte_ack(nu_rsp_ack),
+      .rsp_byte_data(nu_rsp_data),
+`else
+      .cmd_byte_req(cmd_byte_req),
+      .cmd_byte_data(rx_fifo_data),
+      .cmd_byte_ack(cmd_byte_ack),
+      .rsp_byte_req(rsp_byte_req),
+      .rsp_byte_ack(rsp_byte_ack),
+      .rsp_byte_data(rsp_byte_data),
+`endif
+      .cmd_busy(cmd_busy),
+      .vnum(vnum[15:0])
+      ); 
+   
+   ///////////////////////////////////////////////////////////////////////////////////////////
+   // RS232 deserializer
    rs232_des 
-     #(.P_CLK_FREQ_HZ(50_000_000)) 
-   RS232_DES_0(
-	       .clk(clk),
-	       .rst_n(rst_n),
-	       .rx_fifo_data(rx_fifo_data[7:0]),
-	       .rx_fifo_wr_en(rx_fifo_wr_en),
-	       .rx(rx),
-	       .rx_fifo_full(rx_fifo_full)); 
+     #(.P_CLK_FREQ_HZ(50_000_000),.P_BAUD_RATE(3_000_000)) 
+   RS232_DES_0
+     (
+      .clk(clk),
+      .rst_n(rst_n),
+      .rx_fifo_data(rx_fifo_data[7:0]),
+      .rx_fifo_wr_en(rx_fifo_wr_en),
+      .rx(rx),
+      .rx_fifo_full(1'b0)
+      ); 
    
    ///////////////////////////////////////////////////////////////////////////////////////////
    // RS232 serializer
-   reg [7:0]		tx_fifo_data;
-   reg			tx_fifo_empty;
-   wire			tx;	
-   wire			tx_fifo_rd_en;
+   wire 	 tx_fifo_rd_en;
+   reg [7:0] 		rsp_byte_data_reg; 
    rs232_ser 
-     #(.P_CLK_FREQ_HZ(50_000_000)) 
-   RS232_SER_0(
-	       .clk(clk),
-	       .rst_n(rst_n),
-	       .tx(tx),
-	       .tx_fifo_rd_en(tx_fifo_rd_en),
-	       .tx_fifo_data(tx_fifo_data[7:0]),
-	       .tx_fifo_empty(tx_fifo_empty)); 
-
+     #(.P_CLK_FREQ_HZ(50_000_000),.P_BAUD_RATE(3_000_000)) 
+   RS232_SER_0
+     (
+      .clk(clk),
+      .rst_n(rst_n),
+      .tx(tx),
+      .tx_fifo_rd_en(rsp_byte_ack),
+      .tx_fifo_data(rsp_byte_data_reg),
+      .tx_fifo_empty(!rsp_byte_req)
+      ); 
+   
+   
+   // We need a bit of adapter logic between the handshaking of FCR and the FIFO interfaces of the rs232
+   pedge_req PEDGE_REQ_0(.clk(clk),.rst_n(1'b1),.a(rx_fifo_wr_en),.req(cmd_byte_req),.ack(cmd_byte_ack));
+   always @(posedge clk) if(rsp_byte_ack) rsp_byte_data_reg <= rsp_byte_data; 
 
    
 endmodule

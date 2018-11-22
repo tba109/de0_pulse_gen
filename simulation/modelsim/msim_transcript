@@ -10,106 +10,77 @@
 # Copying /home/tyler/altera/16.0/modelsim_ase/linuxaloem/../modelsim.ini to modelsim.ini
 # Modifying modelsim.ini
 # 
+# vlog -vlog01compat -work work +incdir+/home/tyler/de0_pulse_gen/hdl {/home/tyler/de0_pulse_gen/hdl/pedge_req.v}
+# Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 16:52:21 on Nov 21,2018
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/tyler/de0_pulse_gen/hdl" /home/tyler/de0_pulse_gen/hdl/pedge_req.v 
+# -- Compiling module pedge_req
+# 
+# Top level modules:
+# 	pedge_req
+# End time: 16:52:21 on Nov 21,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+/home/tyler/de0_pulse_gen {/home/tyler/de0_pulse_gen/de0_pulse_gen_top.v}
 # Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
-# Start time: 15:08:07 on Nov 13,2018
+# Start time: 16:52:21 on Nov 21,2018
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/tyler/de0_pulse_gen" /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v 
 # -- Compiling module de0_pulse_gen_top
 # 
 # Top level modules:
 # 	de0_pulse_gen_top
-# End time: 15:08:07 on Nov 13,2018, Elapsed time: 0:00:00
+# End time: 16:52:22 on Nov 21,2018, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+/home/tyler/de0_pulse_gen/hdl {/home/tyler/de0_pulse_gen/hdl/posedge_detector.v}
+# Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 16:52:22 on Nov 21,2018
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/tyler/de0_pulse_gen/hdl" /home/tyler/de0_pulse_gen/hdl/posedge_detector.v 
+# -- Compiling module posedge_detector
+# 
+# Top level modules:
+# 	posedge_detector
+# End time: 16:52:22 on Nov 21,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+/home/tyler/de0_pulse_gen/hdl {/home/tyler/de0_pulse_gen/hdl/negedge_detector.v}
+# Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 16:52:22 on Nov 21,2018
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/tyler/de0_pulse_gen/hdl" /home/tyler/de0_pulse_gen/hdl/negedge_detector.v 
+# -- Compiling module negedge_detector
+# 
+# Top level modules:
+# 	negedge_detector
+# End time: 16:52:22 on Nov 21,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+/home/tyler/de0_pulse_gen/hdl {/home/tyler/de0_pulse_gen/hdl/config_ind.v}
 # Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
-# Start time: 15:08:07 on Nov 13,2018
+# Start time: 16:52:22 on Nov 21,2018
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/tyler/de0_pulse_gen/hdl" /home/tyler/de0_pulse_gen/hdl/config_ind.v 
 # -- Compiling module config_ind
 # 
 # Top level modules:
 # 	config_ind
-# End time: 15:08:07 on Nov 13,2018, Elapsed time: 0:00:00
+# End time: 16:52:22 on Nov 21,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# 
-# vlog -vlog01compat -work work +incdir+/home/tyler/de0_pulse_gen/sim {/home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v}
+# vlog -vlog01compat -work work +incdir+/home/tyler/de0_pulse_gen/hdl {/home/tyler/de0_pulse_gen/hdl/sync.v}
 # Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
-# Start time: 15:08:07 on Nov 13,2018
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/tyler/de0_pulse_gen/sim" /home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v 
-# -- Compiling module de0_pulse_gen_top_tb
+# Start time: 16:52:22 on Nov 21,2018
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/tyler/de0_pulse_gen/hdl" /home/tyler/de0_pulse_gen/hdl/sync.v 
+# -- Compiling module sync
 # 
 # Top level modules:
-# 	de0_pulse_gen_top_tb
-# End time: 15:08:07 on Nov 13,2018, Elapsed time: 0:00:00
+# 	sync
+# End time: 16:52:22 on Nov 21,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# 
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  tb_main
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" tb_main 
-# Start time: 15:08:07 on Nov 13,2018
-# ** Error: (vsim-3170) Could not find '/home/tyler/de0_pulse_gen/simulation/modelsim/rtl_work.tb_main'.
-# Error loading design
-# Error: Error loading design
-#        Pausing macro execution
-# MACRO ./de0_pulse_gen_run_msim_rtl_verilog.do PAUSED at line 13
-vsim work.de0_pulse_gen_top_tb
-# vsim work.de0_pulse_gen_top_tb 
-# Start time: 15:08:07 on Nov 13,2018
-# Loading work.de0_pulse_gen_top_tb
-# Loading work.de0_pulse_gen_top
-# Loading work.config_ind
-add wave -position insertpoint sim:/de0_pulse_gen_top_tb/*
-run
-# 
-# ------------------------------------------------------
-# Test Case: CONFIG_IND
-run
-run
-run
-run
-run
-run
-run
-run
-add wave -position insertpoint  \
-sim:/de0_pulse_gen_top_tb/de0_0/CONFIG_IND_0/P_CLK_FREQ_HZ \
-sim:/de0_pulse_gen_top_tb/de0_0/CONFIG_IND_0/N_CYC_HALF_SEC \
-sim:/de0_pulse_gen_top_tb/de0_0/CONFIG_IND_0/NBITS \
-sim:/de0_pulse_gen_top_tb/de0_0/CONFIG_IND_0/clk \
-sim:/de0_pulse_gen_top_tb/de0_0/CONFIG_IND_0/rst_n \
-sim:/de0_pulse_gen_top_tb/de0_0/CONFIG_IND_0/blink_configed \
-sim:/de0_pulse_gen_top_tb/de0_0/CONFIG_IND_0/count
-restart
-run
-# 
-# ------------------------------------------------------
-# Test Case: CONFIG_IND
-run
-restart
-run -continue
-# 
-# ------------------------------------------------------
-# Test Case: CONFIG_IND
-vlog -reportprogress 300 -work work /home/tyler/de0_pulse_gen/hdl/config_ind.v
+# vlog -vlog01compat -work work +incdir+/home/tyler/de0_pulse_gen/hdl {/home/tyler/de0_pulse_gen/hdl/inc_params.v}
 # Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
-# Start time: 15:14:58 on Nov 13,2018
-# vlog -reportprogress 300 -work work /home/tyler/de0_pulse_gen/hdl/config_ind.v 
-# -- Compiling module config_ind
-# 
-# Top level modules:
-# 	config_ind
-# End time: 15:14:58 on Nov 13,2018, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-restart
-# Loading work.config_ind
-run
-run
-run
-# 
-# ------------------------------------------------------
-# Test Case: CONFIG_IND
-run
-run
-run
-run
-run
-# End time: 15:26:00 on Nov 13,2018, Elapsed time: 0:17:53
+# Start time: 16:52:22 on Nov 21,2018
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/tyler/de0_pulse_gen/hdl" /home/tyler/de0_pulse_gen/hdl/inc_params.v 
+# ** Error: /home/tyler/de0_pulse_gen/hdl/inc_params.v(4): (vlog-2155) Global declarations are illegal in Verilog 2001 syntax.
+# End time: 16:52:22 on Nov 21,2018, Elapsed time: 0:00:00
 # Errors: 1, Warnings: 0
+# ** Error: /home/tyler/altera/16.0/modelsim_ase/linuxaloem/vlog failed.
+# Error in macro ./de0_pulse_gen_run_msim_rtl_verilog.do line 14
+# /home/tyler/altera/16.0/modelsim_ase/linuxaloem/vlog failed.
+#     while executing
+# "vlog -vlog01compat -work work +incdir+/home/tyler/de0_pulse_gen/hdl {/home/tyler/de0_pulse_gen/hdl/inc_params.v}"
+# Load canceled
+# Loading project test
