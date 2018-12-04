@@ -5,12 +5,26 @@ Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
 Top level modules:
 	posedge_detector
 
+} {} {}} /home/tyler/de0_pulse_gen/hdl/pulse_gen.v {1 {vlog -work work -stats=none /home/tyler/de0_pulse_gen/hdl/pulse_gen.v
+Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+-- Compiling module pulse_gen
+
+Top level modules:
+	pulse_gen
+
 } {} {}} /home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v {1 {vlog -work work +incdir+/home/tyler/de0_pulse_gen/hdl -stats=none /home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v
 Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
 -- Compiling module de0_pulse_gen_top_tb
 
 Top level modules:
 	de0_pulse_gen_top_tb
+
+} {} {}} /home/tyler/de0_pulse_gen/hdl/lfsr_32.v {1 {vlog -work work -stats=none /home/tyler/de0_pulse_gen/hdl/lfsr_32.v
+Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+-- Compiling module lfsr_32
+
+Top level modules:
+	lfsr_32
 
 } {} {}} /home/tyler/de0_pulse_gen/hdl/rs232_ser.v {1 {vlog -work work -stats=none /home/tyler/de0_pulse_gen/hdl/rs232_ser.v
 Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
@@ -78,7 +92,7 @@ Top level modules:
 } {} {}} /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v {2 {vlog -work work -stats=none /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v
 Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
 -- Compiling module de0_pulse_gen_top
-** Warning: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v(133): (vlog-13230) Invalid argument '0' passed to ifdef macro.
+** Warning: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v(137): (vlog-13230) Invalid argument '0' passed to ifdef macro.
 
 Top level modules:
 	de0_pulse_gen_top

@@ -125,7 +125,11 @@ module de0_pulse_gen_top
    wire 	 cmd_byte_ack;
    wire 	 rsp_byte_req;
    wire 	 rsp_byte_ack;
-   wire [7:0] 	 rsp_byte_data; 
+   wire [7:0] 	 rsp_byte_data;
+   wire [31:0]	 lfsr_seed; 
+   assign lfsr_seed = 32'hffffffff;
+   wire 	 lfsr_seed_wr;
+   assign lfsr_seed_wr = 0; 
    fcr_ctrl FCR_0
      (
       .clk(clk),
@@ -178,12 +182,40 @@ module de0_pulse_gen_top
       .tx_fifo_data(rsp_byte_data_reg),
       .tx_fifo_empty(!rsp_byte_req)
       ); 
-   
-   
+      
    // We need a bit of adapter logic between the handshaking of FCR and the FIFO interfaces of the rs232
    pedge_req PEDGE_REQ_0(.clk(clk),.rst_n(1'b1),.a(rx_fifo_wr_en),.req(cmd_byte_req),.ack(cmd_byte_ack));
    always @(posedge clk) if(rsp_byte_ack) rsp_byte_data_reg <= rsp_byte_data; 
 
+   ///////////////////////////////////////////////////////////////////////////////////////////
+   // LFSR 32b
+   wire [31:0] 		rnd; 
+   lfsr_32 LFSR_32_0(
+		     .clk		(clk),
+		     .seed		(lfsr_seed),
+		     .seed_wr		(lfsr_seed_wr),
+		     .y			(),
+		     .lfsr              (rnd)
+		     ); 
+   
+
+   ///////////////////////////////////////////////////////////////////////////////////////////
+   // Pulse generator
+   wire 		pulse_out; 
+   pulse_gen PG_0(
+		  // Outputs
+		  .pulse_out		(pulse_out),
+		  // Inputs
+		  .clk			(clk),
+		  .x_low		(0),
+		  .x_low_wr		(0),
+		  .x_high		(0),
+		  .x_high_wr		(0),
+		  .x			(rnd));
+   reg [31:0] 		pulse_cnt = 0; 
+   always @(posedge clk) if(pulse_out) pulse_cnt <= pulse_cnt + 1; 
+ 
+   
    
 endmodule
 

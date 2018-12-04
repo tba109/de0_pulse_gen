@@ -9,45 +9,45 @@ z2
 cModel Technology
 Z0 d/home/tyler/de0_pulse_gen/simulation/modelsim
 vconfig_ind
-Z1 !s110 1542859236
+Z1 !s110 1543960944
 !i10b 1
 !s100 Tl=NFMVzKeWoZgznj7l;o2
 IFbejML6AS0le0YOCZhb9c0
 Z2 VDg1SIo80bB@j0V0VzS_@n1
 R0
-w1542140012
+Z3 w1543934425
 8/home/tyler/de0_pulse_gen/hdl/config_ind.v
 F/home/tyler/de0_pulse_gen/hdl/config_ind.v
 L0 14
-Z3 OV;L;10.4d;61
+Z4 OV;L;10.4d;61
 r1
 !s85 0
 31
-Z4 !s108 1542859236.000000
+Z5 !s108 1543960944.000000
 !s107 /home/tyler/de0_pulse_gen/hdl/config_ind.v|
 !s90 -reportprogress|300|-work|work|-stats=none|/home/tyler/de0_pulse_gen/hdl/config_ind.v|
 !i113 1
-Z5 o-work work
+Z6 o-work work
 vde0_pulse_gen_top
 R1
 !i10b 1
-!s100 aNR@]_BBK_iIYkM8>R1Cd3
-I5I4[ZRMXfmQ:@cAeBXNia2
+!s100 Q<_]5<0zoUAGV9jYS94P?2
+I3m;g@4HaWba`zJ[BW@e8G0
 R2
 R0
-w1542858983
+w1543957110
 8/home/tyler/de0_pulse_gen/de0_pulse_gen_top.v
 F/home/tyler/de0_pulse_gen/de0_pulse_gen_top.v
 L0 6
-R3
+R4
 r1
 !s85 0
 31
-R4
+R5
 !s107 /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v|
 !s90 -reportprogress|300|-work|work|-stats=none|/home/tyler/de0_pulse_gen/de0_pulse_gen_top.v|
 !i113 1
-R5
+R6
 vde0_pulse_gen_top_tb
 R1
 !i10b 1
@@ -55,20 +55,20 @@ R1
 I]_T_?N@bRPVWlakV30c^>2
 R2
 R0
-w1542859113
+w1543957281
 8/home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v
 F/home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v
-Z6 F/home/tyler/de0_pulse_gen/hdl/inc_params.v
-Z7 L0 16
-R3
+Z7 F/home/tyler/de0_pulse_gen/hdl/inc_params.v
+Z8 L0 16
+R4
 r1
 !s85 0
 31
-R4
+R5
 !s107 /home/tyler/de0_pulse_gen/hdl/inc_params.v|/home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v|
 !s90 -reportprogress|300|-work|work|+incdir+/home/tyler/de0_pulse_gen/hdl|-stats=none|/home/tyler/de0_pulse_gen/sim/de0_pulse_gen_top_tb.v|
 !i113 1
-R5
+R6
 !s92 -work work +incdir+/home/tyler/de0_pulse_gen/hdl
 vfcr_ctrl
 R1
@@ -77,20 +77,40 @@ R1
 I@?X9`Fec]4C87:89=Dim`0
 R2
 R0
-w1542834745
+R3
 8/home/tyler/de0_pulse_gen/hdl/fcr_ctrl.v
 F/home/tyler/de0_pulse_gen/hdl/fcr_ctrl.v
-R6
+R7
 L0 15
-R3
+R4
 r1
 !s85 0
 31
-R4
+R5
 !s107 /home/tyler/de0_pulse_gen/hdl/inc_params.v|/home/tyler/de0_pulse_gen/hdl/fcr_ctrl.v|
 !s90 -reportprogress|300|-work|work|-stats=none|/home/tyler/de0_pulse_gen/hdl/fcr_ctrl.v|
 !i113 1
+R6
+vlfsr_32
+R1
+!i10b 1
+!s100 B?<6EKd@LiQ[7IL>k`SKh0
+ICBYGKIi;QlOmC9D;=7`Lb0
+R2
+R0
+w1543952775
+8/home/tyler/de0_pulse_gen/hdl/lfsr_32.v
+F/home/tyler/de0_pulse_gen/hdl/lfsr_32.v
+L0 10
+R4
+r1
+!s85 0
+31
 R5
+!s107 /home/tyler/de0_pulse_gen/hdl/lfsr_32.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/home/tyler/de0_pulse_gen/hdl/lfsr_32.v|
+!i113 1
+R6
 vnegedge_detector
 R1
 !i10b 1
@@ -98,19 +118,19 @@ R1
 I>k]zIW@5=aLi<I3X0NLe<3
 R2
 R0
-Z8 w1542125335
+R3
 8/home/tyler/de0_pulse_gen/hdl/negedge_detector.v
 F/home/tyler/de0_pulse_gen/hdl/negedge_detector.v
 L0 5
-R3
+R4
 r1
 !s85 0
 31
-R4
+R5
 !s107 /home/tyler/de0_pulse_gen/hdl/negedge_detector.v|
 !s90 -reportprogress|300|-work|work|-stats=none|/home/tyler/de0_pulse_gen/hdl/negedge_detector.v|
 !i113 1
-R5
+R6
 vpedge_req
 R1
 !i10b 1
@@ -118,19 +138,19 @@ R1
 I7flbzEK3:NhTBDnjiVhZ21
 R2
 R0
-w1542829130
+R3
 8/home/tyler/de0_pulse_gen/hdl/pedge_req.v
 F/home/tyler/de0_pulse_gen/hdl/pedge_req.v
 L0 9
-R3
+R4
 r1
 !s85 0
 31
-R4
+R5
 !s107 /home/tyler/de0_pulse_gen/hdl/pedge_req.v|
 !s90 -reportprogress|300|-work|work|-stats=none|/home/tyler/de0_pulse_gen/hdl/pedge_req.v|
 !i113 1
-R5
+R6
 vposedge_detector
 R1
 !i10b 1
@@ -138,19 +158,39 @@ R1
 Im9Oag4><X831U`G8^azSV3
 R2
 R0
-R8
+R3
 8/home/tyler/de0_pulse_gen/hdl/posedge_detector.v
 F/home/tyler/de0_pulse_gen/hdl/posedge_detector.v
 L0 5
-R3
+R4
 r1
 !s85 0
 31
-R4
+R5
 !s107 /home/tyler/de0_pulse_gen/hdl/posedge_detector.v|
 !s90 -reportprogress|300|-work|work|-stats=none|/home/tyler/de0_pulse_gen/hdl/posedge_detector.v|
 !i113 1
+R6
+vpulse_gen
+R1
+!i10b 1
+!s100 zC?S[4HZk:ZD=EiFG^Dnn2
+IlGF^UAS:BNUN>0lTnY@jm3
+R2
+R0
+w1543960938
+8/home/tyler/de0_pulse_gen/hdl/pulse_gen.v
+F/home/tyler/de0_pulse_gen/hdl/pulse_gen.v
+L0 9
+R4
+r1
+!s85 0
+31
 R5
+!s107 /home/tyler/de0_pulse_gen/hdl/pulse_gen.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/home/tyler/de0_pulse_gen/hdl/pulse_gen.v|
+!i113 1
+R6
 vrs232_des
 R1
 !i10b 1
@@ -158,20 +198,20 @@ R1
 IW7Jekm^8W;2V@bJl>j^LH0
 R2
 R0
-w1542824324
+R3
 8/home/tyler/de0_pulse_gen/hdl/rs232_des.v
 F/home/tyler/de0_pulse_gen/hdl/rs232_des.v
 Z9 F/home/tyler/de0_pulse_gen/hdl/fncs.vh
-R7
-R3
+R8
+R4
 r1
 !s85 0
 31
-R4
+R5
 !s107 /home/tyler/de0_pulse_gen/hdl/fncs.vh|/home/tyler/de0_pulse_gen/hdl/rs232_des.v|
 !s90 -reportprogress|300|-work|work|-stats=none|/home/tyler/de0_pulse_gen/hdl/rs232_des.v|
 !i113 1
-R5
+R6
 vrs232_ser
 R1
 !i10b 1
@@ -179,20 +219,20 @@ R1
 IWYP>`e5;FeT^Zm2nnaTTK2
 R2
 R0
-w1542133248
+R3
 8/home/tyler/de0_pulse_gen/hdl/rs232_ser.v
 F/home/tyler/de0_pulse_gen/hdl/rs232_ser.v
 R9
 L0 17
-R3
+R4
 r1
 !s85 0
 31
-R4
+R5
 !s107 /home/tyler/de0_pulse_gen/hdl/fncs.vh|/home/tyler/de0_pulse_gen/hdl/rs232_ser.v|
 !s90 -reportprogress|300|-work|work|-stats=none|/home/tyler/de0_pulse_gen/hdl/rs232_ser.v|
 !i113 1
-R5
+R6
 vrst_gen
 R1
 !i10b 1
@@ -200,19 +240,19 @@ R1
 IIc6`W[Z]A;ZE=oi;AoGWN3
 R2
 R0
-R8
+R3
 8/home/tyler/de0_pulse_gen/hdl/rst_gen.v
 F/home/tyler/de0_pulse_gen/hdl/rst_gen.v
 L0 9
-R3
+R4
 r1
 !s85 0
 31
-R4
+R5
 !s107 /home/tyler/de0_pulse_gen/hdl/rst_gen.v|
 !s90 -reportprogress|300|-work|work|-stats=none|/home/tyler/de0_pulse_gen/hdl/rst_gen.v|
 !i113 1
-R5
+R6
 vsync
 R1
 !i10b 1
@@ -220,19 +260,19 @@ R1
 IHQmJdHd@Hamb7;Hf_QCJU1
 R2
 R0
-R8
+R3
 8/home/tyler/de0_pulse_gen/hdl/sync.v
 F/home/tyler/de0_pulse_gen/hdl/sync.v
 L0 5
-R3
+R4
 r1
 !s85 0
 31
-R4
+R5
 !s107 /home/tyler/de0_pulse_gen/hdl/sync.v|
 !s90 -reportprogress|300|-work|work|-stats=none|/home/tyler/de0_pulse_gen/hdl/sync.v|
 !i113 1
-R5
+R6
 vversion_number
 R1
 !i10b 1
@@ -240,16 +280,16 @@ R1
 IV]UPZ?zEoN_GfOMe6iBm62
 R2
 R0
-w1542859232
+R3
 8/home/tyler/de0_pulse_gen/hdl/version_number.v
 F/home/tyler/de0_pulse_gen/hdl/version_number.v
 L0 1
-R3
+R4
 r1
 !s85 0
 31
-R4
+R5
 !s107 /home/tyler/de0_pulse_gen/hdl/version_number.v|
 !s90 -reportprogress|300|-work|work|-stats=none|/home/tyler/de0_pulse_gen/hdl/version_number.v|
 !i113 1
-R5
+R6
