@@ -95,13 +95,22 @@ module de0_pulse_gen_top
    
    ///////////////////////////////////////////////////////////////////////////////////////////
    // Clocks, etc
-   wire 	 clk = CLOCK_50; 
-   wire 	 rst_n = KEY[0]; 	 
    wire 	 rx; 
    wire 	 tx; 
+   wire 	 clk; // 50MHz
+   wire 	 clk_200MHz; // 200MHz
+   wire 	 rst_n; 
+   PLL0 PLL0_0(
+	       .refclk(CLOCK_50),
+	       .rst(!KEY[0]),
+	       .outclk_0(clk),
+	       .outclk_1(clk_200MHz),
+	       .locked(rst_n)
+	       );
    assign GPIO_1[29] = 1'b1 ? tx : 1'bz; 
    assign rx         = GPIO_1[28];
-   
+   assign GPIO_1[9] = 1'b1 ? 
+      
    ///////////////////////////////////////////////////////////////////////////////////////////
    // Version Number
    wire [15:0] 	 vnum; 
@@ -187,11 +196,14 @@ module de0_pulse_gen_top
    pedge_req PEDGE_REQ_0(.clk(clk),.rst_n(1'b1),.a(rx_fifo_wr_en),.req(cmd_byte_req),.ack(cmd_byte_ack));
    always @(posedge clk) if(rsp_byte_ack) rsp_byte_data_reg <= rsp_byte_data; 
 
+
+   /* DO EXP_PGEN */
+   
    ///////////////////////////////////////////////////////////////////////////////////////////
    // LFSR 32b
    wire [31:0] 		rnd; 
    lfsr_32 LFSR_32_0(
-		     .clk		(clk),
+		     .clk		(clk_200MHz),
 		     .seed		(lfsr_seed),
 		     .seed_wr		(lfsr_seed_wr),
 		     .y			(),
@@ -206,7 +218,7 @@ module de0_pulse_gen_top
 		  // Outputs
 		  .pulse_out		(pulse_out),
 		  // Inputs
-		  .clk			(clk),
+		  .clk			(clk_200MHz),
 		  .x_low		(0),
 		  .x_low_wr		(0),
 		  .x_high		(0),

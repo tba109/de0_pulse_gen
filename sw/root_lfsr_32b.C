@@ -5,15 +5,14 @@
 // The LFSR function comes from "Bebop to the Boolean Boogie", 2nd Ed. p.384. 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-
 void root_lfsr_32b()
 {
   #define BSEL(x,n) ((x >> n)&1)
 
   // These are the simulation inputs
   unsigned long lfsr_period_cc = 4294967295; // how often the lfsr repeats
-  double clock_period_sec = 20.E-9;
-  double event_rate_hz = 15.E3;
+  double clock_period_sec = 5.E-9;
+  double event_rate_hz = 8.E3;
 
   // These are derived
   unsigned long mean_period_cc = (unsigned long)((double)lfsr_period_cc*clock_period_sec*event_rate_hz);

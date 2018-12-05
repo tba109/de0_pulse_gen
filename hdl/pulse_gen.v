@@ -16,10 +16,18 @@ module pulse_gen
    input [31:0] x,
    output reg pulse_out
    );
-   
-   reg [31:0] 	i_x_low = 0;
-   reg [31:0] 	i_x_high = 32'd858993; // 10kHz
 
+   ////////////////////////////////////////////
+   // See the sw directory for the root script
+   // LFSR 32b has 4,294,967,295 states
+   // 15kHz
+   reg [31:0] 	i_x_low  = 32'd2149322586;
+   reg [31:0] 	i_x_high = 32'd2147644709; 
+
+   // // 8kHz
+   // reg [31:0] 	i_x_low  = 32'd2147397748;
+   // reg [31:0] 	i_x_high = 32'd2147569547; 
+   
    always @(posedge clk) if(x_low_wr) i_x_low <= x_low;
    always @(posedge clk) if(x_high_wr) i_x_high <= x_high;
    // always @(posedge clk) pulse_out <= (x >= i_x_low) && (x < i_x_high) && !pulse_out;
