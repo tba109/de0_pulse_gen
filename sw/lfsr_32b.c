@@ -12,17 +12,19 @@ int main()
   unsigned int cnts[129];
   for(int i = 0; i < 129; i++)
     cnts[i] = 0; 
-
+  unsigned int pulse_cnt = 0; 
   do
     {
       lsb = BSEL(lfsr,31) ^ BSEL(lfsr,6) ^ BSEL(lfsr,5) ^ BSEL(lfsr,1); 
       lfsr = (lfsr << 1) | lsb;
       cnts[lfsr/bw]+=1;
       period++;
-      printf("%08x: %08x\n",period,lfsr); if(period == 100) return 0; 
+      // printf("%08x: %08x\n",period,lfsr); if(period == 100) return 0; 
       // if(lfsr == 1) printf("Found 1\n"); 
       if(period%1000000 == 0)
 	printf("period = %lu\n",period);
+      if(lfsr < 858993)
+	pulse_cnt+=1; 
     }
   while(lfsr != init_reg);
   printf("period = %lu\n",period) ;
@@ -30,6 +32,8 @@ int main()
   printf("-------------------------------\n"); 
   for(int i = 0; i < 129; i++)
     printf("%d\n",cnts[i]);
+
+  printf("pulse_cnt = %d\n",pulse_cnt); 
   
   return 0; 
 }
