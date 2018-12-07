@@ -1,10 +1,10 @@
-Analysis & Synthesis Status : Successful - Fri Dec  7 16:22:50 2018
+Analysis & Synthesis Status : Successful - Fri Dec  7 17:41:12 2018
 Quartus Prime Version : 16.0.0 Build 211 04/27/2016 SJ Standard Edition
 Revision Name : de0_pulse_gen
 Top-level Entity Name : de0_pulse_gen_top
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
-Total registers : 197
+Total registers : 717
 Total pins : 206
 Total virtual pins : 0
 Total block memory bits : 0

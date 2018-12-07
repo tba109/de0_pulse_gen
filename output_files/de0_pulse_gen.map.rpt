@@ -1,5 +1,5 @@
 Analysis & Synthesis report for de0_pulse_gen
-Fri Dec  7 16:22:50 2018
+Fri Dec  7 17:41:12 2018
 Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Standard Edition
 
 
@@ -98,13 +98,13 @@ agreement for further details.
 +-----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                      ;
 +---------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Fri Dec  7 16:22:50 2018           ;
+; Analysis & Synthesis Status     ; Successful - Fri Dec  7 17:41:12 2018           ;
 ; Quartus Prime Version           ; 16.0.0 Build 211 04/27/2016 SJ Standard Edition ;
 ; Revision Name                   ; de0_pulse_gen                                   ;
 ; Top-level Entity Name           ; de0_pulse_gen_top                               ;
 ; Family                          ; Cyclone V                                       ;
 ; Logic utilization (in ALMs)     ; N/A                                             ;
-; Total registers                 ; 197                                             ;
+; Total registers                 ; 717                                             ;
 ; Total pins                      ; 206                                             ;
 ; Total virtual pins              ; 0                                               ;
 ; Total block memory bits         ; 0                                               ;
@@ -254,28 +254,28 @@ agreement for further details.
 +---------------------------------------------+------------------------------------------------------------------------+
 ; Resource                                    ; Usage                                                                  ;
 +---------------------------------------------+------------------------------------------------------------------------+
-; Estimate of Logic utilization (ALMs needed) ; 113                                                                    ;
+; Estimate of Logic utilization (ALMs needed) ; 445                                                                    ;
 ;                                             ;                                                                        ;
-; Combinational ALUT usage for logic          ; 164                                                                    ;
-;     -- 7 input functions                    ; 0                                                                      ;
-;     -- 6 input functions                    ; 28                                                                     ;
-;     -- 5 input functions                    ; 23                                                                     ;
-;     -- 4 input functions                    ; 21                                                                     ;
-;     -- <=3 input functions                  ; 92                                                                     ;
+; Combinational ALUT usage for logic          ; 728                                                                    ;
+;     -- 7 input functions                    ; 8                                                                      ;
+;     -- 6 input functions                    ; 128                                                                    ;
+;     -- 5 input functions                    ; 26                                                                     ;
+;     -- 4 input functions                    ; 56                                                                     ;
+;     -- <=3 input functions                  ; 510                                                                    ;
 ;                                             ;                                                                        ;
-; Dedicated logic registers                   ; 197                                                                    ;
+; Dedicated logic registers                   ; 717                                                                    ;
 ;                                             ;                                                                        ;
 ; I/O pins                                    ; 206                                                                    ;
 ;                                             ;                                                                        ;
 ; Total DSP Blocks                            ; 0                                                                      ;
 ;                                             ;                                                                        ;
-; Total PLLs                                  ; 1                                                                      ;
-;     -- PLLs                                 ; 1                                                                      ;
+; Total PLLs                                  ; 2                                                                      ;
+;     -- PLLs                                 ; 2                                                                      ;
 ;                                             ;                                                                        ;
 ; Maximum fan-out node                        ; PLL0:PLL0_0|PLL0_0002:pll0_inst|altera_pll:altera_pll_i|outclk_wire[0] ;
-; Maximum fan-out                             ; 198                                                                    ;
-; Total fan-out                               ; 1398                                                                   ;
-; Average fan-out                             ; 1.60                                                                   ;
+; Maximum fan-out                             ; 455                                                                    ;
+; Total fan-out                               ; 4492                                                                   ;
+; Average fan-out                             ; 2.30                                                                   ;
 +---------------------------------------------+------------------------------------------------------------------------+
 
 
@@ -284,7 +284,7 @@ agreement for further details.
 +------------------------------------+-------------------+--------------+-------------------+------------+------+--------------+----------------------------------------------------------------------------+-------------------+--------------+
 ; Compilation Hierarchy Node         ; LC Combinationals ; LC Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                        ; Entity Name       ; Library Name ;
 +------------------------------------+-------------------+--------------+-------------------+------------+------+--------------+----------------------------------------------------------------------------+-------------------+--------------+
-; |de0_pulse_gen_top                 ; 164 (1)           ; 197 (1)      ; 0                 ; 0          ; 206  ; 0            ; |de0_pulse_gen_top                                                         ; de0_pulse_gen_top ; work         ;
+; |de0_pulse_gen_top                 ; 728 (332)         ; 717 (257)    ; 0                 ; 0          ; 206  ; 0            ; |de0_pulse_gen_top                                                         ; de0_pulse_gen_top ; work         ;
 ;    |PLL0:PLL0_0|                   ; 0 (0)             ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |de0_pulse_gen_top|PLL0:PLL0_0                                             ; PLL0              ; PLL0         ;
 ;       |PLL0_0002:pll0_inst|        ; 0 (0)             ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |de0_pulse_gen_top|PLL0:PLL0_0|PLL0_0002:pll0_inst                         ; PLL0_0002         ; PLL0         ;
 ;          |altera_pll:altera_pll_i| ; 0 (0)             ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |de0_pulse_gen_top|PLL0:PLL0_0|PLL0_0002:pll0_inst|altera_pll:altera_pll_i ; altera_pll        ; work         ;
@@ -297,9 +297,25 @@ agreement for further details.
 ;       |posedge_detector:PEDGE0|    ; 0 (0)             ; 1 (1)        ; 0                 ; 0          ; 0    ; 0            ; |de0_pulse_gen_top|fcr_ctrl:FCR_0|posedge_detector:PEDGE0                  ; posedge_detector  ; work         ;
 ;       |sync:SYNC0|                 ; 0 (0)             ; 2 (2)        ; 0                 ; 0          ; 0    ; 0            ; |de0_pulse_gen_top|fcr_ctrl:FCR_0|sync:SYNC0                               ; sync              ; work         ;
 ;       |sync:SYNC1|                 ; 0 (0)             ; 2 (2)        ; 0                 ; 0          ; 0    ; 0            ; |de0_pulse_gen_top|fcr_ctrl:FCR_0|sync:SYNC1                               ; sync              ; work         ;
+;    |lfsr_32:LFSR_32_0|             ; 16 (16)           ; 32 (32)      ; 0                 ; 0          ; 0    ; 0            ; |de0_pulse_gen_top|lfsr_32:LFSR_32_0                                       ; lfsr_32           ; work         ;
+;    |lfsr_32:LFSR_32_1|             ; 12 (12)           ; 32 (32)      ; 0                 ; 0          ; 0    ; 0            ; |de0_pulse_gen_top|lfsr_32:LFSR_32_1                                       ; lfsr_32           ; work         ;
+;    |lfsr_32:LFSR_32_2|             ; 15 (15)           ; 32 (32)      ; 0                 ; 0          ; 0    ; 0            ; |de0_pulse_gen_top|lfsr_32:LFSR_32_2                                       ; lfsr_32           ; work         ;
+;    |lfsr_32:LFSR_32_3|             ; 16 (16)           ; 32 (32)      ; 0                 ; 0          ; 0    ; 0            ; |de0_pulse_gen_top|lfsr_32:LFSR_32_3                                       ; lfsr_32           ; work         ;
+;    |lfsr_32:LFSR_32_4|             ; 18 (18)           ; 32 (32)      ; 0                 ; 0          ; 0    ; 0            ; |de0_pulse_gen_top|lfsr_32:LFSR_32_4                                       ; lfsr_32           ; work         ;
+;    |lfsr_32:LFSR_32_5|             ; 19 (19)           ; 32 (32)      ; 0                 ; 0          ; 0    ; 0            ; |de0_pulse_gen_top|lfsr_32:LFSR_32_5                                       ; lfsr_32           ; work         ;
+;    |lfsr_32:LFSR_32_6|             ; 14 (14)           ; 32 (32)      ; 0                 ; 0          ; 0    ; 0            ; |de0_pulse_gen_top|lfsr_32:LFSR_32_6                                       ; lfsr_32           ; work         ;
+;    |lfsr_32:LFSR_32_7|             ; 17 (17)           ; 32 (32)      ; 0                 ; 0          ; 0    ; 0            ; |de0_pulse_gen_top|lfsr_32:LFSR_32_7                                       ; lfsr_32           ; work         ;
 ;    |pedge_req:PEDGE_REQ_0|         ; 2 (2)             ; 4 (2)        ; 0                 ; 0          ; 0    ; 0            ; |de0_pulse_gen_top|pedge_req:PEDGE_REQ_0                                   ; pedge_req         ; work         ;
 ;       |negedge_detector:NEDGE_0|   ; 0 (0)             ; 1 (1)        ; 0                 ; 0          ; 0    ; 0            ; |de0_pulse_gen_top|pedge_req:PEDGE_REQ_0|negedge_detector:NEDGE_0          ; negedge_detector  ; work         ;
 ;       |posedge_detector:PEDGE_0|   ; 0 (0)             ; 1 (1)        ; 0                 ; 0          ; 0    ; 0            ; |de0_pulse_gen_top|pedge_req:PEDGE_REQ_0|posedge_detector:PEDGE_0          ; posedge_detector  ; work         ;
+;    |pulse_gen:PG_0|                ; 13 (13)           ; 1 (1)        ; 0                 ; 0          ; 0    ; 0            ; |de0_pulse_gen_top|pulse_gen:PG_0                                          ; pulse_gen         ; work         ;
+;    |pulse_gen:PG_1|                ; 13 (13)           ; 1 (1)        ; 0                 ; 0          ; 0    ; 0            ; |de0_pulse_gen_top|pulse_gen:PG_1                                          ; pulse_gen         ; work         ;
+;    |pulse_gen:PG_2|                ; 13 (13)           ; 1 (1)        ; 0                 ; 0          ; 0    ; 0            ; |de0_pulse_gen_top|pulse_gen:PG_2                                          ; pulse_gen         ; work         ;
+;    |pulse_gen:PG_3|                ; 15 (15)           ; 1 (1)        ; 0                 ; 0          ; 0    ; 0            ; |de0_pulse_gen_top|pulse_gen:PG_3                                          ; pulse_gen         ; work         ;
+;    |pulse_gen:PG_4|                ; 13 (13)           ; 1 (1)        ; 0                 ; 0          ; 0    ; 0            ; |de0_pulse_gen_top|pulse_gen:PG_4                                          ; pulse_gen         ; work         ;
+;    |pulse_gen:PG_5|                ; 13 (13)           ; 1 (1)        ; 0                 ; 0          ; 0    ; 0            ; |de0_pulse_gen_top|pulse_gen:PG_5                                          ; pulse_gen         ; work         ;
+;    |pulse_gen:PG_6|                ; 13 (13)           ; 1 (1)        ; 0                 ; 0          ; 0    ; 0            ; |de0_pulse_gen_top|pulse_gen:PG_6                                          ; pulse_gen         ; work         ;
+;    |pulse_gen:PG_7|                ; 13 (13)           ; 1 (1)        ; 0                 ; 0          ; 0    ; 0            ; |de0_pulse_gen_top|pulse_gen:PG_7                                          ; pulse_gen         ; work         ;
 ;    |rs232_des:RS232_DES_0|         ; 23 (23)           ; 24 (21)      ; 0                 ; 0          ; 0    ; 0            ; |de0_pulse_gen_top|rs232_des:RS232_DES_0                                   ; rs232_des         ; work         ;
 ;       |negedge_detector:NEDGE0|    ; 0 (0)             ; 1 (1)        ; 0                 ; 0          ; 0    ; 0            ; |de0_pulse_gen_top|rs232_des:RS232_DES_0|negedge_detector:NEDGE0           ; negedge_detector  ; work         ;
 ;       |sync:SYNC0|                 ; 0 (0)             ; 2 (2)        ; 0                 ; 0          ; 0    ; 0            ; |de0_pulse_gen_top|rs232_des:RS232_DES_0|sync:SYNC0                        ; sync              ; work         ;
@@ -458,402 +474,265 @@ Encoding Type:  One-Hot
 +----------------------------------------+------------------------------------------------------------------+--------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                     ;
-+------------------------------------------+---------------------------------------------+
-; Register name                            ; Reason for Removal                          ;
-+------------------------------------------+---------------------------------------------+
-; pulse_gen:PG_7|i_x_low[0]                ; Stuck at GND due to stuck port clock_enable ;
-; pulse_gen:PG_7|i_x_high[0]               ; Stuck at VCC due to stuck port clock_enable ;
-; pulse_gen:PG_7|i_x_high[1]               ; Stuck at GND due to stuck port clock_enable ;
-; pulse_gen:PG_7|i_x_high[2]               ; Stuck at VCC due to stuck port clock_enable ;
-; pulse_gen:PG_7|i_x_high[3,4]             ; Stuck at GND due to stuck port clock_enable ;
-; pulse_gen:PG_7|i_x_high[5]               ; Stuck at VCC due to stuck port clock_enable ;
-; pulse_gen:PG_7|i_x_high[6,7]             ; Stuck at GND due to stuck port clock_enable ;
-; pulse_gen:PG_7|i_x_high[8]               ; Stuck at VCC due to stuck port clock_enable ;
-; pulse_gen:PG_7|i_x_high[9]               ; Stuck at GND due to stuck port clock_enable ;
-; pulse_gen:PG_7|i_x_high[10]              ; Stuck at VCC due to stuck port clock_enable ;
-; pulse_gen:PG_7|i_x_high[11]              ; Stuck at GND due to stuck port clock_enable ;
-; pulse_gen:PG_7|i_x_high[12..14]          ; Stuck at VCC due to stuck port clock_enable ;
-; pulse_gen:PG_7|i_x_high[15,16]           ; Stuck at GND due to stuck port clock_enable ;
-; pulse_gen:PG_7|i_x_high[17]              ; Stuck at VCC due to stuck port clock_enable ;
-; pulse_gen:PG_7|i_x_high[18..30]          ; Stuck at GND due to stuck port clock_enable ;
-; pulse_gen:PG_7|i_x_high[31]              ; Stuck at VCC due to stuck port clock_enable ;
-; pulse_gen:PG_7|i_x_low[1]                ; Stuck at VCC due to stuck port clock_enable ;
-; pulse_gen:PG_7|i_x_low[2]                ; Stuck at GND due to stuck port clock_enable ;
-; pulse_gen:PG_7|i_x_low[3,4]              ; Stuck at VCC due to stuck port clock_enable ;
-; pulse_gen:PG_7|i_x_low[5]                ; Stuck at GND due to stuck port clock_enable ;
-; pulse_gen:PG_7|i_x_low[6]                ; Stuck at VCC due to stuck port clock_enable ;
-; pulse_gen:PG_7|i_x_low[7]                ; Stuck at GND due to stuck port clock_enable ;
-; pulse_gen:PG_7|i_x_low[8..11]            ; Stuck at VCC due to stuck port clock_enable ;
-; pulse_gen:PG_7|i_x_low[12..17]           ; Stuck at GND due to stuck port clock_enable ;
-; pulse_gen:PG_7|i_x_low[18..20]           ; Stuck at VCC due to stuck port clock_enable ;
-; pulse_gen:PG_7|i_x_low[21..30]           ; Stuck at GND due to stuck port clock_enable ;
-; pulse_gen:PG_7|i_x_low[31]               ; Stuck at VCC due to stuck port clock_enable ;
-; pulse_gen:PG_6|i_x_low[0]                ; Stuck at GND due to stuck port clock_enable ;
-; pulse_gen:PG_6|i_x_high[0]               ; Stuck at VCC due to stuck port clock_enable ;
-; pulse_gen:PG_6|i_x_high[1]               ; Stuck at GND due to stuck port clock_enable ;
-; pulse_gen:PG_6|i_x_high[2]               ; Stuck at VCC due to stuck port clock_enable ;
-; pulse_gen:PG_6|i_x_high[3,4]             ; Stuck at GND due to stuck port clock_enable ;
-; pulse_gen:PG_6|i_x_high[5]               ; Stuck at VCC due to stuck port clock_enable ;
-; pulse_gen:PG_6|i_x_high[6,7]             ; Stuck at GND due to stuck port clock_enable ;
-; pulse_gen:PG_6|i_x_high[8]               ; Stuck at VCC due to stuck port clock_enable ;
-; pulse_gen:PG_6|i_x_high[9]               ; Stuck at GND due to stuck port clock_enable ;
-; pulse_gen:PG_6|i_x_high[10]              ; Stuck at VCC due to stuck port clock_enable ;
-; pulse_gen:PG_6|i_x_high[11]              ; Stuck at GND due to stuck port clock_enable ;
-; pulse_gen:PG_6|i_x_high[12..14]          ; Stuck at VCC due to stuck port clock_enable ;
-; pulse_gen:PG_6|i_x_high[15,16]           ; Stuck at GND due to stuck port clock_enable ;
-; pulse_gen:PG_6|i_x_high[17]              ; Stuck at VCC due to stuck port clock_enable ;
-; pulse_gen:PG_6|i_x_high[18..30]          ; Stuck at GND due to stuck port clock_enable ;
-; pulse_gen:PG_6|i_x_high[31]              ; Stuck at VCC due to stuck port clock_enable ;
-; pulse_gen:PG_6|i_x_low[1]                ; Stuck at VCC due to stuck port clock_enable ;
-; pulse_gen:PG_6|i_x_low[2]                ; Stuck at GND due to stuck port clock_enable ;
-; pulse_gen:PG_6|i_x_low[3,4]              ; Stuck at VCC due to stuck port clock_enable ;
-; pulse_gen:PG_6|i_x_low[5]                ; Stuck at GND due to stuck port clock_enable ;
-; pulse_gen:PG_6|i_x_low[6]                ; Stuck at VCC due to stuck port clock_enable ;
-; pulse_gen:PG_6|i_x_low[7]                ; Stuck at GND due to stuck port clock_enable ;
-; pulse_gen:PG_6|i_x_low[8..11]            ; Stuck at VCC due to stuck port clock_enable ;
-; pulse_gen:PG_6|i_x_low[12..17]           ; Stuck at GND due to stuck port clock_enable ;
-; pulse_gen:PG_6|i_x_low[18..20]           ; Stuck at VCC due to stuck port clock_enable ;
-; pulse_gen:PG_6|i_x_low[21..30]           ; Stuck at GND due to stuck port clock_enable ;
-; pulse_gen:PG_6|i_x_low[31]               ; Stuck at VCC due to stuck port clock_enable ;
-; pulse_gen:PG_5|i_x_low[0]                ; Stuck at GND due to stuck port clock_enable ;
-; pulse_gen:PG_5|i_x_high[0]               ; Stuck at VCC due to stuck port clock_enable ;
-; pulse_gen:PG_5|i_x_high[1]               ; Stuck at GND due to stuck port clock_enable ;
-; pulse_gen:PG_5|i_x_high[2]               ; Stuck at VCC due to stuck port clock_enable ;
-; pulse_gen:PG_5|i_x_high[3,4]             ; Stuck at GND due to stuck port clock_enable ;
-; pulse_gen:PG_5|i_x_high[5]               ; Stuck at VCC due to stuck port clock_enable ;
-; pulse_gen:PG_5|i_x_high[6,7]             ; Stuck at GND due to stuck port clock_enable ;
-; pulse_gen:PG_5|i_x_high[8]               ; Stuck at VCC due to stuck port clock_enable ;
-; pulse_gen:PG_5|i_x_high[9]               ; Stuck at GND due to stuck port clock_enable ;
-; pulse_gen:PG_5|i_x_high[10]              ; Stuck at VCC due to stuck port clock_enable ;
-; pulse_gen:PG_5|i_x_high[11]              ; Stuck at GND due to stuck port clock_enable ;
-; pulse_gen:PG_5|i_x_high[12..14]          ; Stuck at VCC due to stuck port clock_enable ;
-; pulse_gen:PG_5|i_x_high[15,16]           ; Stuck at GND due to stuck port clock_enable ;
-; pulse_gen:PG_5|i_x_high[17]              ; Stuck at VCC due to stuck port clock_enable ;
-; pulse_gen:PG_5|i_x_high[18..30]          ; Stuck at GND due to stuck port clock_enable ;
-; pulse_gen:PG_5|i_x_high[31]              ; Stuck at VCC due to stuck port clock_enable ;
-; pulse_gen:PG_5|i_x_low[1]                ; Stuck at VCC due to stuck port clock_enable ;
-; pulse_gen:PG_5|i_x_low[2]                ; Stuck at GND due to stuck port clock_enable ;
-; pulse_gen:PG_5|i_x_low[3,4]              ; Stuck at VCC due to stuck port clock_enable ;
-; pulse_gen:PG_5|i_x_low[5]                ; Stuck at GND due to stuck port clock_enable ;
-; pulse_gen:PG_5|i_x_low[6]                ; Stuck at VCC due to stuck port clock_enable ;
-; pulse_gen:PG_5|i_x_low[7]                ; Stuck at GND due to stuck port clock_enable ;
-; pulse_gen:PG_5|i_x_low[8..11]            ; Stuck at VCC due to stuck port clock_enable ;
-; pulse_gen:PG_5|i_x_low[12..17]           ; Stuck at GND due to stuck port clock_enable ;
-; pulse_gen:PG_5|i_x_low[18..20]           ; Stuck at VCC due to stuck port clock_enable ;
-; pulse_gen:PG_5|i_x_low[21..30]           ; Stuck at GND due to stuck port clock_enable ;
-; pulse_gen:PG_5|i_x_low[31]               ; Stuck at VCC due to stuck port clock_enable ;
-; pulse_gen:PG_4|i_x_low[0]                ; Stuck at GND due to stuck port clock_enable ;
-; pulse_gen:PG_4|i_x_high[0]               ; Stuck at VCC due to stuck port clock_enable ;
-; pulse_gen:PG_4|i_x_high[1]               ; Stuck at GND due to stuck port clock_enable ;
-; pulse_gen:PG_4|i_x_high[2]               ; Stuck at VCC due to stuck port clock_enable ;
-; pulse_gen:PG_4|i_x_high[3,4]             ; Stuck at GND due to stuck port clock_enable ;
-; pulse_gen:PG_4|i_x_high[5]               ; Stuck at VCC due to stuck port clock_enable ;
-; pulse_gen:PG_4|i_x_high[6,7]             ; Stuck at GND due to stuck port clock_enable ;
-; pulse_gen:PG_4|i_x_high[8]               ; Stuck at VCC due to stuck port clock_enable ;
-; pulse_gen:PG_4|i_x_high[9]               ; Stuck at GND due to stuck port clock_enable ;
-; pulse_gen:PG_4|i_x_high[10]              ; Stuck at VCC due to stuck port clock_enable ;
-; pulse_gen:PG_4|i_x_high[11]              ; Stuck at GND due to stuck port clock_enable ;
-; pulse_gen:PG_4|i_x_high[12..14]          ; Stuck at VCC due to stuck port clock_enable ;
-; pulse_gen:PG_4|i_x_high[15,16]           ; Stuck at GND due to stuck port clock_enable ;
-; pulse_gen:PG_4|i_x_high[17]              ; Stuck at VCC due to stuck port clock_enable ;
-; pulse_gen:PG_4|i_x_high[18..30]          ; Stuck at GND due to stuck port clock_enable ;
-; pulse_gen:PG_4|i_x_high[31]              ; Stuck at VCC due to stuck port clock_enable ;
-; pulse_gen:PG_4|i_x_low[1]                ; Stuck at VCC due to stuck port clock_enable ;
-; pulse_gen:PG_4|i_x_low[2]                ; Stuck at GND due to stuck port clock_enable ;
-; pulse_gen:PG_4|i_x_low[3,4]              ; Stuck at VCC due to stuck port clock_enable ;
-; pulse_gen:PG_4|i_x_low[5]                ; Stuck at GND due to stuck port clock_enable ;
-; pulse_gen:PG_4|i_x_low[6]                ; Stuck at VCC due to stuck port clock_enable ;
-; pulse_gen:PG_4|i_x_low[7]                ; Stuck at GND due to stuck port clock_enable ;
-; pulse_gen:PG_4|i_x_low[8..11]            ; Stuck at VCC due to stuck port clock_enable ;
-; pulse_gen:PG_4|i_x_low[12..17]           ; Stuck at GND due to stuck port clock_enable ;
-; pulse_gen:PG_4|i_x_low[18..20]           ; Stuck at VCC due to stuck port clock_enable ;
-; pulse_gen:PG_4|i_x_low[21..30]           ; Stuck at GND due to stuck port clock_enable ;
-; pulse_gen:PG_4|i_x_low[31]               ; Stuck at VCC due to stuck port clock_enable ;
-; pulse_gen:PG_3|i_x_low[0]                ; Stuck at GND due to stuck port clock_enable ;
-; pulse_gen:PG_3|i_x_high[0]               ; Stuck at VCC due to stuck port clock_enable ;
-; pulse_gen:PG_3|i_x_high[1]               ; Stuck at GND due to stuck port clock_enable ;
-; pulse_gen:PG_3|i_x_high[2]               ; Stuck at VCC due to stuck port clock_enable ;
-; pulse_gen:PG_3|i_x_high[3,4]             ; Stuck at GND due to stuck port clock_enable ;
-; pulse_gen:PG_3|i_x_high[5]               ; Stuck at VCC due to stuck port clock_enable ;
-; pulse_gen:PG_3|i_x_high[6,7]             ; Stuck at GND due to stuck port clock_enable ;
-; pulse_gen:PG_3|i_x_high[8]               ; Stuck at VCC due to stuck port clock_enable ;
-; pulse_gen:PG_3|i_x_high[9]               ; Stuck at GND due to stuck port clock_enable ;
-; pulse_gen:PG_3|i_x_high[10]              ; Stuck at VCC due to stuck port clock_enable ;
-; pulse_gen:PG_3|i_x_high[11]              ; Stuck at GND due to stuck port clock_enable ;
-; pulse_gen:PG_3|i_x_high[12..14]          ; Stuck at VCC due to stuck port clock_enable ;
-; pulse_gen:PG_3|i_x_high[15,16]           ; Stuck at GND due to stuck port clock_enable ;
-; pulse_gen:PG_3|i_x_high[17]              ; Stuck at VCC due to stuck port clock_enable ;
-; pulse_gen:PG_3|i_x_high[18..30]          ; Stuck at GND due to stuck port clock_enable ;
-; pulse_gen:PG_3|i_x_high[31]              ; Stuck at VCC due to stuck port clock_enable ;
-; pulse_gen:PG_3|i_x_low[1]                ; Stuck at VCC due to stuck port clock_enable ;
-; pulse_gen:PG_3|i_x_low[2]                ; Stuck at GND due to stuck port clock_enable ;
-; pulse_gen:PG_3|i_x_low[3,4]              ; Stuck at VCC due to stuck port clock_enable ;
-; pulse_gen:PG_3|i_x_low[5]                ; Stuck at GND due to stuck port clock_enable ;
-; pulse_gen:PG_3|i_x_low[6]                ; Stuck at VCC due to stuck port clock_enable ;
-; pulse_gen:PG_3|i_x_low[7]                ; Stuck at GND due to stuck port clock_enable ;
-; pulse_gen:PG_3|i_x_low[8..11]            ; Stuck at VCC due to stuck port clock_enable ;
-; pulse_gen:PG_3|i_x_low[12..17]           ; Stuck at GND due to stuck port clock_enable ;
-; pulse_gen:PG_3|i_x_low[18..20]           ; Stuck at VCC due to stuck port clock_enable ;
-; pulse_gen:PG_3|i_x_low[21..30]           ; Stuck at GND due to stuck port clock_enable ;
-; pulse_gen:PG_3|i_x_low[31]               ; Stuck at VCC due to stuck port clock_enable ;
-; pulse_gen:PG_2|i_x_low[0]                ; Stuck at GND due to stuck port clock_enable ;
-; pulse_gen:PG_2|i_x_high[0]               ; Stuck at VCC due to stuck port clock_enable ;
-; pulse_gen:PG_2|i_x_high[1]               ; Stuck at GND due to stuck port clock_enable ;
-; pulse_gen:PG_2|i_x_high[2]               ; Stuck at VCC due to stuck port clock_enable ;
-; pulse_gen:PG_2|i_x_high[3,4]             ; Stuck at GND due to stuck port clock_enable ;
-; pulse_gen:PG_2|i_x_high[5]               ; Stuck at VCC due to stuck port clock_enable ;
-; pulse_gen:PG_2|i_x_high[6,7]             ; Stuck at GND due to stuck port clock_enable ;
-; pulse_gen:PG_2|i_x_high[8]               ; Stuck at VCC due to stuck port clock_enable ;
-; pulse_gen:PG_2|i_x_high[9]               ; Stuck at GND due to stuck port clock_enable ;
-; pulse_gen:PG_2|i_x_high[10]              ; Stuck at VCC due to stuck port clock_enable ;
-; pulse_gen:PG_2|i_x_high[11]              ; Stuck at GND due to stuck port clock_enable ;
-; pulse_gen:PG_2|i_x_high[12..14]          ; Stuck at VCC due to stuck port clock_enable ;
-; pulse_gen:PG_2|i_x_high[15,16]           ; Stuck at GND due to stuck port clock_enable ;
-; pulse_gen:PG_2|i_x_high[17]              ; Stuck at VCC due to stuck port clock_enable ;
-; pulse_gen:PG_2|i_x_high[18..30]          ; Stuck at GND due to stuck port clock_enable ;
-; pulse_gen:PG_2|i_x_high[31]              ; Stuck at VCC due to stuck port clock_enable ;
-; pulse_gen:PG_2|i_x_low[1]                ; Stuck at VCC due to stuck port clock_enable ;
-; pulse_gen:PG_2|i_x_low[2]                ; Stuck at GND due to stuck port clock_enable ;
-; pulse_gen:PG_2|i_x_low[3,4]              ; Stuck at VCC due to stuck port clock_enable ;
-; pulse_gen:PG_2|i_x_low[5]                ; Stuck at GND due to stuck port clock_enable ;
-; pulse_gen:PG_2|i_x_low[6]                ; Stuck at VCC due to stuck port clock_enable ;
-; pulse_gen:PG_2|i_x_low[7]                ; Stuck at GND due to stuck port clock_enable ;
-; pulse_gen:PG_2|i_x_low[8..11]            ; Stuck at VCC due to stuck port clock_enable ;
-; pulse_gen:PG_2|i_x_low[12..17]           ; Stuck at GND due to stuck port clock_enable ;
-; pulse_gen:PG_2|i_x_low[18..20]           ; Stuck at VCC due to stuck port clock_enable ;
-; pulse_gen:PG_2|i_x_low[21..30]           ; Stuck at GND due to stuck port clock_enable ;
-; pulse_gen:PG_2|i_x_low[31]               ; Stuck at VCC due to stuck port clock_enable ;
-; pulse_gen:PG_1|i_x_low[0]                ; Stuck at GND due to stuck port clock_enable ;
-; pulse_gen:PG_1|i_x_high[0]               ; Stuck at VCC due to stuck port clock_enable ;
-; pulse_gen:PG_1|i_x_high[1]               ; Stuck at GND due to stuck port clock_enable ;
-; pulse_gen:PG_1|i_x_high[2]               ; Stuck at VCC due to stuck port clock_enable ;
-; pulse_gen:PG_1|i_x_high[3,4]             ; Stuck at GND due to stuck port clock_enable ;
-; pulse_gen:PG_1|i_x_high[5]               ; Stuck at VCC due to stuck port clock_enable ;
-; pulse_gen:PG_1|i_x_high[6,7]             ; Stuck at GND due to stuck port clock_enable ;
-; pulse_gen:PG_1|i_x_high[8]               ; Stuck at VCC due to stuck port clock_enable ;
-; pulse_gen:PG_1|i_x_high[9]               ; Stuck at GND due to stuck port clock_enable ;
-; pulse_gen:PG_1|i_x_high[10]              ; Stuck at VCC due to stuck port clock_enable ;
-; pulse_gen:PG_1|i_x_high[11]              ; Stuck at GND due to stuck port clock_enable ;
-; pulse_gen:PG_1|i_x_high[12..14]          ; Stuck at VCC due to stuck port clock_enable ;
-; pulse_gen:PG_1|i_x_high[15,16]           ; Stuck at GND due to stuck port clock_enable ;
-; pulse_gen:PG_1|i_x_high[17]              ; Stuck at VCC due to stuck port clock_enable ;
-; pulse_gen:PG_1|i_x_high[18..30]          ; Stuck at GND due to stuck port clock_enable ;
-; pulse_gen:PG_1|i_x_high[31]              ; Stuck at VCC due to stuck port clock_enable ;
-; pulse_gen:PG_1|i_x_low[1]                ; Stuck at VCC due to stuck port clock_enable ;
-; pulse_gen:PG_1|i_x_low[2]                ; Stuck at GND due to stuck port clock_enable ;
-; pulse_gen:PG_1|i_x_low[3,4]              ; Stuck at VCC due to stuck port clock_enable ;
-; pulse_gen:PG_1|i_x_low[5]                ; Stuck at GND due to stuck port clock_enable ;
-; pulse_gen:PG_1|i_x_low[6]                ; Stuck at VCC due to stuck port clock_enable ;
-; pulse_gen:PG_1|i_x_low[7]                ; Stuck at GND due to stuck port clock_enable ;
-; pulse_gen:PG_1|i_x_low[8..11]            ; Stuck at VCC due to stuck port clock_enable ;
-; pulse_gen:PG_1|i_x_low[12..17]           ; Stuck at GND due to stuck port clock_enable ;
-; pulse_gen:PG_1|i_x_low[18..20]           ; Stuck at VCC due to stuck port clock_enable ;
-; pulse_gen:PG_1|i_x_low[21..30]           ; Stuck at GND due to stuck port clock_enable ;
-; pulse_gen:PG_1|i_x_low[31]               ; Stuck at VCC due to stuck port clock_enable ;
-; pulse_gen:PG_0|i_x_low[0]                ; Stuck at GND due to stuck port clock_enable ;
-; pulse_gen:PG_0|i_x_high[0]               ; Stuck at VCC due to stuck port clock_enable ;
-; pulse_gen:PG_0|i_x_high[1]               ; Stuck at GND due to stuck port clock_enable ;
-; pulse_gen:PG_0|i_x_high[2]               ; Stuck at VCC due to stuck port clock_enable ;
-; pulse_gen:PG_0|i_x_high[3,4]             ; Stuck at GND due to stuck port clock_enable ;
-; pulse_gen:PG_0|i_x_high[5]               ; Stuck at VCC due to stuck port clock_enable ;
-; pulse_gen:PG_0|i_x_high[6,7]             ; Stuck at GND due to stuck port clock_enable ;
-; pulse_gen:PG_0|i_x_high[8]               ; Stuck at VCC due to stuck port clock_enable ;
-; pulse_gen:PG_0|i_x_high[9]               ; Stuck at GND due to stuck port clock_enable ;
-; pulse_gen:PG_0|i_x_high[10]              ; Stuck at VCC due to stuck port clock_enable ;
-; pulse_gen:PG_0|i_x_high[11]              ; Stuck at GND due to stuck port clock_enable ;
-; pulse_gen:PG_0|i_x_high[12..14]          ; Stuck at VCC due to stuck port clock_enable ;
-; pulse_gen:PG_0|i_x_high[15,16]           ; Stuck at GND due to stuck port clock_enable ;
-; pulse_gen:PG_0|i_x_high[17]              ; Stuck at VCC due to stuck port clock_enable ;
-; pulse_gen:PG_0|i_x_high[18..30]          ; Stuck at GND due to stuck port clock_enable ;
-; pulse_gen:PG_0|i_x_high[31]              ; Stuck at VCC due to stuck port clock_enable ;
-; pulse_gen:PG_0|i_x_low[1]                ; Stuck at VCC due to stuck port clock_enable ;
-; pulse_gen:PG_0|i_x_low[2]                ; Stuck at GND due to stuck port clock_enable ;
-; pulse_gen:PG_0|i_x_low[3,4]              ; Stuck at VCC due to stuck port clock_enable ;
-; pulse_gen:PG_0|i_x_low[5]                ; Stuck at GND due to stuck port clock_enable ;
-; pulse_gen:PG_0|i_x_low[6]                ; Stuck at VCC due to stuck port clock_enable ;
-; pulse_gen:PG_0|i_x_low[7]                ; Stuck at GND due to stuck port clock_enable ;
-; pulse_gen:PG_0|i_x_low[8..11]            ; Stuck at VCC due to stuck port clock_enable ;
-; pulse_gen:PG_0|i_x_low[12..17]           ; Stuck at GND due to stuck port clock_enable ;
-; pulse_gen:PG_0|i_x_low[18..20]           ; Stuck at VCC due to stuck port clock_enable ;
-; pulse_gen:PG_0|i_x_low[21..30]           ; Stuck at GND due to stuck port clock_enable ;
-; pulse_gen:PG_0|i_x_low[31]               ; Stuck at VCC due to stuck port clock_enable ;
-; rs232_ser:RS232_SER_0|shift_reg[0..7]    ; Stuck at GND due to stuck port data_in      ;
-; rs232_ser:RS232_SER_0|fsm~7              ; Lost fanout                                 ;
-; rs232_ser:RS232_SER_0|fsm~8              ; Lost fanout                                 ;
-; rs232_des:RS232_DES_0|fsm~7              ; Lost fanout                                 ;
-; rs232_des:RS232_DES_0|fsm~8              ; Lost fanout                                 ;
-; fcr_ctrl:FCR_0|cmd_state~4               ; Lost fanout                                 ;
-; fcr_ctrl:FCR_0|cmd_state~5               ; Lost fanout                                 ;
-; fcr_ctrl:FCR_0|cmd_state~6               ; Lost fanout                                 ;
-; fcr_ctrl:FCR_0|parse_state~21            ; Lost fanout                                 ;
-; fcr_ctrl:FCR_0|parse_state~22            ; Lost fanout                                 ;
-; fcr_ctrl:FCR_0|parse_state~23            ; Lost fanout                                 ;
-; fcr_ctrl:FCR_0|parse_state~24            ; Lost fanout                                 ;
-; fcr_ctrl:FCR_0|exe_state~8               ; Lost fanout                                 ;
-; fcr_ctrl:FCR_0|exe_state~9               ; Lost fanout                                 ;
-; fcr_ctrl:FCR_0|exe_state~11              ; Lost fanout                                 ;
-; fcr_ctrl:FCR_0|exe_state~12              ; Lost fanout                                 ;
-; fcr_ctrl:FCR_0|exe_state~13              ; Lost fanout                                 ;
-; fcr_ctrl:FCR_0|rsp_state~23              ; Lost fanout                                 ;
-; fcr_ctrl:FCR_0|rsp_state~24              ; Lost fanout                                 ;
-; fcr_ctrl:FCR_0|rsp_state~25              ; Lost fanout                                 ;
-; fcr_ctrl:FCR_0|rsp_state~26              ; Lost fanout                                 ;
-; fcr_ctrl:FCR_0|rsp_state~27              ; Lost fanout                                 ;
-; debounce:DB_1|fsm~6                      ; Lost fanout                                 ;
-; debounce:DB_0|fsm~6                      ; Lost fanout                                 ;
-; pulse_gen:PG_0|pulse_out                 ; Stuck at GND due to stuck port data_in      ;
-; pulse_gen:PG_1|pulse_out                 ; Stuck at GND due to stuck port data_in      ;
-; pulse_gen:PG_2|pulse_out                 ; Stuck at GND due to stuck port data_in      ;
-; pulse_gen:PG_3|pulse_out                 ; Stuck at GND due to stuck port data_in      ;
-; pulse_gen:PG_4|pulse_out                 ; Stuck at GND due to stuck port data_in      ;
-; pulse_gen:PG_5|pulse_out                 ; Stuck at GND due to stuck port data_in      ;
-; pulse_gen:PG_6|pulse_out                 ; Stuck at GND due to stuck port data_in      ;
-; pulse_gen:PG_7|pulse_out                 ; Stuck at GND due to stuck port data_in      ;
-; pulse_cnt_0[1..31]                       ; Stuck at GND due to stuck port clock_enable ;
-; pulse_cnt_1[0..31]                       ; Stuck at GND due to stuck port clock_enable ;
-; pulse_cnt_2[0..31]                       ; Stuck at GND due to stuck port clock_enable ;
-; pulse_cnt_3[0..31]                       ; Stuck at GND due to stuck port clock_enable ;
-; pulse_cnt_4[0..31]                       ; Stuck at GND due to stuck port clock_enable ;
-; pulse_cnt_5[0..31]                       ; Stuck at GND due to stuck port clock_enable ;
-; pulse_cnt_6[0..31]                       ; Stuck at GND due to stuck port clock_enable ;
-; pulse_cnt_7[0..31]                       ; Stuck at GND due to stuck port clock_enable ;
-; pulse_cnt_0[0]                           ; Lost fanout                                 ;
-; lfsr_32:LFSR_32_0|sr[0..31]              ; Lost fanout                                 ;
-; lfsr_32:LFSR_32_1|sr[0..31]              ; Lost fanout                                 ;
-; lfsr_32:LFSR_32_2|sr[0..31]              ; Lost fanout                                 ;
-; lfsr_32:LFSR_32_3|sr[0..31]              ; Lost fanout                                 ;
-; lfsr_32:LFSR_32_4|sr[0..31]              ; Lost fanout                                 ;
-; lfsr_32:LFSR_32_5|sr[0..31]              ; Lost fanout                                 ;
-; lfsr_32:LFSR_32_6|sr[0..31]              ; Lost fanout                                 ;
-; lfsr_32:LFSR_32_7|sr[0..31]              ; Lost fanout                                 ;
-; Total Number of Removed Registers = 1063 ;                                             ;
-+------------------------------------------+---------------------------------------------+
++---------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                    ;
++-----------------------------------------+---------------------------------------------+
+; Register name                           ; Reason for Removal                          ;
++-----------------------------------------+---------------------------------------------+
+; pulse_gen:PG_7|i_x_low[0]               ; Stuck at VCC due to stuck port clock_enable ;
+; pulse_gen:PG_7|i_x_high[0]              ; Stuck at GND due to stuck port clock_enable ;
+; pulse_gen:PG_7|i_x_high[1]              ; Stuck at VCC due to stuck port clock_enable ;
+; pulse_gen:PG_7|i_x_high[2]              ; Stuck at GND due to stuck port clock_enable ;
+; pulse_gen:PG_7|i_x_high[3,4]            ; Stuck at VCC due to stuck port clock_enable ;
+; pulse_gen:PG_7|i_x_high[5]              ; Stuck at GND due to stuck port clock_enable ;
+; pulse_gen:PG_7|i_x_high[6]              ; Stuck at VCC due to stuck port clock_enable ;
+; pulse_gen:PG_7|i_x_high[7]              ; Stuck at GND due to stuck port clock_enable ;
+; pulse_gen:PG_7|i_x_high[8..11]          ; Stuck at VCC due to stuck port clock_enable ;
+; pulse_gen:PG_7|i_x_high[12..17]         ; Stuck at GND due to stuck port clock_enable ;
+; pulse_gen:PG_7|i_x_high[18..20]         ; Stuck at VCC due to stuck port clock_enable ;
+; pulse_gen:PG_7|i_x_high[21..30]         ; Stuck at GND due to stuck port clock_enable ;
+; pulse_gen:PG_7|i_x_high[31]             ; Stuck at VCC due to stuck port clock_enable ;
+; pulse_gen:PG_7|i_x_low[1]               ; Stuck at GND due to stuck port clock_enable ;
+; pulse_gen:PG_7|i_x_low[2]               ; Stuck at VCC due to stuck port clock_enable ;
+; pulse_gen:PG_7|i_x_low[3,4]             ; Stuck at GND due to stuck port clock_enable ;
+; pulse_gen:PG_7|i_x_low[5]               ; Stuck at VCC due to stuck port clock_enable ;
+; pulse_gen:PG_7|i_x_low[6,7]             ; Stuck at GND due to stuck port clock_enable ;
+; pulse_gen:PG_7|i_x_low[8]               ; Stuck at VCC due to stuck port clock_enable ;
+; pulse_gen:PG_7|i_x_low[9]               ; Stuck at GND due to stuck port clock_enable ;
+; pulse_gen:PG_7|i_x_low[10]              ; Stuck at VCC due to stuck port clock_enable ;
+; pulse_gen:PG_7|i_x_low[11]              ; Stuck at GND due to stuck port clock_enable ;
+; pulse_gen:PG_7|i_x_low[12..14]          ; Stuck at VCC due to stuck port clock_enable ;
+; pulse_gen:PG_7|i_x_low[15,16]           ; Stuck at GND due to stuck port clock_enable ;
+; pulse_gen:PG_7|i_x_low[17]              ; Stuck at VCC due to stuck port clock_enable ;
+; pulse_gen:PG_7|i_x_low[18..30]          ; Stuck at GND due to stuck port clock_enable ;
+; pulse_gen:PG_7|i_x_low[31]              ; Stuck at VCC due to stuck port clock_enable ;
+; pulse_gen:PG_6|i_x_low[0]               ; Stuck at VCC due to stuck port clock_enable ;
+; pulse_gen:PG_6|i_x_high[0]              ; Stuck at GND due to stuck port clock_enable ;
+; pulse_gen:PG_6|i_x_high[1]              ; Stuck at VCC due to stuck port clock_enable ;
+; pulse_gen:PG_6|i_x_high[2]              ; Stuck at GND due to stuck port clock_enable ;
+; pulse_gen:PG_6|i_x_high[3,4]            ; Stuck at VCC due to stuck port clock_enable ;
+; pulse_gen:PG_6|i_x_high[5]              ; Stuck at GND due to stuck port clock_enable ;
+; pulse_gen:PG_6|i_x_high[6]              ; Stuck at VCC due to stuck port clock_enable ;
+; pulse_gen:PG_6|i_x_high[7]              ; Stuck at GND due to stuck port clock_enable ;
+; pulse_gen:PG_6|i_x_high[8..11]          ; Stuck at VCC due to stuck port clock_enable ;
+; pulse_gen:PG_6|i_x_high[12..17]         ; Stuck at GND due to stuck port clock_enable ;
+; pulse_gen:PG_6|i_x_high[18..20]         ; Stuck at VCC due to stuck port clock_enable ;
+; pulse_gen:PG_6|i_x_high[21..30]         ; Stuck at GND due to stuck port clock_enable ;
+; pulse_gen:PG_6|i_x_high[31]             ; Stuck at VCC due to stuck port clock_enable ;
+; pulse_gen:PG_6|i_x_low[1]               ; Stuck at GND due to stuck port clock_enable ;
+; pulse_gen:PG_6|i_x_low[2]               ; Stuck at VCC due to stuck port clock_enable ;
+; pulse_gen:PG_6|i_x_low[3,4]             ; Stuck at GND due to stuck port clock_enable ;
+; pulse_gen:PG_6|i_x_low[5]               ; Stuck at VCC due to stuck port clock_enable ;
+; pulse_gen:PG_6|i_x_low[6,7]             ; Stuck at GND due to stuck port clock_enable ;
+; pulse_gen:PG_6|i_x_low[8]               ; Stuck at VCC due to stuck port clock_enable ;
+; pulse_gen:PG_6|i_x_low[9]               ; Stuck at GND due to stuck port clock_enable ;
+; pulse_gen:PG_6|i_x_low[10]              ; Stuck at VCC due to stuck port clock_enable ;
+; pulse_gen:PG_6|i_x_low[11]              ; Stuck at GND due to stuck port clock_enable ;
+; pulse_gen:PG_6|i_x_low[12..14]          ; Stuck at VCC due to stuck port clock_enable ;
+; pulse_gen:PG_6|i_x_low[15,16]           ; Stuck at GND due to stuck port clock_enable ;
+; pulse_gen:PG_6|i_x_low[17]              ; Stuck at VCC due to stuck port clock_enable ;
+; pulse_gen:PG_6|i_x_low[18..30]          ; Stuck at GND due to stuck port clock_enable ;
+; pulse_gen:PG_6|i_x_low[31]              ; Stuck at VCC due to stuck port clock_enable ;
+; pulse_gen:PG_5|i_x_low[0]               ; Stuck at VCC due to stuck port clock_enable ;
+; pulse_gen:PG_5|i_x_high[0]              ; Stuck at GND due to stuck port clock_enable ;
+; pulse_gen:PG_5|i_x_high[1]              ; Stuck at VCC due to stuck port clock_enable ;
+; pulse_gen:PG_5|i_x_high[2]              ; Stuck at GND due to stuck port clock_enable ;
+; pulse_gen:PG_5|i_x_high[3,4]            ; Stuck at VCC due to stuck port clock_enable ;
+; pulse_gen:PG_5|i_x_high[5]              ; Stuck at GND due to stuck port clock_enable ;
+; pulse_gen:PG_5|i_x_high[6]              ; Stuck at VCC due to stuck port clock_enable ;
+; pulse_gen:PG_5|i_x_high[7]              ; Stuck at GND due to stuck port clock_enable ;
+; pulse_gen:PG_5|i_x_high[8..11]          ; Stuck at VCC due to stuck port clock_enable ;
+; pulse_gen:PG_5|i_x_high[12..17]         ; Stuck at GND due to stuck port clock_enable ;
+; pulse_gen:PG_5|i_x_high[18..20]         ; Stuck at VCC due to stuck port clock_enable ;
+; pulse_gen:PG_5|i_x_high[21..30]         ; Stuck at GND due to stuck port clock_enable ;
+; pulse_gen:PG_5|i_x_high[31]             ; Stuck at VCC due to stuck port clock_enable ;
+; pulse_gen:PG_5|i_x_low[1]               ; Stuck at GND due to stuck port clock_enable ;
+; pulse_gen:PG_5|i_x_low[2]               ; Stuck at VCC due to stuck port clock_enable ;
+; pulse_gen:PG_5|i_x_low[3,4]             ; Stuck at GND due to stuck port clock_enable ;
+; pulse_gen:PG_5|i_x_low[5]               ; Stuck at VCC due to stuck port clock_enable ;
+; pulse_gen:PG_5|i_x_low[6,7]             ; Stuck at GND due to stuck port clock_enable ;
+; pulse_gen:PG_5|i_x_low[8]               ; Stuck at VCC due to stuck port clock_enable ;
+; pulse_gen:PG_5|i_x_low[9]               ; Stuck at GND due to stuck port clock_enable ;
+; pulse_gen:PG_5|i_x_low[10]              ; Stuck at VCC due to stuck port clock_enable ;
+; pulse_gen:PG_5|i_x_low[11]              ; Stuck at GND due to stuck port clock_enable ;
+; pulse_gen:PG_5|i_x_low[12..14]          ; Stuck at VCC due to stuck port clock_enable ;
+; pulse_gen:PG_5|i_x_low[15,16]           ; Stuck at GND due to stuck port clock_enable ;
+; pulse_gen:PG_5|i_x_low[17]              ; Stuck at VCC due to stuck port clock_enable ;
+; pulse_gen:PG_5|i_x_low[18..30]          ; Stuck at GND due to stuck port clock_enable ;
+; pulse_gen:PG_5|i_x_low[31]              ; Stuck at VCC due to stuck port clock_enable ;
+; pulse_gen:PG_4|i_x_low[0]               ; Stuck at VCC due to stuck port clock_enable ;
+; pulse_gen:PG_4|i_x_high[0]              ; Stuck at GND due to stuck port clock_enable ;
+; pulse_gen:PG_4|i_x_high[1]              ; Stuck at VCC due to stuck port clock_enable ;
+; pulse_gen:PG_4|i_x_high[2]              ; Stuck at GND due to stuck port clock_enable ;
+; pulse_gen:PG_4|i_x_high[3,4]            ; Stuck at VCC due to stuck port clock_enable ;
+; pulse_gen:PG_4|i_x_high[5]              ; Stuck at GND due to stuck port clock_enable ;
+; pulse_gen:PG_4|i_x_high[6]              ; Stuck at VCC due to stuck port clock_enable ;
+; pulse_gen:PG_4|i_x_high[7]              ; Stuck at GND due to stuck port clock_enable ;
+; pulse_gen:PG_4|i_x_high[8..11]          ; Stuck at VCC due to stuck port clock_enable ;
+; pulse_gen:PG_4|i_x_high[12..17]         ; Stuck at GND due to stuck port clock_enable ;
+; pulse_gen:PG_4|i_x_high[18..20]         ; Stuck at VCC due to stuck port clock_enable ;
+; pulse_gen:PG_4|i_x_high[21..30]         ; Stuck at GND due to stuck port clock_enable ;
+; pulse_gen:PG_4|i_x_high[31]             ; Stuck at VCC due to stuck port clock_enable ;
+; pulse_gen:PG_4|i_x_low[1]               ; Stuck at GND due to stuck port clock_enable ;
+; pulse_gen:PG_4|i_x_low[2]               ; Stuck at VCC due to stuck port clock_enable ;
+; pulse_gen:PG_4|i_x_low[3,4]             ; Stuck at GND due to stuck port clock_enable ;
+; pulse_gen:PG_4|i_x_low[5]               ; Stuck at VCC due to stuck port clock_enable ;
+; pulse_gen:PG_4|i_x_low[6,7]             ; Stuck at GND due to stuck port clock_enable ;
+; pulse_gen:PG_4|i_x_low[8]               ; Stuck at VCC due to stuck port clock_enable ;
+; pulse_gen:PG_4|i_x_low[9]               ; Stuck at GND due to stuck port clock_enable ;
+; pulse_gen:PG_4|i_x_low[10]              ; Stuck at VCC due to stuck port clock_enable ;
+; pulse_gen:PG_4|i_x_low[11]              ; Stuck at GND due to stuck port clock_enable ;
+; pulse_gen:PG_4|i_x_low[12..14]          ; Stuck at VCC due to stuck port clock_enable ;
+; pulse_gen:PG_4|i_x_low[15,16]           ; Stuck at GND due to stuck port clock_enable ;
+; pulse_gen:PG_4|i_x_low[17]              ; Stuck at VCC due to stuck port clock_enable ;
+; pulse_gen:PG_4|i_x_low[18..30]          ; Stuck at GND due to stuck port clock_enable ;
+; pulse_gen:PG_4|i_x_low[31]              ; Stuck at VCC due to stuck port clock_enable ;
+; pulse_gen:PG_3|i_x_low[0]               ; Stuck at VCC due to stuck port clock_enable ;
+; pulse_gen:PG_3|i_x_high[0]              ; Stuck at GND due to stuck port clock_enable ;
+; pulse_gen:PG_3|i_x_high[1]              ; Stuck at VCC due to stuck port clock_enable ;
+; pulse_gen:PG_3|i_x_high[2]              ; Stuck at GND due to stuck port clock_enable ;
+; pulse_gen:PG_3|i_x_high[3,4]            ; Stuck at VCC due to stuck port clock_enable ;
+; pulse_gen:PG_3|i_x_high[5]              ; Stuck at GND due to stuck port clock_enable ;
+; pulse_gen:PG_3|i_x_high[6]              ; Stuck at VCC due to stuck port clock_enable ;
+; pulse_gen:PG_3|i_x_high[7]              ; Stuck at GND due to stuck port clock_enable ;
+; pulse_gen:PG_3|i_x_high[8..11]          ; Stuck at VCC due to stuck port clock_enable ;
+; pulse_gen:PG_3|i_x_high[12..17]         ; Stuck at GND due to stuck port clock_enable ;
+; pulse_gen:PG_3|i_x_high[18..20]         ; Stuck at VCC due to stuck port clock_enable ;
+; pulse_gen:PG_3|i_x_high[21..30]         ; Stuck at GND due to stuck port clock_enable ;
+; pulse_gen:PG_3|i_x_high[31]             ; Stuck at VCC due to stuck port clock_enable ;
+; pulse_gen:PG_3|i_x_low[1]               ; Stuck at GND due to stuck port clock_enable ;
+; pulse_gen:PG_3|i_x_low[2]               ; Stuck at VCC due to stuck port clock_enable ;
+; pulse_gen:PG_3|i_x_low[3,4]             ; Stuck at GND due to stuck port clock_enable ;
+; pulse_gen:PG_3|i_x_low[5]               ; Stuck at VCC due to stuck port clock_enable ;
+; pulse_gen:PG_3|i_x_low[6,7]             ; Stuck at GND due to stuck port clock_enable ;
+; pulse_gen:PG_3|i_x_low[8]               ; Stuck at VCC due to stuck port clock_enable ;
+; pulse_gen:PG_3|i_x_low[9]               ; Stuck at GND due to stuck port clock_enable ;
+; pulse_gen:PG_3|i_x_low[10]              ; Stuck at VCC due to stuck port clock_enable ;
+; pulse_gen:PG_3|i_x_low[11]              ; Stuck at GND due to stuck port clock_enable ;
+; pulse_gen:PG_3|i_x_low[12..14]          ; Stuck at VCC due to stuck port clock_enable ;
+; pulse_gen:PG_3|i_x_low[15,16]           ; Stuck at GND due to stuck port clock_enable ;
+; pulse_gen:PG_3|i_x_low[17]              ; Stuck at VCC due to stuck port clock_enable ;
+; pulse_gen:PG_3|i_x_low[18..30]          ; Stuck at GND due to stuck port clock_enable ;
+; pulse_gen:PG_3|i_x_low[31]              ; Stuck at VCC due to stuck port clock_enable ;
+; pulse_gen:PG_2|i_x_low[0]               ; Stuck at VCC due to stuck port clock_enable ;
+; pulse_gen:PG_2|i_x_high[0]              ; Stuck at GND due to stuck port clock_enable ;
+; pulse_gen:PG_2|i_x_high[1]              ; Stuck at VCC due to stuck port clock_enable ;
+; pulse_gen:PG_2|i_x_high[2]              ; Stuck at GND due to stuck port clock_enable ;
+; pulse_gen:PG_2|i_x_high[3,4]            ; Stuck at VCC due to stuck port clock_enable ;
+; pulse_gen:PG_2|i_x_high[5]              ; Stuck at GND due to stuck port clock_enable ;
+; pulse_gen:PG_2|i_x_high[6]              ; Stuck at VCC due to stuck port clock_enable ;
+; pulse_gen:PG_2|i_x_high[7]              ; Stuck at GND due to stuck port clock_enable ;
+; pulse_gen:PG_2|i_x_high[8..11]          ; Stuck at VCC due to stuck port clock_enable ;
+; pulse_gen:PG_2|i_x_high[12..17]         ; Stuck at GND due to stuck port clock_enable ;
+; pulse_gen:PG_2|i_x_high[18..20]         ; Stuck at VCC due to stuck port clock_enable ;
+; pulse_gen:PG_2|i_x_high[21..30]         ; Stuck at GND due to stuck port clock_enable ;
+; pulse_gen:PG_2|i_x_high[31]             ; Stuck at VCC due to stuck port clock_enable ;
+; pulse_gen:PG_2|i_x_low[1]               ; Stuck at GND due to stuck port clock_enable ;
+; pulse_gen:PG_2|i_x_low[2]               ; Stuck at VCC due to stuck port clock_enable ;
+; pulse_gen:PG_2|i_x_low[3,4]             ; Stuck at GND due to stuck port clock_enable ;
+; pulse_gen:PG_2|i_x_low[5]               ; Stuck at VCC due to stuck port clock_enable ;
+; pulse_gen:PG_2|i_x_low[6,7]             ; Stuck at GND due to stuck port clock_enable ;
+; pulse_gen:PG_2|i_x_low[8]               ; Stuck at VCC due to stuck port clock_enable ;
+; pulse_gen:PG_2|i_x_low[9]               ; Stuck at GND due to stuck port clock_enable ;
+; pulse_gen:PG_2|i_x_low[10]              ; Stuck at VCC due to stuck port clock_enable ;
+; pulse_gen:PG_2|i_x_low[11]              ; Stuck at GND due to stuck port clock_enable ;
+; pulse_gen:PG_2|i_x_low[12..14]          ; Stuck at VCC due to stuck port clock_enable ;
+; pulse_gen:PG_2|i_x_low[15,16]           ; Stuck at GND due to stuck port clock_enable ;
+; pulse_gen:PG_2|i_x_low[17]              ; Stuck at VCC due to stuck port clock_enable ;
+; pulse_gen:PG_2|i_x_low[18..30]          ; Stuck at GND due to stuck port clock_enable ;
+; pulse_gen:PG_2|i_x_low[31]              ; Stuck at VCC due to stuck port clock_enable ;
+; pulse_gen:PG_1|i_x_low[0]               ; Stuck at VCC due to stuck port clock_enable ;
+; pulse_gen:PG_1|i_x_high[0]              ; Stuck at GND due to stuck port clock_enable ;
+; pulse_gen:PG_1|i_x_high[1]              ; Stuck at VCC due to stuck port clock_enable ;
+; pulse_gen:PG_1|i_x_high[2]              ; Stuck at GND due to stuck port clock_enable ;
+; pulse_gen:PG_1|i_x_high[3,4]            ; Stuck at VCC due to stuck port clock_enable ;
+; pulse_gen:PG_1|i_x_high[5]              ; Stuck at GND due to stuck port clock_enable ;
+; pulse_gen:PG_1|i_x_high[6]              ; Stuck at VCC due to stuck port clock_enable ;
+; pulse_gen:PG_1|i_x_high[7]              ; Stuck at GND due to stuck port clock_enable ;
+; pulse_gen:PG_1|i_x_high[8..11]          ; Stuck at VCC due to stuck port clock_enable ;
+; pulse_gen:PG_1|i_x_high[12..17]         ; Stuck at GND due to stuck port clock_enable ;
+; pulse_gen:PG_1|i_x_high[18..20]         ; Stuck at VCC due to stuck port clock_enable ;
+; pulse_gen:PG_1|i_x_high[21..30]         ; Stuck at GND due to stuck port clock_enable ;
+; pulse_gen:PG_1|i_x_high[31]             ; Stuck at VCC due to stuck port clock_enable ;
+; pulse_gen:PG_1|i_x_low[1]               ; Stuck at GND due to stuck port clock_enable ;
+; pulse_gen:PG_1|i_x_low[2]               ; Stuck at VCC due to stuck port clock_enable ;
+; pulse_gen:PG_1|i_x_low[3,4]             ; Stuck at GND due to stuck port clock_enable ;
+; pulse_gen:PG_1|i_x_low[5]               ; Stuck at VCC due to stuck port clock_enable ;
+; pulse_gen:PG_1|i_x_low[6,7]             ; Stuck at GND due to stuck port clock_enable ;
+; pulse_gen:PG_1|i_x_low[8]               ; Stuck at VCC due to stuck port clock_enable ;
+; pulse_gen:PG_1|i_x_low[9]               ; Stuck at GND due to stuck port clock_enable ;
+; pulse_gen:PG_1|i_x_low[10]              ; Stuck at VCC due to stuck port clock_enable ;
+; pulse_gen:PG_1|i_x_low[11]              ; Stuck at GND due to stuck port clock_enable ;
+; pulse_gen:PG_1|i_x_low[12..14]          ; Stuck at VCC due to stuck port clock_enable ;
+; pulse_gen:PG_1|i_x_low[15,16]           ; Stuck at GND due to stuck port clock_enable ;
+; pulse_gen:PG_1|i_x_low[17]              ; Stuck at VCC due to stuck port clock_enable ;
+; pulse_gen:PG_1|i_x_low[18..30]          ; Stuck at GND due to stuck port clock_enable ;
+; pulse_gen:PG_1|i_x_low[31]              ; Stuck at VCC due to stuck port clock_enable ;
+; pulse_gen:PG_0|i_x_low[0]               ; Stuck at VCC due to stuck port clock_enable ;
+; pulse_gen:PG_0|i_x_high[0]              ; Stuck at GND due to stuck port clock_enable ;
+; pulse_gen:PG_0|i_x_high[1]              ; Stuck at VCC due to stuck port clock_enable ;
+; pulse_gen:PG_0|i_x_high[2]              ; Stuck at GND due to stuck port clock_enable ;
+; pulse_gen:PG_0|i_x_high[3,4]            ; Stuck at VCC due to stuck port clock_enable ;
+; pulse_gen:PG_0|i_x_high[5]              ; Stuck at GND due to stuck port clock_enable ;
+; pulse_gen:PG_0|i_x_high[6]              ; Stuck at VCC due to stuck port clock_enable ;
+; pulse_gen:PG_0|i_x_high[7]              ; Stuck at GND due to stuck port clock_enable ;
+; pulse_gen:PG_0|i_x_high[8..11]          ; Stuck at VCC due to stuck port clock_enable ;
+; pulse_gen:PG_0|i_x_high[12..17]         ; Stuck at GND due to stuck port clock_enable ;
+; pulse_gen:PG_0|i_x_high[18..20]         ; Stuck at VCC due to stuck port clock_enable ;
+; pulse_gen:PG_0|i_x_high[21..30]         ; Stuck at GND due to stuck port clock_enable ;
+; pulse_gen:PG_0|i_x_high[31]             ; Stuck at VCC due to stuck port clock_enable ;
+; pulse_gen:PG_0|i_x_low[1]               ; Stuck at GND due to stuck port clock_enable ;
+; pulse_gen:PG_0|i_x_low[2]               ; Stuck at VCC due to stuck port clock_enable ;
+; pulse_gen:PG_0|i_x_low[3,4]             ; Stuck at GND due to stuck port clock_enable ;
+; pulse_gen:PG_0|i_x_low[5]               ; Stuck at VCC due to stuck port clock_enable ;
+; pulse_gen:PG_0|i_x_low[6,7]             ; Stuck at GND due to stuck port clock_enable ;
+; pulse_gen:PG_0|i_x_low[8]               ; Stuck at VCC due to stuck port clock_enable ;
+; pulse_gen:PG_0|i_x_low[9]               ; Stuck at GND due to stuck port clock_enable ;
+; pulse_gen:PG_0|i_x_low[10]              ; Stuck at VCC due to stuck port clock_enable ;
+; pulse_gen:PG_0|i_x_low[11]              ; Stuck at GND due to stuck port clock_enable ;
+; pulse_gen:PG_0|i_x_low[12..14]          ; Stuck at VCC due to stuck port clock_enable ;
+; pulse_gen:PG_0|i_x_low[15,16]           ; Stuck at GND due to stuck port clock_enable ;
+; pulse_gen:PG_0|i_x_low[17]              ; Stuck at VCC due to stuck port clock_enable ;
+; pulse_gen:PG_0|i_x_low[18..30]          ; Stuck at GND due to stuck port clock_enable ;
+; pulse_gen:PG_0|i_x_low[31]              ; Stuck at VCC due to stuck port clock_enable ;
+; rs232_ser:RS232_SER_0|shift_reg[0..7]   ; Stuck at GND due to stuck port data_in      ;
+; rs232_ser:RS232_SER_0|fsm~7             ; Lost fanout                                 ;
+; rs232_ser:RS232_SER_0|fsm~8             ; Lost fanout                                 ;
+; rs232_des:RS232_DES_0|fsm~7             ; Lost fanout                                 ;
+; rs232_des:RS232_DES_0|fsm~8             ; Lost fanout                                 ;
+; fcr_ctrl:FCR_0|cmd_state~4              ; Lost fanout                                 ;
+; fcr_ctrl:FCR_0|cmd_state~5              ; Lost fanout                                 ;
+; fcr_ctrl:FCR_0|cmd_state~6              ; Lost fanout                                 ;
+; fcr_ctrl:FCR_0|parse_state~21           ; Lost fanout                                 ;
+; fcr_ctrl:FCR_0|parse_state~22           ; Lost fanout                                 ;
+; fcr_ctrl:FCR_0|parse_state~23           ; Lost fanout                                 ;
+; fcr_ctrl:FCR_0|parse_state~24           ; Lost fanout                                 ;
+; fcr_ctrl:FCR_0|exe_state~8              ; Lost fanout                                 ;
+; fcr_ctrl:FCR_0|exe_state~9              ; Lost fanout                                 ;
+; fcr_ctrl:FCR_0|exe_state~11             ; Lost fanout                                 ;
+; fcr_ctrl:FCR_0|exe_state~12             ; Lost fanout                                 ;
+; fcr_ctrl:FCR_0|exe_state~13             ; Lost fanout                                 ;
+; fcr_ctrl:FCR_0|rsp_state~23             ; Lost fanout                                 ;
+; fcr_ctrl:FCR_0|rsp_state~24             ; Lost fanout                                 ;
+; fcr_ctrl:FCR_0|rsp_state~25             ; Lost fanout                                 ;
+; fcr_ctrl:FCR_0|rsp_state~26             ; Lost fanout                                 ;
+; fcr_ctrl:FCR_0|rsp_state~27             ; Lost fanout                                 ;
+; debounce:DB_1|fsm~6                     ; Lost fanout                                 ;
+; debounce:DB_0|fsm~6                     ; Lost fanout                                 ;
+; Total Number of Removed Registers = 543 ;                                             ;
++-----------------------------------------+---------------------------------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                                                                ;
-+------------------------------------+--------------------------------+--------------------------------------------------------------------------------------+
-; Register name                      ; Reason for Removal             ; Registers Removed due to This Register                                               ;
-+------------------------------------+--------------------------------+--------------------------------------------------------------------------------------+
-; pulse_gen:PG_6|i_x_low[0]          ; Stuck at GND                   ; pulse_gen:PG_6|pulse_out, pulse_cnt_6[24], pulse_cnt_6[23], pulse_cnt_6[22],         ;
-;                                    ; due to stuck port clock_enable ; pulse_cnt_6[21], pulse_cnt_6[20], pulse_cnt_6[19], pulse_cnt_6[18], pulse_cnt_6[17], ;
-;                                    ;                                ; pulse_cnt_6[16], pulse_cnt_6[15], pulse_cnt_6[14], pulse_cnt_6[13], pulse_cnt_6[12], ;
-;                                    ;                                ; pulse_cnt_6[11], pulse_cnt_6[10], pulse_cnt_6[9], pulse_cnt_6[8], pulse_cnt_6[7],    ;
-;                                    ;                                ; pulse_cnt_6[6], pulse_cnt_6[5], pulse_cnt_6[4], pulse_cnt_6[3], pulse_cnt_6[2],      ;
-;                                    ;                                ; pulse_cnt_6[1], pulse_cnt_6[0], lfsr_32:LFSR_32_6|sr[24], lfsr_32:LFSR_32_6|sr[25],  ;
-;                                    ;                                ; lfsr_32:LFSR_32_6|sr[26], lfsr_32:LFSR_32_6|sr[27], lfsr_32:LFSR_32_6|sr[28],        ;
-;                                    ;                                ; lfsr_32:LFSR_32_6|sr[29], lfsr_32:LFSR_32_6|sr[30], lfsr_32:LFSR_32_6|sr[31]         ;
-; pulse_gen:PG_5|i_x_low[0]          ; Stuck at GND                   ; pulse_gen:PG_5|pulse_out, pulse_cnt_5[24], pulse_cnt_5[23], pulse_cnt_5[22],         ;
-;                                    ; due to stuck port clock_enable ; pulse_cnt_5[21], pulse_cnt_5[20], pulse_cnt_5[19], pulse_cnt_5[18], pulse_cnt_5[17], ;
-;                                    ;                                ; pulse_cnt_5[16], pulse_cnt_5[15], pulse_cnt_5[14], pulse_cnt_5[13], pulse_cnt_5[12], ;
-;                                    ;                                ; pulse_cnt_5[11], pulse_cnt_5[10], pulse_cnt_5[9], pulse_cnt_5[8], pulse_cnt_5[7],    ;
-;                                    ;                                ; pulse_cnt_5[6], pulse_cnt_5[5], pulse_cnt_5[4], pulse_cnt_5[3], pulse_cnt_5[2],      ;
-;                                    ;                                ; pulse_cnt_5[1], pulse_cnt_5[0], lfsr_32:LFSR_32_5|sr[24], lfsr_32:LFSR_32_5|sr[25],  ;
-;                                    ;                                ; lfsr_32:LFSR_32_5|sr[26], lfsr_32:LFSR_32_5|sr[27], lfsr_32:LFSR_32_5|sr[28],        ;
-;                                    ;                                ; lfsr_32:LFSR_32_5|sr[29], lfsr_32:LFSR_32_5|sr[30], lfsr_32:LFSR_32_5|sr[31]         ;
-; pulse_gen:PG_4|i_x_low[0]          ; Stuck at GND                   ; pulse_gen:PG_4|pulse_out, pulse_cnt_4[24], pulse_cnt_4[23], pulse_cnt_4[22],         ;
-;                                    ; due to stuck port clock_enable ; pulse_cnt_4[21], pulse_cnt_4[20], pulse_cnt_4[19], pulse_cnt_4[18], pulse_cnt_4[17], ;
-;                                    ;                                ; pulse_cnt_4[16], pulse_cnt_4[15], pulse_cnt_4[14], pulse_cnt_4[13], pulse_cnt_4[12], ;
-;                                    ;                                ; pulse_cnt_4[11], pulse_cnt_4[10], pulse_cnt_4[9], pulse_cnt_4[8], pulse_cnt_4[7],    ;
-;                                    ;                                ; pulse_cnt_4[6], pulse_cnt_4[5], pulse_cnt_4[4], pulse_cnt_4[3], pulse_cnt_4[2],      ;
-;                                    ;                                ; pulse_cnt_4[1], pulse_cnt_4[0], lfsr_32:LFSR_32_4|sr[24], lfsr_32:LFSR_32_4|sr[25],  ;
-;                                    ;                                ; lfsr_32:LFSR_32_4|sr[26], lfsr_32:LFSR_32_4|sr[27], lfsr_32:LFSR_32_4|sr[28],        ;
-;                                    ;                                ; lfsr_32:LFSR_32_4|sr[29], lfsr_32:LFSR_32_4|sr[30], lfsr_32:LFSR_32_4|sr[31]         ;
-; pulse_gen:PG_3|i_x_low[0]          ; Stuck at GND                   ; pulse_gen:PG_3|pulse_out, pulse_cnt_3[24], pulse_cnt_3[23], pulse_cnt_3[22],         ;
-;                                    ; due to stuck port clock_enable ; pulse_cnt_3[21], pulse_cnt_3[20], pulse_cnt_3[19], pulse_cnt_3[18], pulse_cnt_3[17], ;
-;                                    ;                                ; pulse_cnt_3[16], pulse_cnt_3[15], pulse_cnt_3[14], pulse_cnt_3[13], pulse_cnt_3[12], ;
-;                                    ;                                ; pulse_cnt_3[11], pulse_cnt_3[10], pulse_cnt_3[9], pulse_cnt_3[8], pulse_cnt_3[7],    ;
-;                                    ;                                ; pulse_cnt_3[6], pulse_cnt_3[5], pulse_cnt_3[4], pulse_cnt_3[3], pulse_cnt_3[2],      ;
-;                                    ;                                ; pulse_cnt_3[1], pulse_cnt_3[0], lfsr_32:LFSR_32_3|sr[24], lfsr_32:LFSR_32_3|sr[25],  ;
-;                                    ;                                ; lfsr_32:LFSR_32_3|sr[26], lfsr_32:LFSR_32_3|sr[27], lfsr_32:LFSR_32_3|sr[28],        ;
-;                                    ;                                ; lfsr_32:LFSR_32_3|sr[29], lfsr_32:LFSR_32_3|sr[30], lfsr_32:LFSR_32_3|sr[31]         ;
-; pulse_gen:PG_2|i_x_low[0]          ; Stuck at GND                   ; pulse_gen:PG_2|pulse_out, pulse_cnt_2[24], pulse_cnt_2[23], pulse_cnt_2[22],         ;
-;                                    ; due to stuck port clock_enable ; pulse_cnt_2[21], pulse_cnt_2[20], pulse_cnt_2[19], pulse_cnt_2[18], pulse_cnt_2[17], ;
-;                                    ;                                ; pulse_cnt_2[16], pulse_cnt_2[15], pulse_cnt_2[14], pulse_cnt_2[13], pulse_cnt_2[12], ;
-;                                    ;                                ; pulse_cnt_2[11], pulse_cnt_2[10], pulse_cnt_2[9], pulse_cnt_2[8], pulse_cnt_2[7],    ;
-;                                    ;                                ; pulse_cnt_2[6], pulse_cnt_2[5], pulse_cnt_2[4], pulse_cnt_2[3], pulse_cnt_2[2],      ;
-;                                    ;                                ; pulse_cnt_2[1], pulse_cnt_2[0], lfsr_32:LFSR_32_2|sr[24], lfsr_32:LFSR_32_2|sr[25],  ;
-;                                    ;                                ; lfsr_32:LFSR_32_2|sr[26], lfsr_32:LFSR_32_2|sr[27], lfsr_32:LFSR_32_2|sr[28],        ;
-;                                    ;                                ; lfsr_32:LFSR_32_2|sr[29], lfsr_32:LFSR_32_2|sr[30], lfsr_32:LFSR_32_2|sr[31]         ;
-; pulse_gen:PG_1|i_x_low[0]          ; Stuck at GND                   ; pulse_gen:PG_1|pulse_out, pulse_cnt_1[24], pulse_cnt_1[23], pulse_cnt_1[22],         ;
-;                                    ; due to stuck port clock_enable ; pulse_cnt_1[21], pulse_cnt_1[20], pulse_cnt_1[19], pulse_cnt_1[18], pulse_cnt_1[17], ;
-;                                    ;                                ; pulse_cnt_1[16], pulse_cnt_1[15], pulse_cnt_1[14], pulse_cnt_1[13], pulse_cnt_1[12], ;
-;                                    ;                                ; pulse_cnt_1[11], pulse_cnt_1[10], pulse_cnt_1[9], pulse_cnt_1[8], pulse_cnt_1[7],    ;
-;                                    ;                                ; pulse_cnt_1[6], pulse_cnt_1[5], pulse_cnt_1[4], pulse_cnt_1[3], pulse_cnt_1[2],      ;
-;                                    ;                                ; pulse_cnt_1[1], pulse_cnt_1[0], lfsr_32:LFSR_32_1|sr[24], lfsr_32:LFSR_32_1|sr[25],  ;
-;                                    ;                                ; lfsr_32:LFSR_32_1|sr[26], lfsr_32:LFSR_32_1|sr[27], lfsr_32:LFSR_32_1|sr[28],        ;
-;                                    ;                                ; lfsr_32:LFSR_32_1|sr[29], lfsr_32:LFSR_32_1|sr[30], lfsr_32:LFSR_32_1|sr[31]         ;
-; pulse_gen:PG_0|i_x_low[0]          ; Stuck at GND                   ; pulse_gen:PG_0|pulse_out, pulse_cnt_0[24], pulse_cnt_0[23], pulse_cnt_0[22],         ;
-;                                    ; due to stuck port clock_enable ; pulse_cnt_0[21], pulse_cnt_0[20], pulse_cnt_0[19], pulse_cnt_0[18], pulse_cnt_0[17], ;
-;                                    ;                                ; pulse_cnt_0[16], pulse_cnt_0[15], pulse_cnt_0[14], pulse_cnt_0[13], pulse_cnt_0[12], ;
-;                                    ;                                ; pulse_cnt_0[11], pulse_cnt_0[10], pulse_cnt_0[9], pulse_cnt_0[8], pulse_cnt_0[7],    ;
-;                                    ;                                ; pulse_cnt_0[6], pulse_cnt_0[5], pulse_cnt_0[4], pulse_cnt_0[3], pulse_cnt_0[2],      ;
-;                                    ;                                ; pulse_cnt_0[1], pulse_cnt_0[0], lfsr_32:LFSR_32_0|sr[24], lfsr_32:LFSR_32_0|sr[25],  ;
-;                                    ;                                ; lfsr_32:LFSR_32_0|sr[26], lfsr_32:LFSR_32_0|sr[27], lfsr_32:LFSR_32_0|sr[28],        ;
-;                                    ;                                ; lfsr_32:LFSR_32_0|sr[29], lfsr_32:LFSR_32_0|sr[30], lfsr_32:LFSR_32_0|sr[31]         ;
-; pulse_gen:PG_7|i_x_low[0]          ; Stuck at GND                   ; pulse_gen:PG_7|pulse_out, pulse_cnt_7[24], pulse_cnt_7[23], pulse_cnt_7[22],         ;
-;                                    ; due to stuck port clock_enable ; pulse_cnt_7[21], pulse_cnt_7[20], pulse_cnt_7[19], pulse_cnt_7[18], pulse_cnt_7[17], ;
-;                                    ;                                ; pulse_cnt_7[16], pulse_cnt_7[15], pulse_cnt_7[14], pulse_cnt_7[13], pulse_cnt_7[12], ;
-;                                    ;                                ; pulse_cnt_7[11], pulse_cnt_7[10], pulse_cnt_7[9], pulse_cnt_7[8], pulse_cnt_7[7],    ;
-;                                    ;                                ; pulse_cnt_7[6], pulse_cnt_7[5], pulse_cnt_7[4], pulse_cnt_7[3], pulse_cnt_7[2],      ;
-;                                    ;                                ; pulse_cnt_7[1], pulse_cnt_7[0], lfsr_32:LFSR_32_7|sr[24], lfsr_32:LFSR_32_7|sr[25],  ;
-;                                    ;                                ; lfsr_32:LFSR_32_7|sr[26], lfsr_32:LFSR_32_7|sr[27], lfsr_32:LFSR_32_7|sr[28],        ;
-;                                    ;                                ; lfsr_32:LFSR_32_7|sr[29], lfsr_32:LFSR_32_7|sr[30], lfsr_32:LFSR_32_7|sr[31]         ;
-; rs232_ser:RS232_SER_0|shift_reg[7] ; Stuck at GND                   ; rs232_ser:RS232_SER_0|shift_reg[6], rs232_ser:RS232_SER_0|shift_reg[5],              ;
-;                                    ; due to stuck port data_in      ; rs232_ser:RS232_SER_0|shift_reg[4], rs232_ser:RS232_SER_0|shift_reg[3],              ;
-;                                    ;                                ; rs232_ser:RS232_SER_0|shift_reg[2], rs232_ser:RS232_SER_0|shift_reg[1],              ;
-;                                    ;                                ; rs232_ser:RS232_SER_0|shift_reg[0]                                                   ;
-; lfsr_32:LFSR_32_4|sr[12]           ; Lost Fanouts                   ; lfsr_32:LFSR_32_4|sr[11], lfsr_32:LFSR_32_4|sr[10], lfsr_32:LFSR_32_4|sr[9],         ;
-;                                    ;                                ; lfsr_32:LFSR_32_4|sr[8], lfsr_32:LFSR_32_4|sr[7]                                     ;
-; lfsr_32:LFSR_32_3|sr[12]           ; Lost Fanouts                   ; lfsr_32:LFSR_32_3|sr[11], lfsr_32:LFSR_32_3|sr[10], lfsr_32:LFSR_32_3|sr[9],         ;
-;                                    ;                                ; lfsr_32:LFSR_32_3|sr[8], lfsr_32:LFSR_32_3|sr[7]                                     ;
-; lfsr_32:LFSR_32_5|sr[12]           ; Lost Fanouts                   ; lfsr_32:LFSR_32_5|sr[11], lfsr_32:LFSR_32_5|sr[10], lfsr_32:LFSR_32_5|sr[9],         ;
-;                                    ;                                ; lfsr_32:LFSR_32_5|sr[8], lfsr_32:LFSR_32_5|sr[7]                                     ;
-; lfsr_32:LFSR_32_2|sr[12]           ; Lost Fanouts                   ; lfsr_32:LFSR_32_2|sr[11], lfsr_32:LFSR_32_2|sr[10], lfsr_32:LFSR_32_2|sr[9],         ;
-;                                    ;                                ; lfsr_32:LFSR_32_2|sr[8], lfsr_32:LFSR_32_2|sr[7]                                     ;
-; lfsr_32:LFSR_32_6|sr[12]           ; Lost Fanouts                   ; lfsr_32:LFSR_32_6|sr[11], lfsr_32:LFSR_32_6|sr[10], lfsr_32:LFSR_32_6|sr[9],         ;
-;                                    ;                                ; lfsr_32:LFSR_32_6|sr[8], lfsr_32:LFSR_32_6|sr[7]                                     ;
-; lfsr_32:LFSR_32_1|sr[12]           ; Lost Fanouts                   ; lfsr_32:LFSR_32_1|sr[11], lfsr_32:LFSR_32_1|sr[10], lfsr_32:LFSR_32_1|sr[9],         ;
-;                                    ;                                ; lfsr_32:LFSR_32_1|sr[8], lfsr_32:LFSR_32_1|sr[7]                                     ;
-; lfsr_32:LFSR_32_7|sr[12]           ; Lost Fanouts                   ; lfsr_32:LFSR_32_7|sr[11], lfsr_32:LFSR_32_7|sr[10], lfsr_32:LFSR_32_7|sr[9],         ;
-;                                    ;                                ; lfsr_32:LFSR_32_7|sr[8], lfsr_32:LFSR_32_7|sr[7]                                     ;
-; lfsr_32:LFSR_32_0|sr[12]           ; Lost Fanouts                   ; lfsr_32:LFSR_32_0|sr[11], lfsr_32:LFSR_32_0|sr[10], lfsr_32:LFSR_32_0|sr[9],         ;
-;                                    ;                                ; lfsr_32:LFSR_32_0|sr[8], lfsr_32:LFSR_32_0|sr[7]                                     ;
-; lfsr_32:LFSR_32_6|sr[6]            ; Lost Fanouts                   ; lfsr_32:LFSR_32_6|sr[5], lfsr_32:LFSR_32_6|sr[4]                                     ;
-; lfsr_32:LFSR_32_6|sr[3]            ; Lost Fanouts                   ; lfsr_32:LFSR_32_6|sr[2], lfsr_32:LFSR_32_6|sr[1]                                     ;
-; lfsr_32:LFSR_32_7|sr[18]           ; Lost Fanouts                   ; lfsr_32:LFSR_32_7|sr[17], lfsr_32:LFSR_32_7|sr[16]                                   ;
-; lfsr_32:LFSR_32_6|sr[18]           ; Lost Fanouts                   ; lfsr_32:LFSR_32_6|sr[17], lfsr_32:LFSR_32_6|sr[16]                                   ;
-; lfsr_32:LFSR_32_5|sr[3]            ; Lost Fanouts                   ; lfsr_32:LFSR_32_5|sr[2], lfsr_32:LFSR_32_5|sr[1]                                     ;
-; lfsr_32:LFSR_32_5|sr[6]            ; Lost Fanouts                   ; lfsr_32:LFSR_32_5|sr[5], lfsr_32:LFSR_32_5|sr[4]                                     ;
-; lfsr_32:LFSR_32_5|sr[18]           ; Lost Fanouts                   ; lfsr_32:LFSR_32_5|sr[17], lfsr_32:LFSR_32_5|sr[16]                                   ;
-; lfsr_32:LFSR_32_4|sr[3]            ; Lost Fanouts                   ; lfsr_32:LFSR_32_4|sr[2], lfsr_32:LFSR_32_4|sr[1]                                     ;
-; lfsr_32:LFSR_32_4|sr[6]            ; Lost Fanouts                   ; lfsr_32:LFSR_32_4|sr[5], lfsr_32:LFSR_32_4|sr[4]                                     ;
-; lfsr_32:LFSR_32_7|sr[3]            ; Lost Fanouts                   ; lfsr_32:LFSR_32_7|sr[2], lfsr_32:LFSR_32_7|sr[1]                                     ;
-; lfsr_32:LFSR_32_7|sr[6]            ; Lost Fanouts                   ; lfsr_32:LFSR_32_7|sr[5], lfsr_32:LFSR_32_7|sr[4]                                     ;
-; lfsr_32:LFSR_32_4|sr[18]           ; Lost Fanouts                   ; lfsr_32:LFSR_32_4|sr[17], lfsr_32:LFSR_32_4|sr[16]                                   ;
-; lfsr_32:LFSR_32_0|sr[18]           ; Lost Fanouts                   ; lfsr_32:LFSR_32_0|sr[17], lfsr_32:LFSR_32_0|sr[16]                                   ;
-; lfsr_32:LFSR_32_3|sr[6]            ; Lost Fanouts                   ; lfsr_32:LFSR_32_3|sr[5], lfsr_32:LFSR_32_3|sr[4]                                     ;
-; lfsr_32:LFSR_32_3|sr[3]            ; Lost Fanouts                   ; lfsr_32:LFSR_32_3|sr[2], lfsr_32:LFSR_32_3|sr[1]                                     ;
-; lfsr_32:LFSR_32_3|sr[18]           ; Lost Fanouts                   ; lfsr_32:LFSR_32_3|sr[17], lfsr_32:LFSR_32_3|sr[16]                                   ;
-; lfsr_32:LFSR_32_2|sr[3]            ; Lost Fanouts                   ; lfsr_32:LFSR_32_2|sr[2], lfsr_32:LFSR_32_2|sr[1]                                     ;
-; lfsr_32:LFSR_32_0|sr[6]            ; Lost Fanouts                   ; lfsr_32:LFSR_32_0|sr[5], lfsr_32:LFSR_32_0|sr[4]                                     ;
-; lfsr_32:LFSR_32_2|sr[6]            ; Lost Fanouts                   ; lfsr_32:LFSR_32_2|sr[5], lfsr_32:LFSR_32_2|sr[4]                                     ;
-; lfsr_32:LFSR_32_2|sr[18]           ; Lost Fanouts                   ; lfsr_32:LFSR_32_2|sr[17], lfsr_32:LFSR_32_2|sr[16]                                   ;
-; lfsr_32:LFSR_32_1|sr[3]            ; Lost Fanouts                   ; lfsr_32:LFSR_32_1|sr[2], lfsr_32:LFSR_32_1|sr[1]                                     ;
-; lfsr_32:LFSR_32_0|sr[3]            ; Lost Fanouts                   ; lfsr_32:LFSR_32_0|sr[2], lfsr_32:LFSR_32_0|sr[1]                                     ;
-; lfsr_32:LFSR_32_1|sr[6]            ; Lost Fanouts                   ; lfsr_32:LFSR_32_1|sr[5], lfsr_32:LFSR_32_1|sr[4]                                     ;
-; lfsr_32:LFSR_32_1|sr[18]           ; Lost Fanouts                   ; lfsr_32:LFSR_32_1|sr[17], lfsr_32:LFSR_32_1|sr[16]                                   ;
-; lfsr_32:LFSR_32_0|sr[15]           ; Lost Fanouts                   ; lfsr_32:LFSR_32_0|sr[14]                                                             ;
-; lfsr_32:LFSR_32_7|sr[15]           ; Lost Fanouts                   ; lfsr_32:LFSR_32_7|sr[14]                                                             ;
-; lfsr_32:LFSR_32_1|sr[15]           ; Lost Fanouts                   ; lfsr_32:LFSR_32_1|sr[14]                                                             ;
-; lfsr_32:LFSR_32_6|sr[15]           ; Lost Fanouts                   ; lfsr_32:LFSR_32_6|sr[14]                                                             ;
-; lfsr_32:LFSR_32_2|sr[15]           ; Lost Fanouts                   ; lfsr_32:LFSR_32_2|sr[14]                                                             ;
-; lfsr_32:LFSR_32_5|sr[15]           ; Lost Fanouts                   ; lfsr_32:LFSR_32_5|sr[14]                                                             ;
-; lfsr_32:LFSR_32_3|sr[15]           ; Lost Fanouts                   ; lfsr_32:LFSR_32_3|sr[14]                                                             ;
-; lfsr_32:LFSR_32_4|sr[15]           ; Lost Fanouts                   ; lfsr_32:LFSR_32_4|sr[14]                                                             ;
-+------------------------------------+--------------------------------+--------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                              ;
++------------------------------------+---------------------------+-------------------------------------------------------------------------+
+; Register name                      ; Reason for Removal        ; Registers Removed due to This Register                                  ;
++------------------------------------+---------------------------+-------------------------------------------------------------------------+
+; rs232_ser:RS232_SER_0|shift_reg[7] ; Stuck at GND              ; rs232_ser:RS232_SER_0|shift_reg[6], rs232_ser:RS232_SER_0|shift_reg[5], ;
+;                                    ; due to stuck port data_in ; rs232_ser:RS232_SER_0|shift_reg[4], rs232_ser:RS232_SER_0|shift_reg[3], ;
+;                                    ;                           ; rs232_ser:RS232_SER_0|shift_reg[2], rs232_ser:RS232_SER_0|shift_reg[1], ;
+;                                    ;                           ; rs232_ser:RS232_SER_0|shift_reg[0]                                      ;
++------------------------------------+---------------------------+-------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -861,24 +740,124 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 197   ;
-; Number of registers using Synchronous Clear  ; 70    ;
+; Total registers                              ; 717   ;
+; Number of registers using Synchronous Clear  ; 326   ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 127   ;
+; Number of registers using Asynchronous Clear ; 383   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 73    ;
+; Number of registers using Clock Enable       ; 329   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+--------------------------------------------------+
-; Inverted Register Statistics                     ;
-+----------------------------------------+---------+
-; Inverted Register                      ; Fan out ;
-+----------------------------------------+---------+
-; rs232_ser:RS232_SER_0|tx               ; 2       ;
-; Total number of inverted registers = 1 ;         ;
-+----------------------------------------+---------+
++-----------------------------------------------------+
+; Inverted Register Statistics                        ;
++-------------------------------------------+---------+
+; Inverted Register                         ; Fan out ;
++-------------------------------------------+---------+
+; lfsr_32:LFSR_32_4|sr[15]                  ; 3       ;
+; lfsr_32:LFSR_32_4|sr[3]                   ; 3       ;
+; lfsr_32:LFSR_32_4|sr[4]                   ; 3       ;
+; lfsr_32:LFSR_32_4|sr[1]                   ; 4       ;
+; lfsr_32:LFSR_32_4|sr[9]                   ; 3       ;
+; lfsr_32:LFSR_32_4|sr[10]                  ; 4       ;
+; lfsr_32:LFSR_32_4|sr[13]                  ; 3       ;
+; lfsr_32:LFSR_32_4|sr[19]                  ; 2       ;
+; lfsr_32:LFSR_32_4|sr[20]                  ; 2       ;
+; lfsr_32:LFSR_32_4|sr[25]                  ; 2       ;
+; lfsr_32:LFSR_32_4|sr[26]                  ; 2       ;
+; lfsr_32:LFSR_32_4|sr[31]                  ; 2       ;
+; lfsr_32:LFSR_32_4|sr[21]                  ; 2       ;
+; lfsr_32:LFSR_32_4|sr[22]                  ; 2       ;
+; lfsr_32:LFSR_32_4|sr[23]                  ; 2       ;
+; lfsr_32:LFSR_32_4|sr[28]                  ; 2       ;
+; lfsr_32:LFSR_32_5|sr[15]                  ; 3       ;
+; lfsr_32:LFSR_32_5|sr[16]                  ; 3       ;
+; lfsr_32:LFSR_32_5|sr[5]                   ; 4       ;
+; lfsr_32:LFSR_32_5|sr[1]                   ; 4       ;
+; lfsr_32:LFSR_32_5|sr[0]                   ; 2       ;
+; lfsr_32:LFSR_32_5|sr[7]                   ; 3       ;
+; lfsr_32:LFSR_32_5|sr[14]                  ; 3       ;
+; lfsr_32:LFSR_32_5|sr[18]                  ; 2       ;
+; lfsr_32:LFSR_32_5|sr[19]                  ; 2       ;
+; lfsr_32:LFSR_32_5|sr[26]                  ; 2       ;
+; lfsr_32:LFSR_32_5|sr[31]                  ; 2       ;
+; lfsr_32:LFSR_32_5|sr[22]                  ; 2       ;
+; lfsr_32:LFSR_32_5|sr[24]                  ; 2       ;
+; lfsr_32:LFSR_32_5|sr[28]                  ; 2       ;
+; lfsr_32:LFSR_32_6|sr[16]                  ; 3       ;
+; lfsr_32:LFSR_32_6|sr[5]                   ; 4       ;
+; lfsr_32:LFSR_32_6|sr[4]                   ; 3       ;
+; lfsr_32:LFSR_32_6|sr[1]                   ; 4       ;
+; lfsr_32:LFSR_32_6|sr[2]                   ; 3       ;
+; lfsr_32:LFSR_32_6|sr[0]                   ; 2       ;
+; lfsr_32:LFSR_32_6|sr[9]                   ; 3       ;
+; lfsr_32:LFSR_32_6|sr[7]                   ; 3       ;
+; lfsr_32:LFSR_32_6|sr[6]                   ; 4       ;
+; lfsr_32:LFSR_32_6|sr[8]                   ; 4       ;
+; lfsr_32:LFSR_32_6|sr[10]                  ; 4       ;
+; lfsr_32:LFSR_32_6|sr[12]                  ; 3       ;
+; lfsr_32:LFSR_32_6|sr[13]                  ; 3       ;
+; lfsr_32:LFSR_32_6|sr[25]                  ; 2       ;
+; lfsr_32:LFSR_32_6|sr[22]                  ; 2       ;
+; lfsr_32:LFSR_32_6|sr[24]                  ; 2       ;
+; lfsr_32:LFSR_32_6|sr[27]                  ; 2       ;
+; lfsr_32:LFSR_32_6|sr[28]                  ; 2       ;
+; lfsr_32:LFSR_32_6|sr[29]                  ; 2       ;
+; lfsr_32:LFSR_32_7|sr[17]                  ; 3       ;
+; lfsr_32:LFSR_32_7|sr[15]                  ; 3       ;
+; lfsr_32:LFSR_32_7|sr[16]                  ; 3       ;
+; lfsr_32:LFSR_32_7|sr[4]                   ; 3       ;
+; lfsr_32:LFSR_32_7|sr[2]                   ; 3       ;
+; lfsr_32:LFSR_32_7|sr[0]                   ; 2       ;
+; lfsr_32:LFSR_32_7|sr[7]                   ; 3       ;
+; lfsr_32:LFSR_32_7|sr[6]                   ; 4       ;
+; lfsr_32:LFSR_32_7|sr[8]                   ; 4       ;
+; lfsr_32:LFSR_32_7|sr[10]                  ; 4       ;
+; lfsr_32:LFSR_32_7|sr[14]                  ; 3       ;
+; lfsr_32:LFSR_32_7|sr[31]                  ; 2       ;
+; lfsr_32:LFSR_32_7|sr[22]                  ; 2       ;
+; lfsr_32:LFSR_32_7|sr[23]                  ; 2       ;
+; lfsr_32:LFSR_32_7|sr[29]                  ; 2       ;
+; lfsr_32:LFSR_32_0|sr[17]                  ; 3       ;
+; lfsr_32:LFSR_32_0|sr[11]                  ; 3       ;
+; lfsr_32:LFSR_32_0|sr[15]                  ; 3       ;
+; lfsr_32:LFSR_32_0|sr[16]                  ; 3       ;
+; lfsr_32:LFSR_32_0|sr[5]                   ; 4       ;
+; lfsr_32:LFSR_32_0|sr[3]                   ; 3       ;
+; lfsr_32:LFSR_32_0|sr[4]                   ; 3       ;
+; lfsr_32:LFSR_32_0|sr[8]                   ; 4       ;
+; lfsr_32:LFSR_32_0|sr[18]                  ; 2       ;
+; lfsr_32:LFSR_32_0|sr[20]                  ; 2       ;
+; lfsr_32:LFSR_32_0|sr[25]                  ; 2       ;
+; lfsr_32:LFSR_32_0|sr[26]                  ; 2       ;
+; lfsr_32:LFSR_32_0|sr[31]                  ; 2       ;
+; lfsr_32:LFSR_32_0|sr[21]                  ; 2       ;
+; lfsr_32:LFSR_32_0|sr[22]                  ; 2       ;
+; lfsr_32:LFSR_32_0|sr[28]                  ; 2       ;
+; lfsr_32:LFSR_32_0|sr[30]                  ; 2       ;
+; lfsr_32:LFSR_32_1|sr[17]                  ; 3       ;
+; lfsr_32:LFSR_32_1|sr[11]                  ; 3       ;
+; lfsr_32:LFSR_32_1|sr[16]                  ; 3       ;
+; lfsr_32:LFSR_32_1|sr[0]                   ; 2       ;
+; lfsr_32:LFSR_32_1|sr[12]                  ; 3       ;
+; lfsr_32:LFSR_32_1|sr[13]                  ; 3       ;
+; lfsr_32:LFSR_32_1|sr[18]                  ; 2       ;
+; lfsr_32:LFSR_32_1|sr[19]                  ; 2       ;
+; lfsr_32:LFSR_32_1|sr[26]                  ; 2       ;
+; lfsr_32:LFSR_32_1|sr[24]                  ; 2       ;
+; lfsr_32:LFSR_32_1|sr[27]                  ; 2       ;
+; lfsr_32:LFSR_32_1|sr[29]                  ; 2       ;
+; lfsr_32:LFSR_32_2|sr[17]                  ; 3       ;
+; lfsr_32:LFSR_32_2|sr[11]                  ; 3       ;
+; lfsr_32:LFSR_32_2|sr[15]                  ; 3       ;
+; lfsr_32:LFSR_32_2|sr[16]                  ; 3       ;
+; lfsr_32:LFSR_32_2|sr[2]                   ; 3       ;
+; lfsr_32:LFSR_32_2|sr[0]                   ; 2       ;
+; lfsr_32:LFSR_32_2|sr[7]                   ; 3       ;
+; Total number of inverted registers = 126* ;         ;
++-------------------------------------------+---------+
+* Table truncated at 100 items. To change the number of inverted registers reported, set the "Number of Inverted Registers Reported" option under Assignments->Settings->Analysis and Synthesis Settings->More Settings
 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -886,9 +865,17 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                             ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------+
-; 5:1                ; 7 bits    ; 21 LEs        ; 7 LEs                ; 14 LEs                 ; Yes        ; |de0_pulse_gen_top|rs232_ser:RS232_SER_0|shift_reg[6]  ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |de0_pulse_gen_top|pulse_cnt_0[6]                      ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |de0_pulse_gen_top|pulse_cnt_1[9]                      ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |de0_pulse_gen_top|pulse_cnt_2[9]                      ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |de0_pulse_gen_top|pulse_cnt_3[9]                      ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |de0_pulse_gen_top|pulse_cnt_4[8]                      ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |de0_pulse_gen_top|pulse_cnt_5[6]                      ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |de0_pulse_gen_top|pulse_cnt_6[9]                      ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |de0_pulse_gen_top|pulse_cnt_7[9]                      ;
+; 5:1                ; 7 bits    ; 21 LEs        ; 7 LEs                ; 14 LEs                 ; Yes        ; |de0_pulse_gen_top|rs232_ser:RS232_SER_0|shift_reg[0]  ;
 ; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |de0_pulse_gen_top|rs232_ser:RS232_SER_0|launch_cnt[1] ;
-; 6:1                ; 5 bits    ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |de0_pulse_gen_top|rs232_des:RS232_DES_0|latch_cnt[0]  ;
+; 6:1                ; 5 bits    ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |de0_pulse_gen_top|rs232_des:RS232_DES_0|latch_cnt[3]  ;
 ; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |de0_pulse_gen_top|rs232_ser:RS232_SER_0|shift_cnt     ;
 ; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |de0_pulse_gen_top|rs232_des:RS232_DES_0|shift_cnt     ;
 ; 7:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |de0_pulse_gen_top|fcr_ctrl:FCR_0|Selector48           ;
@@ -1606,29 +1593,33 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 197                         ;
+; arriav_ff             ; 717                         ;
 ;     CLR               ; 44                          ;
 ;     CLR SCLR          ; 26                          ;
 ;     ENA               ; 16                          ;
 ;     ENA CLR           ; 57                          ;
+;     ENA CLR SCLR      ; 256                         ;
 ;     SCLR              ; 44                          ;
-;     plain             ; 10                          ;
+;     plain             ; 274                         ;
 ; arriav_io_obuf        ; 98                          ;
-; arriav_lcell_comb     ; 165                         ;
-;     arith             ; 69                          ;
-;         1 data inputs ; 69                          ;
-;     normal            ; 96                          ;
+; arriav_lcell_comb     ; 729                         ;
+;     arith             ; 325                         ;
+;         1 data inputs ; 325                         ;
+;     extend            ; 8                           ;
+;         7 data inputs ; 8                           ;
+;     normal            ; 396                         ;
 ;         0 data inputs ; 1                           ;
-;         2 data inputs ; 12                          ;
-;         3 data inputs ; 11                          ;
-;         4 data inputs ; 21                          ;
-;         5 data inputs ; 23                          ;
-;         6 data inputs ; 28                          ;
+;         1 data inputs ; 127                         ;
+;         2 data inputs ; 29                          ;
+;         3 data inputs ; 29                          ;
+;         4 data inputs ; 56                          ;
+;         5 data inputs ; 26                          ;
+;         6 data inputs ; 128                         ;
 ; boundary_port         ; 206                         ;
-; generic_pll           ; 1                           ;
+; generic_pll           ; 2                           ;
 ;                       ;                             ;
-; Max LUT depth         ; 3.40                        ;
-; Average LUT depth     ; 1.67                        ;
+; Max LUT depth         ; 4.10                        ;
+; Average LUT depth     ; 2.80                        ;
 +-----------------------+-----------------------------+
 
 
@@ -1647,7 +1638,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 16.0.0 Build 211 04/27/2016 SJ Standard Edition
-    Info: Processing started: Fri Dec  7 16:22:31 2018
+    Info: Processing started: Fri Dec  7 17:40:54 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off de0_pulse_gen -c de0_pulse_gen
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -1666,7 +1657,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file hdl/ped
 Info (12021): Found 1 design units, including 1 entities, in source file hdl/fcr_ctrl.v
     Info (12023): Found entity 1: fcr_ctrl File: /home/tyler/de0_pulse_gen/hdl/fcr_ctrl.v Line: 15
 Info (12021): Found 1 design units, including 1 entities, in source file de0_pulse_gen_top.v
-    Info (12023): Found entity 1: de0_pulse_gen_top File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 6
+    Info (12023): Found entity 1: de0_pulse_gen_top File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 7
 Info (12021): Found 1 design units, including 1 entities, in source file hdl/rst_gen.v
     Info (12023): Found entity 1: rst_gen File: /home/tyler/de0_pulse_gen/hdl/rst_gen.v Line: 9
 Info (12021): Found 1 design units, including 1 entities, in source file hdl/rs232_ser.v
@@ -1687,34 +1678,34 @@ Info (12021): Found 1 design units, including 1 entities, in source file PLL0/PL
     Info (12023): Found entity 1: PLL0_0002 File: /home/tyler/de0_pulse_gen/PLL0/PLL0_0002.v Line: 2
 Warning (10037): Verilog HDL or VHDL warning at fcr_ctrl.v(185): conditional expression evaluates to a constant File: /home/tyler/de0_pulse_gen/hdl/fcr_ctrl.v Line: 185
 Info (12127): Elaborating entity "de0_pulse_gen_top" for the top level hierarchy
-Warning (10230): Verilog HDL assignment warning at de0_pulse_gen_top.v(407): truncated value with size 32 to match size of target (1) File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 407
-Warning (10230): Verilog HDL assignment warning at de0_pulse_gen_top.v(411): truncated value with size 32 to match size of target (1) File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 411
-Warning (10230): Verilog HDL assignment warning at de0_pulse_gen_top.v(432): truncated value with size 32 to match size of target (1) File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 432
-Warning (10230): Verilog HDL assignment warning at de0_pulse_gen_top.v(433): truncated value with size 32 to match size of target (1) File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 433
-Warning (10034): Output port "DRAM_ADDR" at de0_pulse_gen_top.v(31) has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 31
-Warning (10034): Output port "DRAM_BA" at de0_pulse_gen_top.v(32) has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 32
-Warning (10034): Output port "HEX0" at de0_pulse_gen_top.v(48) has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 48
-Warning (10034): Output port "HEX1" at de0_pulse_gen_top.v(51) has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 51
-Warning (10034): Output port "HEX2" at de0_pulse_gen_top.v(54) has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 54
-Warning (10034): Output port "HEX3" at de0_pulse_gen_top.v(57) has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 57
-Warning (10034): Output port "HEX4" at de0_pulse_gen_top.v(60) has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 60
-Warning (10034): Output port "HEX5" at de0_pulse_gen_top.v(63) has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 63
-Warning (10034): Output port "LEDR[9..3]" at de0_pulse_gen_top.v(69) has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 69
-Warning (10034): Output port "VGA_B" at de0_pulse_gen_top.v(89) has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 89
-Warning (10034): Output port "VGA_G" at de0_pulse_gen_top.v(90) has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 90
-Warning (10034): Output port "VGA_R" at de0_pulse_gen_top.v(92) has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 92
-Warning (10034): Output port "DRAM_CAS_N" at de0_pulse_gen_top.v(33) has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 33
-Warning (10034): Output port "DRAM_CKE" at de0_pulse_gen_top.v(34) has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 34
-Warning (10034): Output port "DRAM_CLK" at de0_pulse_gen_top.v(35) has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 35
-Warning (10034): Output port "DRAM_CS_N" at de0_pulse_gen_top.v(36) has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 36
-Warning (10034): Output port "DRAM_LDQM" at de0_pulse_gen_top.v(38) has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 38
-Warning (10034): Output port "DRAM_RAS_N" at de0_pulse_gen_top.v(39) has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 39
-Warning (10034): Output port "DRAM_UDQM" at de0_pulse_gen_top.v(40) has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 40
-Warning (10034): Output port "DRAM_WE_N" at de0_pulse_gen_top.v(41) has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 41
-Warning (10034): Output port "SD_CLK" at de0_pulse_gen_top.v(81) has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 81
-Warning (10034): Output port "VGA_HS" at de0_pulse_gen_top.v(91) has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 91
-Warning (10034): Output port "VGA_VS" at de0_pulse_gen_top.v(94) has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 94
-Info (12128): Elaborating entity "PLL0" for hierarchy "PLL0:PLL0_0" File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 109
+Warning (10230): Verilog HDL assignment warning at de0_pulse_gen_top.v(423): truncated value with size 32 to match size of target (1) File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 423
+Warning (10230): Verilog HDL assignment warning at de0_pulse_gen_top.v(427): truncated value with size 32 to match size of target (1) File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 427
+Warning (10230): Verilog HDL assignment warning at de0_pulse_gen_top.v(448): truncated value with size 32 to match size of target (1) File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 448
+Warning (10230): Verilog HDL assignment warning at de0_pulse_gen_top.v(452): truncated value with size 32 to match size of target (1) File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 452
+Warning (10034): Output port "DRAM_ADDR" at de0_pulse_gen_top.v(32) has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 32
+Warning (10034): Output port "DRAM_BA" at de0_pulse_gen_top.v(33) has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 33
+Warning (10034): Output port "HEX0" at de0_pulse_gen_top.v(49) has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 49
+Warning (10034): Output port "HEX1" at de0_pulse_gen_top.v(52) has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 52
+Warning (10034): Output port "HEX2" at de0_pulse_gen_top.v(55) has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 55
+Warning (10034): Output port "HEX3" at de0_pulse_gen_top.v(58) has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 58
+Warning (10034): Output port "HEX4" at de0_pulse_gen_top.v(61) has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 61
+Warning (10034): Output port "HEX5" at de0_pulse_gen_top.v(64) has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 64
+Warning (10034): Output port "LEDR[9..3]" at de0_pulse_gen_top.v(70) has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 70
+Warning (10034): Output port "VGA_B" at de0_pulse_gen_top.v(90) has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 90
+Warning (10034): Output port "VGA_G" at de0_pulse_gen_top.v(91) has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 91
+Warning (10034): Output port "VGA_R" at de0_pulse_gen_top.v(93) has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 93
+Warning (10034): Output port "DRAM_CAS_N" at de0_pulse_gen_top.v(34) has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 34
+Warning (10034): Output port "DRAM_CKE" at de0_pulse_gen_top.v(35) has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 35
+Warning (10034): Output port "DRAM_CLK" at de0_pulse_gen_top.v(36) has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 36
+Warning (10034): Output port "DRAM_CS_N" at de0_pulse_gen_top.v(37) has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 37
+Warning (10034): Output port "DRAM_LDQM" at de0_pulse_gen_top.v(39) has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 39
+Warning (10034): Output port "DRAM_RAS_N" at de0_pulse_gen_top.v(40) has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 40
+Warning (10034): Output port "DRAM_UDQM" at de0_pulse_gen_top.v(41) has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 41
+Warning (10034): Output port "DRAM_WE_N" at de0_pulse_gen_top.v(42) has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 42
+Warning (10034): Output port "SD_CLK" at de0_pulse_gen_top.v(82) has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 82
+Warning (10034): Output port "VGA_HS" at de0_pulse_gen_top.v(92) has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 92
+Warning (10034): Output port "VGA_VS" at de0_pulse_gen_top.v(95) has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 95
+Info (12128): Elaborating entity "PLL0" for hierarchy "PLL0:PLL0_0" File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 119
 Info (12128): Elaborating entity "PLL0_0002" for hierarchy "PLL0:PLL0_0|PLL0_0002:pll0_inst" File: /home/tyler/de0_pulse_gen/PLL0.v Line: 22
 Info (12128): Elaborating entity "altera_pll" for hierarchy "PLL0:PLL0_0|PLL0_0002:pll0_inst|altera_pll:altera_pll_i" File: /home/tyler/de0_pulse_gen/PLL0/PLL0_0002.v Line: 88
 Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "wire_to_nowhere_64" into its bus
@@ -1780,235 +1771,231 @@ Info (12133): Instantiated megafunction "PLL0:PLL0_0|PLL0_0002:pll0_inst|altera_
     Info (12134): Parameter "duty_cycle17" = "50"
     Info (12134): Parameter "pll_type" = "General"
     Info (12134): Parameter "pll_subtype" = "General"
-Info (12128): Elaborating entity "debounce" for hierarchy "debounce:DB_0" File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 115
+Info (12128): Elaborating entity "debounce" for hierarchy "debounce:DB_0" File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 131
 Warning (10230): Verilog HDL assignment warning at debounce.v(58): truncated value with size 32 to match size of target (1) File: /home/tyler/de0_pulse_gen/hdl/debounce.v Line: 58
 Warning (10230): Verilog HDL assignment warning at debounce.v(59): truncated value with size 32 to match size of target (1) File: /home/tyler/de0_pulse_gen/hdl/debounce.v Line: 59
-Info (12128): Elaborating entity "version_number" for hierarchy "version_number:VNUM_0" File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 123
-Info (12128): Elaborating entity "config_ind" for hierarchy "config_ind:CONFIG_IND_0" File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 132
-Info (12128): Elaborating entity "fcr_ctrl" for hierarchy "fcr_ctrl:FCR_0" File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 165
+Info (12128): Elaborating entity "version_number" for hierarchy "version_number:VNUM_0" File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 138
+Info (12128): Elaborating entity "config_ind" for hierarchy "config_ind:CONFIG_IND_0" File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 147
+Info (12128): Elaborating entity "fcr_ctrl" for hierarchy "fcr_ctrl:FCR_0" File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 180
 Warning (10036): Verilog HDL or VHDL warning at fcr_ctrl.v(41): object "data" assigned a value but never read File: /home/tyler/de0_pulse_gen/hdl/fcr_ctrl.v Line: 41
 Warning (10036): Verilog HDL or VHDL warning at fcr_ctrl.v(46): object "erm_clear_cnt" assigned a value but never read File: /home/tyler/de0_pulse_gen/hdl/fcr_ctrl.v Line: 46
 Info (10264): Verilog HDL Case Statement information at fcr_ctrl.v(170): all case item expressions in this case statement are onehot File: /home/tyler/de0_pulse_gen/hdl/fcr_ctrl.v Line: 170
 Info (12128): Elaborating entity "sync" for hierarchy "fcr_ctrl:FCR_0|sync:SYNC0" File: /home/tyler/de0_pulse_gen/hdl/fcr_ctrl.v Line: 108
 Info (12128): Elaborating entity "negedge_detector" for hierarchy "fcr_ctrl:FCR_0|negedge_detector:NEDGE1" File: /home/tyler/de0_pulse_gen/hdl/fcr_ctrl.v Line: 112
 Info (12128): Elaborating entity "posedge_detector" for hierarchy "fcr_ctrl:FCR_0|posedge_detector:PEDGE0" File: /home/tyler/de0_pulse_gen/hdl/fcr_ctrl.v Line: 297
-Info (12128): Elaborating entity "rs232_des" for hierarchy "rs232_des:RS232_DES_0" File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 179
-Info (12128): Elaborating entity "rs232_ser" for hierarchy "rs232_ser:RS232_SER_0" File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 195
-Info (12128): Elaborating entity "pedge_req" for hierarchy "pedge_req:PEDGE_REQ_0" File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 198
-Info (12128): Elaborating entity "lfsr_32" for hierarchy "lfsr_32:LFSR_32_0" File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 210
-Info (12128): Elaborating entity "pulse_gen" for hierarchy "pulse_gen:PG_0" File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 222
-Info (12128): Elaborating entity "lfsr_32" for hierarchy "lfsr_32:LFSR_32_1" File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 235
-Info (12128): Elaborating entity "lfsr_32" for hierarchy "lfsr_32:LFSR_32_2" File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 260
-Info (12128): Elaborating entity "lfsr_32" for hierarchy "lfsr_32:LFSR_32_3" File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 285
-Info (12128): Elaborating entity "lfsr_32" for hierarchy "lfsr_32:LFSR_32_4" File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 310
-Info (12128): Elaborating entity "lfsr_32" for hierarchy "lfsr_32:LFSR_32_5" File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 335
-Info (12128): Elaborating entity "lfsr_32" for hierarchy "lfsr_32:LFSR_32_6" File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 360
-Info (12128): Elaborating entity "lfsr_32" for hierarchy "lfsr_32:LFSR_32_7" File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 385
+Info (12128): Elaborating entity "rs232_des" for hierarchy "rs232_des:RS232_DES_0" File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 194
+Info (12128): Elaborating entity "rs232_ser" for hierarchy "rs232_ser:RS232_SER_0" File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 210
+Info (12128): Elaborating entity "pedge_req" for hierarchy "pedge_req:PEDGE_REQ_0" File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 213
+Info (12128): Elaborating entity "lfsr_32" for hierarchy "lfsr_32:LFSR_32_0" File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 226
+Info (12128): Elaborating entity "pulse_gen" for hierarchy "pulse_gen:PG_0" File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 238
+Info (12128): Elaborating entity "lfsr_32" for hierarchy "lfsr_32:LFSR_32_1" File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 251
+Info (12128): Elaborating entity "lfsr_32" for hierarchy "lfsr_32:LFSR_32_2" File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 276
+Info (12128): Elaborating entity "lfsr_32" for hierarchy "lfsr_32:LFSR_32_3" File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 301
+Info (12128): Elaborating entity "lfsr_32" for hierarchy "lfsr_32:LFSR_32_4" File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 326
+Info (12128): Elaborating entity "lfsr_32" for hierarchy "lfsr_32:LFSR_32_5" File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 351
+Info (12128): Elaborating entity "lfsr_32" for hierarchy "lfsr_32:LFSR_32_6" File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 376
+Info (12128): Elaborating entity "lfsr_32" for hierarchy "lfsr_32:LFSR_32_7" File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 401
 Warning (12241): 8 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13034): The following nodes have both tri-state and non-tri-state drivers
-    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_1[8]" and its non-tri-state driver. File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
-    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_1[9]" and its non-tri-state driver. File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
-    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_1[10]" and its non-tri-state driver. File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
-    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_1[11]" and its non-tri-state driver. File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
-    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_1[24]" and its non-tri-state driver. File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
-    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_1[25]" and its non-tri-state driver. File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
-    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_1[26]" and its non-tri-state driver. File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
-    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_1[27]" and its non-tri-state driver. File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
-    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_1[29]" and its non-tri-state driver. File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_1[8]" and its non-tri-state driver. File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 46
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_1[9]" and its non-tri-state driver. File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 46
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_1[10]" and its non-tri-state driver. File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 46
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_1[11]" and its non-tri-state driver. File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 46
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_1[24]" and its non-tri-state driver. File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 46
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_1[25]" and its non-tri-state driver. File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 46
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_1[26]" and its non-tri-state driver. File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 46
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_1[27]" and its non-tri-state driver. File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 46
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_1[29]" and its non-tri-state driver. File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 46
 Warning (13039): The following bidirectional pins have no drivers
-    Warning (13040): bidirectional pin "GPIO_1[28]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
-    Warning (13040): bidirectional pin "CLOCK4_50" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 25
-    Warning (13040): bidirectional pin "DRAM_DQ[0]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 37
-    Warning (13040): bidirectional pin "DRAM_DQ[1]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 37
-    Warning (13040): bidirectional pin "DRAM_DQ[2]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 37
-    Warning (13040): bidirectional pin "DRAM_DQ[3]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 37
-    Warning (13040): bidirectional pin "DRAM_DQ[4]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 37
-    Warning (13040): bidirectional pin "DRAM_DQ[5]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 37
-    Warning (13040): bidirectional pin "DRAM_DQ[6]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 37
-    Warning (13040): bidirectional pin "DRAM_DQ[7]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 37
-    Warning (13040): bidirectional pin "DRAM_DQ[8]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 37
-    Warning (13040): bidirectional pin "DRAM_DQ[9]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 37
-    Warning (13040): bidirectional pin "DRAM_DQ[10]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 37
-    Warning (13040): bidirectional pin "DRAM_DQ[11]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 37
-    Warning (13040): bidirectional pin "DRAM_DQ[12]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 37
-    Warning (13040): bidirectional pin "DRAM_DQ[13]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 37
-    Warning (13040): bidirectional pin "DRAM_DQ[14]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 37
-    Warning (13040): bidirectional pin "DRAM_DQ[15]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 37
-    Warning (13040): bidirectional pin "GPIO_0[0]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 44
-    Warning (13040): bidirectional pin "GPIO_0[1]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 44
-    Warning (13040): bidirectional pin "GPIO_0[2]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 44
-    Warning (13040): bidirectional pin "GPIO_0[3]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 44
-    Warning (13040): bidirectional pin "GPIO_0[4]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 44
-    Warning (13040): bidirectional pin "GPIO_0[5]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 44
-    Warning (13040): bidirectional pin "GPIO_0[6]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 44
-    Warning (13040): bidirectional pin "GPIO_0[7]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 44
-    Warning (13040): bidirectional pin "GPIO_0[8]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 44
-    Warning (13040): bidirectional pin "GPIO_0[9]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 44
-    Warning (13040): bidirectional pin "GPIO_0[10]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 44
-    Warning (13040): bidirectional pin "GPIO_0[11]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 44
-    Warning (13040): bidirectional pin "GPIO_0[12]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 44
-    Warning (13040): bidirectional pin "GPIO_0[13]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 44
-    Warning (13040): bidirectional pin "GPIO_0[14]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 44
-    Warning (13040): bidirectional pin "GPIO_0[15]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 44
-    Warning (13040): bidirectional pin "GPIO_0[16]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 44
-    Warning (13040): bidirectional pin "GPIO_0[17]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 44
-    Warning (13040): bidirectional pin "GPIO_0[18]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 44
-    Warning (13040): bidirectional pin "GPIO_0[19]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 44
-    Warning (13040): bidirectional pin "GPIO_0[20]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 44
-    Warning (13040): bidirectional pin "GPIO_0[21]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 44
-    Warning (13040): bidirectional pin "GPIO_0[22]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 44
-    Warning (13040): bidirectional pin "GPIO_0[23]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 44
-    Warning (13040): bidirectional pin "GPIO_0[24]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 44
-    Warning (13040): bidirectional pin "GPIO_0[25]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 44
-    Warning (13040): bidirectional pin "GPIO_0[26]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 44
-    Warning (13040): bidirectional pin "GPIO_0[27]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 44
-    Warning (13040): bidirectional pin "GPIO_0[28]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 44
-    Warning (13040): bidirectional pin "GPIO_0[29]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 44
-    Warning (13040): bidirectional pin "GPIO_0[30]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 44
-    Warning (13040): bidirectional pin "GPIO_0[31]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 44
-    Warning (13040): bidirectional pin "GPIO_0[32]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 44
-    Warning (13040): bidirectional pin "GPIO_0[33]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 44
-    Warning (13040): bidirectional pin "GPIO_0[34]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 44
-    Warning (13040): bidirectional pin "GPIO_0[35]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 44
-    Warning (13040): bidirectional pin "GPIO_1[0]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
-    Warning (13040): bidirectional pin "GPIO_1[1]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
-    Warning (13040): bidirectional pin "GPIO_1[2]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
-    Warning (13040): bidirectional pin "GPIO_1[3]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
-    Warning (13040): bidirectional pin "GPIO_1[4]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
-    Warning (13040): bidirectional pin "GPIO_1[5]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
-    Warning (13040): bidirectional pin "GPIO_1[6]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
-    Warning (13040): bidirectional pin "GPIO_1[7]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
-    Warning (13040): bidirectional pin "GPIO_1[12]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
-    Warning (13040): bidirectional pin "GPIO_1[13]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
-    Warning (13040): bidirectional pin "GPIO_1[14]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
-    Warning (13040): bidirectional pin "GPIO_1[15]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
-    Warning (13040): bidirectional pin "GPIO_1[16]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
-    Warning (13040): bidirectional pin "GPIO_1[17]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
-    Warning (13040): bidirectional pin "GPIO_1[18]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
-    Warning (13040): bidirectional pin "GPIO_1[19]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
-    Warning (13040): bidirectional pin "GPIO_1[20]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
-    Warning (13040): bidirectional pin "GPIO_1[21]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
-    Warning (13040): bidirectional pin "GPIO_1[22]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
-    Warning (13040): bidirectional pin "GPIO_1[23]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
-    Warning (13040): bidirectional pin "GPIO_1[30]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
-    Warning (13040): bidirectional pin "GPIO_1[31]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
-    Warning (13040): bidirectional pin "GPIO_1[32]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
-    Warning (13040): bidirectional pin "GPIO_1[33]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
-    Warning (13040): bidirectional pin "GPIO_1[34]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
-    Warning (13040): bidirectional pin "GPIO_1[35]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
-    Warning (13040): bidirectional pin "PS2_CLK" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 72
-    Warning (13040): bidirectional pin "PS2_CLK2" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 73
-    Warning (13040): bidirectional pin "PS2_DAT" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 74
-    Warning (13040): bidirectional pin "PS2_DAT2" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 75
-    Warning (13040): bidirectional pin "SD_CMD" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 82
-    Warning (13040): bidirectional pin "SD_DATA[0]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 83
-    Warning (13040): bidirectional pin "SD_DATA[1]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 83
-    Warning (13040): bidirectional pin "SD_DATA[2]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 83
-    Warning (13040): bidirectional pin "SD_DATA[3]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 83
-Warning (14284): Synthesized away the following node(s):
-    Warning (14285): Synthesized away the following PLL node(s):
-        Warning (14320): Synthesized away node "PLL0:PLL0_0|PLL0_0002:pll0_inst|altera_pll:altera_pll_i|outclk_wire[1]" File: /home/tyler/altera/16.0/quartus/libraries/megafunctions/altera_pll.v Line: 749
+    Warning (13040): bidirectional pin "GPIO_1[28]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 46
+    Warning (13040): bidirectional pin "CLOCK4_50" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 26
+    Warning (13040): bidirectional pin "DRAM_DQ[0]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 38
+    Warning (13040): bidirectional pin "DRAM_DQ[1]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 38
+    Warning (13040): bidirectional pin "DRAM_DQ[2]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 38
+    Warning (13040): bidirectional pin "DRAM_DQ[3]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 38
+    Warning (13040): bidirectional pin "DRAM_DQ[4]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 38
+    Warning (13040): bidirectional pin "DRAM_DQ[5]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 38
+    Warning (13040): bidirectional pin "DRAM_DQ[6]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 38
+    Warning (13040): bidirectional pin "DRAM_DQ[7]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 38
+    Warning (13040): bidirectional pin "DRAM_DQ[8]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 38
+    Warning (13040): bidirectional pin "DRAM_DQ[9]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 38
+    Warning (13040): bidirectional pin "DRAM_DQ[10]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 38
+    Warning (13040): bidirectional pin "DRAM_DQ[11]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 38
+    Warning (13040): bidirectional pin "DRAM_DQ[12]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 38
+    Warning (13040): bidirectional pin "DRAM_DQ[13]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 38
+    Warning (13040): bidirectional pin "DRAM_DQ[14]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 38
+    Warning (13040): bidirectional pin "DRAM_DQ[15]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 38
+    Warning (13040): bidirectional pin "GPIO_0[0]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
+    Warning (13040): bidirectional pin "GPIO_0[1]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
+    Warning (13040): bidirectional pin "GPIO_0[2]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
+    Warning (13040): bidirectional pin "GPIO_0[3]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
+    Warning (13040): bidirectional pin "GPIO_0[4]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
+    Warning (13040): bidirectional pin "GPIO_0[5]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
+    Warning (13040): bidirectional pin "GPIO_0[6]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
+    Warning (13040): bidirectional pin "GPIO_0[7]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
+    Warning (13040): bidirectional pin "GPIO_0[8]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
+    Warning (13040): bidirectional pin "GPIO_0[9]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
+    Warning (13040): bidirectional pin "GPIO_0[10]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
+    Warning (13040): bidirectional pin "GPIO_0[11]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
+    Warning (13040): bidirectional pin "GPIO_0[12]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
+    Warning (13040): bidirectional pin "GPIO_0[13]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
+    Warning (13040): bidirectional pin "GPIO_0[14]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
+    Warning (13040): bidirectional pin "GPIO_0[15]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
+    Warning (13040): bidirectional pin "GPIO_0[16]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
+    Warning (13040): bidirectional pin "GPIO_0[17]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
+    Warning (13040): bidirectional pin "GPIO_0[18]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
+    Warning (13040): bidirectional pin "GPIO_0[19]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
+    Warning (13040): bidirectional pin "GPIO_0[20]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
+    Warning (13040): bidirectional pin "GPIO_0[21]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
+    Warning (13040): bidirectional pin "GPIO_0[22]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
+    Warning (13040): bidirectional pin "GPIO_0[23]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
+    Warning (13040): bidirectional pin "GPIO_0[24]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
+    Warning (13040): bidirectional pin "GPIO_0[25]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
+    Warning (13040): bidirectional pin "GPIO_0[26]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
+    Warning (13040): bidirectional pin "GPIO_0[27]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
+    Warning (13040): bidirectional pin "GPIO_0[28]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
+    Warning (13040): bidirectional pin "GPIO_0[29]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
+    Warning (13040): bidirectional pin "GPIO_0[30]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
+    Warning (13040): bidirectional pin "GPIO_0[31]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
+    Warning (13040): bidirectional pin "GPIO_0[32]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
+    Warning (13040): bidirectional pin "GPIO_0[33]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
+    Warning (13040): bidirectional pin "GPIO_0[34]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
+    Warning (13040): bidirectional pin "GPIO_0[35]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
+    Warning (13040): bidirectional pin "GPIO_1[0]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 46
+    Warning (13040): bidirectional pin "GPIO_1[1]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 46
+    Warning (13040): bidirectional pin "GPIO_1[2]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 46
+    Warning (13040): bidirectional pin "GPIO_1[3]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 46
+    Warning (13040): bidirectional pin "GPIO_1[4]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 46
+    Warning (13040): bidirectional pin "GPIO_1[5]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 46
+    Warning (13040): bidirectional pin "GPIO_1[6]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 46
+    Warning (13040): bidirectional pin "GPIO_1[7]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 46
+    Warning (13040): bidirectional pin "GPIO_1[12]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 46
+    Warning (13040): bidirectional pin "GPIO_1[13]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 46
+    Warning (13040): bidirectional pin "GPIO_1[14]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 46
+    Warning (13040): bidirectional pin "GPIO_1[15]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 46
+    Warning (13040): bidirectional pin "GPIO_1[16]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 46
+    Warning (13040): bidirectional pin "GPIO_1[17]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 46
+    Warning (13040): bidirectional pin "GPIO_1[18]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 46
+    Warning (13040): bidirectional pin "GPIO_1[19]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 46
+    Warning (13040): bidirectional pin "GPIO_1[20]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 46
+    Warning (13040): bidirectional pin "GPIO_1[21]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 46
+    Warning (13040): bidirectional pin "GPIO_1[22]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 46
+    Warning (13040): bidirectional pin "GPIO_1[23]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 46
+    Warning (13040): bidirectional pin "GPIO_1[30]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 46
+    Warning (13040): bidirectional pin "GPIO_1[31]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 46
+    Warning (13040): bidirectional pin "GPIO_1[32]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 46
+    Warning (13040): bidirectional pin "GPIO_1[33]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 46
+    Warning (13040): bidirectional pin "GPIO_1[34]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 46
+    Warning (13040): bidirectional pin "GPIO_1[35]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 46
+    Warning (13040): bidirectional pin "PS2_CLK" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 73
+    Warning (13040): bidirectional pin "PS2_CLK2" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 74
+    Warning (13040): bidirectional pin "PS2_DAT" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 75
+    Warning (13040): bidirectional pin "PS2_DAT2" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 76
+    Warning (13040): bidirectional pin "SD_CMD" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 83
+    Warning (13040): bidirectional pin "SD_DATA[0]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 84
+    Warning (13040): bidirectional pin "SD_DATA[1]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 84
+    Warning (13040): bidirectional pin "SD_DATA[2]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 84
+    Warning (13040): bidirectional pin "SD_DATA[3]" has no driver File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 84
 Warning (13009): TRI or OPNDRN buffers permanently enabled
-    Warning (13010): Node "GPIO_1[8]~synth" File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
-    Warning (13010): Node "GPIO_1[9]~synth" File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
-    Warning (13010): Node "GPIO_1[10]~synth" File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
-    Warning (13010): Node "GPIO_1[11]~synth" File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
-    Warning (13010): Node "GPIO_1[24]~synth" File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
-    Warning (13010): Node "GPIO_1[25]~synth" File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
-    Warning (13010): Node "GPIO_1[26]~synth" File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
-    Warning (13010): Node "GPIO_1[27]~synth" File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
-    Warning (13010): Node "GPIO_1[29]~synth" File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 45
+    Warning (13010): Node "GPIO_1[8]~synth" File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 46
+    Warning (13010): Node "GPIO_1[9]~synth" File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 46
+    Warning (13010): Node "GPIO_1[10]~synth" File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 46
+    Warning (13010): Node "GPIO_1[11]~synth" File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 46
+    Warning (13010): Node "GPIO_1[24]~synth" File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 46
+    Warning (13010): Node "GPIO_1[25]~synth" File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 46
+    Warning (13010): Node "GPIO_1[26]~synth" File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 46
+    Warning (13010): Node "GPIO_1[27]~synth" File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 46
+    Warning (13010): Node "GPIO_1[29]~synth" File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 46
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "DRAM_ADDR[0]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 31
-    Warning (13410): Pin "DRAM_ADDR[1]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 31
-    Warning (13410): Pin "DRAM_ADDR[2]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 31
-    Warning (13410): Pin "DRAM_ADDR[3]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 31
-    Warning (13410): Pin "DRAM_ADDR[4]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 31
-    Warning (13410): Pin "DRAM_ADDR[5]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 31
-    Warning (13410): Pin "DRAM_ADDR[6]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 31
-    Warning (13410): Pin "DRAM_ADDR[7]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 31
-    Warning (13410): Pin "DRAM_ADDR[8]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 31
-    Warning (13410): Pin "DRAM_ADDR[9]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 31
-    Warning (13410): Pin "DRAM_ADDR[10]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 31
-    Warning (13410): Pin "DRAM_ADDR[11]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 31
-    Warning (13410): Pin "DRAM_ADDR[12]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 31
-    Warning (13410): Pin "DRAM_BA[0]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 32
-    Warning (13410): Pin "DRAM_BA[1]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 32
-    Warning (13410): Pin "DRAM_CAS_N" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 33
-    Warning (13410): Pin "DRAM_CKE" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 34
-    Warning (13410): Pin "DRAM_CLK" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 35
-    Warning (13410): Pin "DRAM_CS_N" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 36
-    Warning (13410): Pin "DRAM_LDQM" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 38
-    Warning (13410): Pin "DRAM_RAS_N" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 39
-    Warning (13410): Pin "DRAM_UDQM" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 40
-    Warning (13410): Pin "DRAM_WE_N" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 41
-    Warning (13410): Pin "HEX0[0]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 48
-    Warning (13410): Pin "HEX0[1]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 48
-    Warning (13410): Pin "HEX0[2]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 48
-    Warning (13410): Pin "HEX0[3]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 48
-    Warning (13410): Pin "HEX0[4]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 48
-    Warning (13410): Pin "HEX0[5]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 48
-    Warning (13410): Pin "HEX0[6]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 48
-    Warning (13410): Pin "HEX1[0]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 51
-    Warning (13410): Pin "HEX1[1]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 51
-    Warning (13410): Pin "HEX1[2]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 51
-    Warning (13410): Pin "HEX1[3]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 51
-    Warning (13410): Pin "HEX1[4]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 51
-    Warning (13410): Pin "HEX1[5]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 51
-    Warning (13410): Pin "HEX1[6]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 51
-    Warning (13410): Pin "HEX2[0]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 54
-    Warning (13410): Pin "HEX2[1]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 54
-    Warning (13410): Pin "HEX2[2]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 54
-    Warning (13410): Pin "HEX2[3]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 54
-    Warning (13410): Pin "HEX2[4]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 54
-    Warning (13410): Pin "HEX2[5]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 54
-    Warning (13410): Pin "HEX2[6]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 54
-    Warning (13410): Pin "HEX3[0]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 57
-    Warning (13410): Pin "HEX3[1]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 57
-    Warning (13410): Pin "HEX3[2]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 57
-    Warning (13410): Pin "HEX3[3]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 57
-    Warning (13410): Pin "HEX3[4]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 57
-    Warning (13410): Pin "HEX3[5]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 57
-    Warning (13410): Pin "HEX3[6]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 57
-    Warning (13410): Pin "HEX4[0]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 60
-    Warning (13410): Pin "HEX4[1]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 60
-    Warning (13410): Pin "HEX4[2]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 60
-    Warning (13410): Pin "HEX4[3]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 60
-    Warning (13410): Pin "HEX4[4]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 60
-    Warning (13410): Pin "HEX4[5]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 60
-    Warning (13410): Pin "HEX4[6]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 60
-    Warning (13410): Pin "HEX5[0]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 63
-    Warning (13410): Pin "HEX5[1]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 63
-    Warning (13410): Pin "HEX5[2]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 63
-    Warning (13410): Pin "HEX5[3]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 63
-    Warning (13410): Pin "HEX5[4]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 63
-    Warning (13410): Pin "HEX5[5]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 63
-    Warning (13410): Pin "HEX5[6]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 63
-    Warning (13410): Pin "LEDR[2]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 69
-    Warning (13410): Pin "LEDR[3]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 69
-    Warning (13410): Pin "LEDR[4]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 69
-    Warning (13410): Pin "LEDR[5]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 69
-    Warning (13410): Pin "LEDR[6]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 69
-    Warning (13410): Pin "LEDR[7]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 69
-    Warning (13410): Pin "LEDR[8]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 69
-    Warning (13410): Pin "LEDR[9]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 69
-    Warning (13410): Pin "SD_CLK" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 81
-    Warning (13410): Pin "VGA_B[0]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 89
-    Warning (13410): Pin "VGA_B[1]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 89
-    Warning (13410): Pin "VGA_B[2]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 89
-    Warning (13410): Pin "VGA_B[3]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 89
-    Warning (13410): Pin "VGA_G[0]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 90
-    Warning (13410): Pin "VGA_G[1]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 90
-    Warning (13410): Pin "VGA_G[2]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 90
-    Warning (13410): Pin "VGA_G[3]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 90
-    Warning (13410): Pin "VGA_HS" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 91
-    Warning (13410): Pin "VGA_R[0]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 92
-    Warning (13410): Pin "VGA_R[1]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 92
-    Warning (13410): Pin "VGA_R[2]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 92
-    Warning (13410): Pin "VGA_R[3]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 92
-    Warning (13410): Pin "VGA_VS" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 94
+    Warning (13410): Pin "DRAM_ADDR[0]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 32
+    Warning (13410): Pin "DRAM_ADDR[1]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 32
+    Warning (13410): Pin "DRAM_ADDR[2]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 32
+    Warning (13410): Pin "DRAM_ADDR[3]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 32
+    Warning (13410): Pin "DRAM_ADDR[4]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 32
+    Warning (13410): Pin "DRAM_ADDR[5]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 32
+    Warning (13410): Pin "DRAM_ADDR[6]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 32
+    Warning (13410): Pin "DRAM_ADDR[7]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 32
+    Warning (13410): Pin "DRAM_ADDR[8]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 32
+    Warning (13410): Pin "DRAM_ADDR[9]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 32
+    Warning (13410): Pin "DRAM_ADDR[10]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 32
+    Warning (13410): Pin "DRAM_ADDR[11]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 32
+    Warning (13410): Pin "DRAM_ADDR[12]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 32
+    Warning (13410): Pin "DRAM_BA[0]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 33
+    Warning (13410): Pin "DRAM_BA[1]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 33
+    Warning (13410): Pin "DRAM_CAS_N" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 34
+    Warning (13410): Pin "DRAM_CKE" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 35
+    Warning (13410): Pin "DRAM_CLK" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 36
+    Warning (13410): Pin "DRAM_CS_N" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 37
+    Warning (13410): Pin "DRAM_LDQM" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 39
+    Warning (13410): Pin "DRAM_RAS_N" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 40
+    Warning (13410): Pin "DRAM_UDQM" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 41
+    Warning (13410): Pin "DRAM_WE_N" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 42
+    Warning (13410): Pin "HEX0[0]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 49
+    Warning (13410): Pin "HEX0[1]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 49
+    Warning (13410): Pin "HEX0[2]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 49
+    Warning (13410): Pin "HEX0[3]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 49
+    Warning (13410): Pin "HEX0[4]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 49
+    Warning (13410): Pin "HEX0[5]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 49
+    Warning (13410): Pin "HEX0[6]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 49
+    Warning (13410): Pin "HEX1[0]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 52
+    Warning (13410): Pin "HEX1[1]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 52
+    Warning (13410): Pin "HEX1[2]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 52
+    Warning (13410): Pin "HEX1[3]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 52
+    Warning (13410): Pin "HEX1[4]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 52
+    Warning (13410): Pin "HEX1[5]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 52
+    Warning (13410): Pin "HEX1[6]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 52
+    Warning (13410): Pin "HEX2[0]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 55
+    Warning (13410): Pin "HEX2[1]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 55
+    Warning (13410): Pin "HEX2[2]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 55
+    Warning (13410): Pin "HEX2[3]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 55
+    Warning (13410): Pin "HEX2[4]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 55
+    Warning (13410): Pin "HEX2[5]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 55
+    Warning (13410): Pin "HEX2[6]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 55
+    Warning (13410): Pin "HEX3[0]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 58
+    Warning (13410): Pin "HEX3[1]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 58
+    Warning (13410): Pin "HEX3[2]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 58
+    Warning (13410): Pin "HEX3[3]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 58
+    Warning (13410): Pin "HEX3[4]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 58
+    Warning (13410): Pin "HEX3[5]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 58
+    Warning (13410): Pin "HEX3[6]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 58
+    Warning (13410): Pin "HEX4[0]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 61
+    Warning (13410): Pin "HEX4[1]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 61
+    Warning (13410): Pin "HEX4[2]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 61
+    Warning (13410): Pin "HEX4[3]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 61
+    Warning (13410): Pin "HEX4[4]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 61
+    Warning (13410): Pin "HEX4[5]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 61
+    Warning (13410): Pin "HEX4[6]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 61
+    Warning (13410): Pin "HEX5[0]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 64
+    Warning (13410): Pin "HEX5[1]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 64
+    Warning (13410): Pin "HEX5[2]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 64
+    Warning (13410): Pin "HEX5[3]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 64
+    Warning (13410): Pin "HEX5[4]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 64
+    Warning (13410): Pin "HEX5[5]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 64
+    Warning (13410): Pin "HEX5[6]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 64
+    Warning (13410): Pin "LEDR[3]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 70
+    Warning (13410): Pin "LEDR[4]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 70
+    Warning (13410): Pin "LEDR[5]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 70
+    Warning (13410): Pin "LEDR[6]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 70
+    Warning (13410): Pin "LEDR[7]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 70
+    Warning (13410): Pin "LEDR[8]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 70
+    Warning (13410): Pin "LEDR[9]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 70
+    Warning (13410): Pin "SD_CLK" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 82
+    Warning (13410): Pin "VGA_B[0]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 90
+    Warning (13410): Pin "VGA_B[1]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 90
+    Warning (13410): Pin "VGA_B[2]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 90
+    Warning (13410): Pin "VGA_B[3]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 90
+    Warning (13410): Pin "VGA_G[0]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 91
+    Warning (13410): Pin "VGA_G[1]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 91
+    Warning (13410): Pin "VGA_G[2]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 91
+    Warning (13410): Pin "VGA_G[3]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 91
+    Warning (13410): Pin "VGA_HS" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 92
+    Warning (13410): Pin "VGA_R[0]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 93
+    Warning (13410): Pin "VGA_R[1]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 93
+    Warning (13410): Pin "VGA_R[2]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 93
+    Warning (13410): Pin "VGA_R[3]" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 93
+    Warning (13410): Pin "VGA_VS" is stuck at GND File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 95
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 280 registers lost all their fanouts during netlist optimizations.
+Info (17049): 23 registers lost all their fanouts during netlist optimizations.
 Warning (20013): Ignored 230 assignments for entity "DE0_CV_Default" -- entity does not exist in design
     Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to CLOCK2_50 -entity DE0_CV_Default was ignored
     Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to CLOCK3_50 -entity DE0_CV_Default was ignored
@@ -2241,32 +2228,32 @@ Warning (20013): Ignored 230 assignments for entity "DE0_CV_Default" -- entity d
     Warning (20014): Assignment for entity set_global_assignment -name PARTITION_EXTRACT_HARD_BLOCK_NODES ON -entity DE0_CV_Default -section_id Top was ignored
     Warning (20014): Assignment for entity set_global_assignment -name PARTITION_ENABLE_STRICT_PRESERVATION OFF -entity DE0_CV_Default -section_id Top was ignored
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
-    Info (16011): Adding 5 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
+    Info (16011): Adding 6 node(s), including 0 DDIO, 2 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 14 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "CLOCK2_50" File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 19
-    Warning (15610): No output dependent on input pin "CLOCK3_50" File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 22
-    Warning (15610): No output dependent on input pin "KEY[3]" File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 66
-    Warning (15610): No output dependent on input pin "RESET_N" File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 78
-    Warning (15610): No output dependent on input pin "SW[0]" File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 86
-    Warning (15610): No output dependent on input pin "SW[1]" File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 86
-    Warning (15610): No output dependent on input pin "SW[2]" File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 86
-    Warning (15610): No output dependent on input pin "SW[3]" File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 86
-    Warning (15610): No output dependent on input pin "SW[4]" File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 86
-    Warning (15610): No output dependent on input pin "SW[5]" File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 86
-    Warning (15610): No output dependent on input pin "SW[6]" File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 86
-    Warning (15610): No output dependent on input pin "SW[7]" File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 86
-    Warning (15610): No output dependent on input pin "SW[8]" File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 86
-    Warning (15610): No output dependent on input pin "SW[9]" File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 86
-Info (21057): Implemented 448 device resources after synthesis - the final resource count might be different
+    Warning (15610): No output dependent on input pin "CLOCK2_50" File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 20
+    Warning (15610): No output dependent on input pin "CLOCK3_50" File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 23
+    Warning (15610): No output dependent on input pin "KEY[3]" File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 67
+    Warning (15610): No output dependent on input pin "RESET_N" File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 79
+    Warning (15610): No output dependent on input pin "SW[0]" File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 87
+    Warning (15610): No output dependent on input pin "SW[1]" File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 87
+    Warning (15610): No output dependent on input pin "SW[2]" File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 87
+    Warning (15610): No output dependent on input pin "SW[3]" File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 87
+    Warning (15610): No output dependent on input pin "SW[4]" File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 87
+    Warning (15610): No output dependent on input pin "SW[5]" File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 87
+    Warning (15610): No output dependent on input pin "SW[6]" File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 87
+    Warning (15610): No output dependent on input pin "SW[7]" File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 87
+    Warning (15610): No output dependent on input pin "SW[8]" File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 87
+    Warning (15610): No output dependent on input pin "SW[9]" File: /home/tyler/de0_pulse_gen/de0_pulse_gen_top.v Line: 87
+Info (21057): Implemented 1142 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 18 input pins
     Info (21059): Implemented 90 output pins
     Info (21060): Implemented 98 bidirectional pins
-    Info (21061): Implemented 241 logic cells
-    Info (21065): Implemented 1 PLLs
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 482 warnings
-    Info: Peak virtual memory: 1362 megabytes
-    Info: Processing ended: Fri Dec  7 16:22:50 2018
-    Info: Elapsed time: 00:00:19
-    Info: Total CPU time (on all processors): 00:00:27
+    Info (21061): Implemented 934 logic cells
+    Info (21065): Implemented 2 PLLs
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 478 warnings
+    Info: Peak virtual memory: 1367 megabytes
+    Info: Processing ended: Fri Dec  7 17:41:12 2018
+    Info: Elapsed time: 00:00:18
+    Info: Total CPU time (on all processors): 00:00:25
 
 
