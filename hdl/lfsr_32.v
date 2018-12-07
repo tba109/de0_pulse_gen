@@ -4,7 +4,7 @@
 // lfsr_32.v
 //
 // Pseudo random number generator based on "Bebop to the Boolean Boogie", Appendix E, Figure E.4. 
-// This is a maximum length sequence. 
+// This is a maximum length sequence (4294967295 terms)
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 module lfsr_32

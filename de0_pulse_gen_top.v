@@ -3,6 +3,7 @@
 // de0_pulse_gen_top.v
 //
 //////////////////////////////////////////////////////////////////////////////////////
+`timescale 1 ns / 1 ps
 module de0_pulse_gen_top
   (
    
@@ -100,6 +101,15 @@ module de0_pulse_gen_top
    wire 	 clk; // 50MHz
    wire 	 clk_200MHz; // 200MHz
    wire 	 rst_n; 
+   
+`ifdef MODEL_TECH
+   assign clk = CLOCK_50; 
+   reg 		 sim_clk_200MHz;
+   always @(sim_clk_200MHz) #(5.0) sim_clk_200MHz <= !sim_clk_200MHz; 
+   initial begin sim_clk_200MHz = 1; end
+   assign clk_200MHz = sim_clk_200MHz;
+   assign rst_n = 1'b1; 
+`else
    PLL0 PLL0_0(
 	       .refclk(CLOCK_50),
 	       .rst(!KEY[0]),
@@ -107,10 +117,21 @@ module de0_pulse_gen_top
 	       .outclk_1(clk_200MHz),
 	       .locked(rst_n)
 	       );
+`endif
    assign GPIO_1[29] = 1'b1 ? tx : 1'bz; 
    assign rx         = GPIO_1[28];
-   assign GPIO_1[9] = 1'b1 ? 
-      
+
+   
+   wire 	 rst_pg;
+   wire 	 run_pg;  		
+`ifdef MODEL_TECH
+   debounce #(.P_DEFVAL(0),.P_DELAY(32'd250)) DB_0(.clk(clk),.rst_n(1'b1),.a(!KEY[1]),.y(rst_pg));
+   debounce #(.P_DEFVAL(0),.P_DELAY(32'd250)) DB_1(.clk(clk),.rst_n(1'b1),.a(!KEY[2]),.y(run_pg)); 
+`else
+   debounce #(.P_DEFVAL(0),.P_DELAY(32'd2500000)) DB_0(.clk(clk),.rst_n(1'b1),.a(!KEY[1]),.y(rst_pg));
+   debounce #(.P_DEFVAL(0),.P_DELAY(32'd2500000)) DB_1(.clk(clk),.rst_n(1'b1),.a(!KEY[2]),.y(run_pg)); 
+`endif
+         
    ///////////////////////////////////////////////////////////////////////////////////////////
    // Version Number
    wire [15:0] 	 vnum; 
@@ -135,15 +156,11 @@ module de0_pulse_gen_top
    wire 	 rsp_byte_req;
    wire 	 rsp_byte_ack;
    wire [7:0] 	 rsp_byte_data;
-   wire [31:0]	 lfsr_seed; 
-   assign lfsr_seed = 32'hffffffff;
-   wire 	 lfsr_seed_wr;
-   assign lfsr_seed_wr = 0; 
    fcr_ctrl FCR_0
      (
       .clk(clk),
       .rst_n(rst_n),
-`ifdef 0//MODEL_TECH
+`ifdef MODEL_TECH
       .cmd_byte_req(nu_cmd_req),
       .cmd_byte_data(nu_cmd_data),
       .cmd_byte_ack(nu_cmd_ack),
@@ -192,42 +209,279 @@ module de0_pulse_gen_top
       .tx_fifo_empty(!rsp_byte_req)
       ); 
       
-   // We need a bit of adapter logic between the handshaking of FCR and the FIFO interfaces of the rs232
+   // We need adapter logic between the handshaking of FCR and the FIFO interfaces of the rs232
    pedge_req PEDGE_REQ_0(.clk(clk),.rst_n(1'b1),.a(rx_fifo_wr_en),.req(cmd_byte_req),.ack(cmd_byte_ack));
-   always @(posedge clk) if(rsp_byte_ack) rsp_byte_data_reg <= rsp_byte_data; 
-
-
-   /* DO EXP_PGEN */
-   
-   ///////////////////////////////////////////////////////////////////////////////////////////
-   // LFSR 32b
-   wire [31:0] 		rnd; 
-   lfsr_32 LFSR_32_0(
-		     .clk		(clk_200MHz),
-		     .seed		(lfsr_seed),
-		     .seed_wr		(lfsr_seed_wr),
-		     .y			(),
-		     .lfsr              (rnd)
-		     ); 
-   
 
    ///////////////////////////////////////////////////////////////////////////////////////////
+   // LFSR 32b 0
+   wire [31:0] 		rnd_0; 
+   localparam [31:0] L_SEED_0 = 32'hd6778938;
+   // localparam [31:0] L_SEED_0 = 32'hFFFFFFFF; 
+   lfsr_32 #(.P_INIT_SEED(L_SEED_0)) LFSR_32_0(
+					       .clk(clk_200MHz),
+					       .seed(),
+					       .seed_wr(),
+					       .y(),
+					       .lfsr(rnd_0)
+					       );    
    // Pulse generator
-   wire 		pulse_out; 
+   wire 		pulse_out_0; 
    pulse_gen PG_0(
 		  // Outputs
-		  .pulse_out		(pulse_out),
+		  .pulse_out		(pulse_out_0),
 		  // Inputs
 		  .clk			(clk_200MHz),
 		  .x_low		(0),
 		  .x_low_wr		(0),
 		  .x_high		(0),
 		  .x_high_wr		(0),
-		  .x			(rnd));
-   reg [31:0] 		pulse_cnt = 0; 
-   always @(posedge clk) if(pulse_out) pulse_cnt <= pulse_cnt + 1; 
- 
+		  .x			(rnd_0));
+   reg [31:0] 		pulse_cnt_0 = 0; 
    
+   ///////////////////////////////////////////////////////////////////////////////////////////
+   // LFSR 32b 1
+   wire [31:0] 		rnd_1;
+   localparam [31:0] L_SEED_1 = 32'h2d0f3801;
+   lfsr_32 #(.P_INIT_SEED(L_SEED_1)) LFSR_32_1(
+					       .clk(clk_200MHz),
+					       .seed(),
+					       .seed_wr(),
+					       .y(),
+					       .lfsr(rnd_1)
+					       );    
+   // Pulse generator
+   wire 		pulse_out_1; 
+   pulse_gen PG_1(
+		  // Outputs
+		  .pulse_out		(pulse_out_1),
+		  // Inputs
+		  .clk			(clk_200MHz),
+		  .x_low		(0),
+		  .x_low_wr		(0),
+		  .x_high		(0),
+		  .x_high_wr		(0),
+		  .x			(rnd_1));
+   reg [31:0] 		pulse_cnt_1 = 0; 
+
+   ///////////////////////////////////////////////////////////////////////////////////////////
+   // LFSR 32b 2
+   wire [31:0] 		rnd_2;
+   localparam [31:0] L_SEED_2 = 32'hf2338c85;
+   lfsr_32 #(.P_INIT_SEED(L_SEED_2)) LFSR_32_2(
+					       .clk(clk_200MHz),
+					       .seed(),
+					       .seed_wr(),
+					       .y(),
+					       .lfsr(rnd_2)
+					       );    
+   // Pulse generator
+   wire 		pulse_out_2; 
+   pulse_gen PG_2(
+		  // Outputs
+		  .pulse_out		(pulse_out_2),
+		  // Inputs
+		  .clk			(clk_200MHz),
+		  .x_low		(0),
+		  .x_low_wr		(0),
+		  .x_high		(0),
+		  .x_high_wr		(0),
+		  .x			(rnd_2));
+   reg [31:0] 		pulse_cnt_2 = 0; 
+
+   ///////////////////////////////////////////////////////////////////////////////////////////
+   // LFSR 32b 3
+   wire [31:0] 		rnd_3;
+   localparam [31:0] L_SEED_3 = 32'hfd28533c;
+   lfsr_32 #(.P_INIT_SEED(L_SEED_3)) LFSR_32_3(
+					       .clk(clk_200MHz),
+					       .seed(),
+					       .seed_wr(),
+					       .y(),
+					       .lfsr(rnd_3)
+					       );    
+   // Pulse generator
+   wire 		pulse_out_3; 
+   pulse_gen PG_3(
+		  // Outputs
+		  .pulse_out		(pulse_out_3),
+		  // Inputs
+		  .clk			(clk_200MHz),
+		  .x_low		(0),
+		  .x_low_wr		(0),
+		  .x_high		(0),
+		  .x_high_wr		(0),
+		  .x			(rnd_3));
+   reg [31:0] 		pulse_cnt_3 = 0; 
+
+   ///////////////////////////////////////////////////////////////////////////////////////////
+   // LFSR 32b 4 
+   wire [31:0] 		rnd_4;
+   localparam [31:0] L_SEED_4 = 32'h96f8a61a; 
+   lfsr_32 #(.P_INIT_SEED(L_SEED_4)) LFSR_32_4(
+					       .clk(clk_200MHz),
+					       .seed(),
+					       .seed_wr(),
+					       .y(),
+					       .lfsr(rnd_4)
+					       );    
+   // Pulse generator
+   wire 		pulse_out_4; 
+   pulse_gen PG_4(
+		  // Outputs
+		  .pulse_out		(pulse_out_4),
+		  // Inputs
+		  .clk			(clk_200MHz),
+		  .x_low		(0),
+		  .x_low_wr		(0),
+		  .x_high		(0),
+		  .x_high_wr		(0),
+		  .x			(rnd_4));
+   reg [31:0] 		pulse_cnt_4 = 0; 
+
+   ///////////////////////////////////////////////////////////////////////////////////////////
+   // LFSR 32b 5 
+   wire [31:0] 		rnd_5;
+   localparam [31:0] L_SEED_5 = 32'h954dc0a3; 
+   lfsr_32 #(.P_INIT_SEED(L_SEED_5)) LFSR_32_5(
+					       .clk(clk_200MHz),
+					       .seed(),
+					       .seed_wr(),
+					       .y(),
+					       .lfsr(rnd_5)
+					       );    
+   // Pulse generator
+   wire 		pulse_out_5; 
+   pulse_gen PG_5(
+		  // Outputs
+		  .pulse_out		(pulse_out_5),
+		  // Inputs
+		  .clk			(clk_200MHz),
+		  .x_low		(0),
+		  .x_low_wr		(0),
+		  .x_high		(0),
+		  .x_high_wr		(0),
+		  .x			(rnd_5));
+   reg [31:0] 		pulse_cnt_5 = 0; 
+
+   ///////////////////////////////////////////////////////////////////////////////////////////
+   // LFSR 32b 6 
+   wire [31:0] 		rnd_6;
+   localparam [31:0] L_SEED_6 = 32'h3b4137f7; 
+   lfsr_32 #(.P_INIT_SEED(L_SEED_6)) LFSR_32_6(
+					       .clk(clk_200MHz),
+					       .seed(),
+					       .seed_wr(),
+					       .y(),
+					       .lfsr(rnd_6)
+					       );    
+   // Pulse generator
+   wire 		pulse_out_6; 
+   pulse_gen PG_6(
+		  // Outputs
+		  .pulse_out		(pulse_out_6),
+		  // Inputs
+		  .clk			(clk_200MHz),
+		  .x_low		(0),
+		  .x_low_wr		(0),
+		  .x_high		(0),
+		  .x_high_wr		(0),
+		  .x			(rnd_6));
+   reg [31:0] 		pulse_cnt_6 = 0; 
+
+   ///////////////////////////////////////////////////////////////////////////////////////////
+   // LFSR 32b 7
+   wire [31:0] 		rnd_7; 
+   localparam [31:0] L_SEED_7 = 32'ha0c3c5d5; 
+   lfsr_32 #(.P_INIT_SEED(L_SEED_7)) LFSR_32_7(
+					       .clk(clk_200MHz),
+					       .seed(),
+					       .seed_wr(),
+					       .y(),
+					       .lfsr(rnd_7)
+					       );    
+   // Pulse generator
+   wire 		pulse_out_7; 
+   pulse_gen PG_7(
+		  // Outputs
+		  .pulse_out		(pulse_out_7),
+		  // Inputs
+		  .clk			(clk_200MHz),
+		  .x_low		(0),
+		  .x_low_wr		(0),
+		  .x_high		(0),
+		  .x_high_wr		(0),
+		  .x			(rnd_7));
+   reg [31:0] 		pulse_cnt_7 = 0; 
+
+   ///////////////////////////////////////////////////////////////////////////////////////////
+   // gates
+   localparam L_PULSE_CNT_MAX = 32'hffffffff;
+   localparam 
+     S_IDLE = 0,
+     S_RUN = 1; 
+     
+   reg 			fsm = S_IDLE;
+   always @(posedge clk or negedge rst_n)
+     if(!rst_n)
+       begin
+	  fsm <= S_IDLE;
+	  pulse_cnt_0 <= 0;
+	  pulse_cnt_1 <= 0;
+	  pulse_cnt_2 <= 0;
+	  pulse_cnt_3 <= 0;
+	  pulse_cnt_4 <= 0;
+	  pulse_cnt_5 <= 0;
+	  pulse_cnt_6 <= 0;
+	  pulse_cnt_7 <= 0;
+       end 
+     else
+       begin
+	  if(pulse_out_0 && fsm == S_RUN && pulse_cnt_0 != L_PULSE_CNT_MAX) pulse_cnt_0 <= pulse_cnt_0 + 1;
+	  if(pulse_out_1 && fsm == S_RUN && pulse_cnt_0 != L_PULSE_CNT_MAX) pulse_cnt_1 <= pulse_cnt_1 + 1;
+	  if(pulse_out_2 && fsm == S_RUN && pulse_cnt_0 != L_PULSE_CNT_MAX) pulse_cnt_2 <= pulse_cnt_2 + 1;
+	  if(pulse_out_3 && fsm == S_RUN && pulse_cnt_0 != L_PULSE_CNT_MAX) pulse_cnt_3 <= pulse_cnt_3 + 1;
+	  if(pulse_out_4 && fsm == S_RUN && pulse_cnt_0 != L_PULSE_CNT_MAX) pulse_cnt_4 <= pulse_cnt_4 + 1;
+	  if(pulse_out_5 && fsm == S_RUN && pulse_cnt_0 != L_PULSE_CNT_MAX) pulse_cnt_5 <= pulse_cnt_5 + 1;
+	  if(pulse_out_6 && fsm == S_RUN && pulse_cnt_0 != L_PULSE_CNT_MAX) pulse_cnt_6 <= pulse_cnt_6 + 1;
+	  if(pulse_out_7 && fsm == S_RUN && pulse_cnt_0 != L_PULSE_CNT_MAX) pulse_cnt_7 <= pulse_cnt_7 + 1; 
+	  case(fsm)
+	    S_IDLE: if(run_pg) fsm <= S_RUN;
+	    S_RUN:
+	      if(rst_pg)
+		begin
+		   fsm <= S_IDLE;
+		   pulse_cnt_0 <= 0;
+		   pulse_cnt_1 <= 0;
+		   pulse_cnt_2 <= 0;
+		   pulse_cnt_3 <= 0;
+		   pulse_cnt_4 <= 0;
+		   pulse_cnt_5 <= 0;
+		   pulse_cnt_6 <= 0;
+		   pulse_cnt_7 <= 0;
+		end
+	  endcase // case (fsm)
+       end // else: !if(!KEY[1])
+
+   
+   ///////////////////////////////////////////////////////////////////////////////////////////
+   // Output assignments
+   assign GPIO_1[9]  = pulse_out_0 && pulse_cnt_0 != L_PULSE_CNT_MAX && fsm==S_RUN;
+   assign GPIO_1[8]  = pulse_out_1 && pulse_cnt_1 != L_PULSE_CNT_MAX && fsm==S_RUN;
+   assign GPIO_1[11] = pulse_out_2 && pulse_cnt_2 != L_PULSE_CNT_MAX && fsm==S_RUN;
+   assign GPIO_1[10] = pulse_out_3 && pulse_cnt_3 != L_PULSE_CNT_MAX && fsm==S_RUN;
+   assign GPIO_1[25] = pulse_out_4 && pulse_cnt_4 != L_PULSE_CNT_MAX && fsm==S_RUN; 
+   assign GPIO_1[24] = pulse_out_5 && pulse_cnt_5 != L_PULSE_CNT_MAX && fsm==S_RUN;
+   assign GPIO_1[27] = pulse_out_6 && pulse_cnt_6 != L_PULSE_CNT_MAX && fsm==S_RUN;
+   assign GPIO_1[26] = pulse_out_7 && pulse_cnt_7 != L_PULSE_CNT_MAX && fsm==S_RUN;
+   assign LEDR[1] = fsm == S_RUN;
+   assign LEDR[2] = (pulse_cnt_0 == L_PULSE_CNT_MAX) &&
+		    (pulse_cnt_1 == L_PULSE_CNT_MAX) &&
+		    (pulse_cnt_2 == L_PULSE_CNT_MAX) &&
+		    (pulse_cnt_3 == L_PULSE_CNT_MAX) &&
+		    (pulse_cnt_4 == L_PULSE_CNT_MAX) &&
+		    (pulse_cnt_5 == L_PULSE_CNT_MAX) &&
+		    (pulse_cnt_6 == L_PULSE_CNT_MAX) &&
+		    (pulse_cnt_7 == L_PULSE_CNT_MAX);
    
 endmodule
 

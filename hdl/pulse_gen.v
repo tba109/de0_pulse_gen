@@ -20,9 +20,10 @@ module pulse_gen
    ////////////////////////////////////////////
    // See the sw directory for the root script
    // LFSR 32b has 4,294,967,295 states
+
    // 15kHz
-   reg [31:0] 	i_x_low  = 32'd2149322586;
-   reg [31:0] 	i_x_high = 32'd2147644709; 
+   reg [31:0] 	i_x_high  = 32'd2149322586;
+   reg [31:0] 	i_x_low = 32'd2147644709; 
 
    // // 8kHz
    // reg [31:0] 	i_x_low  = 32'd2147397748;

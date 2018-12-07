@@ -476,9 +476,14 @@ set_global_assignment -name EDA_NATIVELINK_SIMULATION_TEST_BENCH tb_main -sectio
 set_global_assignment -name EDA_TEST_BENCH_NAME tb_main -section_id eda_simulation
 set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id tb_main
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME tb_main -section_id tb_main
+set_global_assignment -name EDA_TEST_BENCH_FILE sim/de0_pulse_gen_top_tb.v -section_id tb_main
+set_global_assignment -name VERILOG_FILE hdl/version_number.v
+set_global_assignment -name VERILOG_FILE hdl/lfsr_32.v
+set_global_assignment -name VERILOG_FILE hdl/pulse_gen.v
+set_global_assignment -name VERILOG_FILE hdl/exp_pgen.v
+set_global_assignment -name VERILOG_FILE hdl/debounce.v
 set_global_assignment -name VERILOG_FILE hdl/pedge_req.v
 set_global_assignment -name VERILOG_FILE hdl/fcr_ctrl.v
-set_global_assignment -name VERILOG_FILE sim/de0_pulse_gen_top_tb.v
 set_global_assignment -name VERILOG_INCLUDE_FILE hdl/fncs.vh
 set_global_assignment -name VERILOG_FILE de0_pulse_gen_top.v
 set_global_assignment -name VERILOG_FILE hdl/rst_gen.v
@@ -489,7 +494,6 @@ set_global_assignment -name VERILOG_FILE hdl/negedge_detector.v
 set_global_assignment -name VERILOG_FILE hdl/config_ind.v
 set_global_assignment -name VERILOG_FILE hdl/sync.v
 set_global_assignment -name VECTOR_WAVEFORM_FILE vwf/config_ind.vwf
-set_global_assignment -name EDA_TEST_BENCH_FILE sim/de0_pulse_gen_top_tb.v -section_id tb_main
-set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
 set_global_assignment -name QIP_FILE PLL0.qip
 set_global_assignment -name SIP_FILE PLL0.sip
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
